@@ -5,11 +5,9 @@ public class PumaClimb : MonoBehaviour {
 
 	private float triggerDistance;
 	private UIHint climbHintText;
-	private float climbspeed;
 	// Use this for initialization
 	void Start () {
 		triggerDistance = 1;
-		climbspeed = 20;
 		climbHintText = GameObject.Find ("ClimbHint").GetComponent<UIHint>();
 	}
 	
