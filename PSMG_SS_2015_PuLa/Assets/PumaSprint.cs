@@ -15,7 +15,7 @@ public class PumaSprint : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		walkingSpeed = GetComponent<PlayerMovement> ().movePower;
-		slowSpeed = 3;
+		slowSpeed = 2;
 		sprintSpeed = 25;
 		stamina = 150;
 		staminaDrain = 2;
@@ -45,16 +45,21 @@ public class PumaSprint : MonoBehaviour {
 		if (stamina == 0) {
 			tired = true;
 		}
-		if (stamina >  9 * MAX_STAMINA / 10 && tired) {
+		if (stamina > 9 * MAX_STAMINA / 10) {
 			tired = false;
-			GetComponent<PlayerMovement>().movePower = slowSpeed;
 		}
+		if (tired) {
+			GetComponent<PlayerMovement> ().movePower = slowSpeed;
+		} else {
+			GetComponent<PlayerMovement>().movePower = walkingSpeed;
+		}
+	
 
 		if (isSprintOn) {
 			GetComponent<PlayerMovement>().movePower = sprintSpeed;
 			stamina -= staminaDrain;
 		} else {
-			GetComponent<PlayerMovement>().movePower = walkingSpeed;
+
 			if(stamina < MAX_STAMINA){
 				stamina += staminaGain;
 			}
