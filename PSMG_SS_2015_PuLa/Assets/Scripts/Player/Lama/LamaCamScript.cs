@@ -23,7 +23,7 @@ public class LamaCamScript : MonoBehaviour {
 	}
 
 	void doUpdate(){
-		float angle = Input.GetAxis ("Mouse Y") * 50 * -1;
+		float angle = Input.GetAxis ("Mouse Y") * 20 * -1;
 		Vector3 angleV = new Vector3 (angle, 0, 0);
 		transform.eulerAngles += angleV;
 		if(Input.GetKeyDown(KeyCode.Q)){
