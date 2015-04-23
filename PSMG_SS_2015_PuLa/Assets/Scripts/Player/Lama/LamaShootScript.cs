@@ -6,8 +6,11 @@ public class LamaShootScript : MonoBehaviour {
 
 
 	// Use this for initialization
+	private Camera lamaCam;
+	private GameObject bullet;
 	void Start () {
-
+		bullet = GameObject.Find ("Bullet");
+		lamaCam = GetComponentInChildren<Camera> ();
 	}
 	
 	// Update is called once per frame
@@ -18,8 +21,14 @@ public class LamaShootScript : MonoBehaviour {
 	}
 
 	void doUpdate(){
-		if(Input.GetKeyDown(KeyCode.Mouse0) && GetComponentInChildren<Camera>().enabled){
-			Debug.Log ("Test");
+		if(Input.GetKeyDown(KeyCode.Mouse0) && lamaCam.enabled){
+			RaycastHit hit;
+			Ray ray = lamaCam.ScreenPointToRay(new Vector3(Screen.width/2, Screen.height/2, 0));
+			if(Physics.Raycast (ray, out hit, 10000)){
+				Vector3 target = lamaCam.transform.position + lamaCam.transform.forward;
+				GameObject bullet1 = (GameObject) Instantiate(bullet, target, Quaternion.identity);
+				bullet1.GetComponent<BulletScript>().shoot (hit.point);
+			}
 		}
 	}
 }

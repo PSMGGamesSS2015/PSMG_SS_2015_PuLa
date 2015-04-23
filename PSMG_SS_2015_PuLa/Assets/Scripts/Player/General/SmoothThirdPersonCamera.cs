@@ -10,8 +10,6 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 	public bool smoothRotation = true;
 	public bool followBehind = true;
 	public float rotationDamping = 10.0f;
-	private float mouseSpeed = 100;
-	private bool rotate = false;
 	private Vector3 behindTarget;
 	
 
