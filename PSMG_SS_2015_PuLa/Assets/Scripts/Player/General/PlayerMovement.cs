@@ -11,10 +11,14 @@ public class PlayerMovement : MonoBehaviour {
 
 	private Rigidbody rigidBody;
 	private float jumpTrigger;
+	private bool rotate;
+	private float rotPower;
+
 	void Start () {
 		rigidBody = GetComponent<Rigidbody> ();
-		jumpTrigger = 1;
+		jumpTrigger = 3;
 		jumpPower *= 3;
+		rotPower = 20;
 
 	}
 	
@@ -25,7 +29,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 	void doUpdate(){
-
+		//Jumping. Checks before if on ground to disable mid-air jumps
 		if(Input.GetKeyDown(KeyCode.Space)){
 			RaycastHit hit;
 			Ray jumpRay = new Ray (transform.position, -transform.up);
@@ -36,13 +40,15 @@ public class PlayerMovement : MonoBehaviour {
 			}
 		}
 
+			float horizontalRot = Input.GetAxis ("Mouse X") * rotPower;
+			transform.RotateAround(transform.position, new Vector3(0, horizontalRot, 0), 150*Time.deltaTime);
 		float verticalInput = Input.GetAxis ("Vertical") * movePower;
-		float horizontalInput = Input.GetAxis ("Horizontal");
+		float horizontalInput = Input.GetAxis ("Horizontal") * movePower;
 		
 		//rigidBody.AddForce(new Vector3(horizontalInput, verticalInput, 0));
-		transform.Rotate (0, horizontalInput, 0);
+		//transform.Rotate (0, horizontalInput, 0);
 
-		Vector3 moveDirection = new Vector3(0 ,rigidBody.velocity.y, verticalInput);
+		Vector3 moveDirection = new Vector3(horizontalInput ,rigidBody.velocity.y, verticalInput);
 		//Transform the vector3 to local space
 		moveDirection = transform.TransformDirection(moveDirection);
 		//set the velocity, so you can move

@@ -7,7 +7,7 @@ public class PumaClimb : MonoBehaviour {
 	private UIHint climbHintText;
 	// Use this for initialization
 	void Start () {
-		triggerDistance = 1;
+		triggerDistance = 1.5f;
 		climbHintText = GameObject.Find ("ClimbHint").GetComponent<UIHint>();
 	}
 	
@@ -36,10 +36,7 @@ public class PumaClimb : MonoBehaviour {
 	}
 
 	void doClimb(Collider hit){
-		Debug.Log (hit);
-		Debug.Log (hit.GetComponentInParent<MeshFilter>().mesh.bounds.extents.y);
 		Vector3 endOfClimb = transform.position;
-		Debug.Log (endOfClimb.y);
 		endOfClimb.y += hit.GetComponentInParent<MeshFilter>().mesh.bounds.size.y * hit.transform.lossyScale.y + transform.lossyScale.y;
 		endOfClimb += transform.forward * 2;
 		transform.position = endOfClimb;

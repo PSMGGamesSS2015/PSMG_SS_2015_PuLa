@@ -1,20 +1,14 @@
 fileFormatVersion: 2
-guid: ba1123d5b8fb14ac8aff6492ca0eef4b
-timeCreated: 1429183916
+guid: 68eb2c6c719e64683bac82aec483f6b5
+timeCreated: 1429713852
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Camera
-    100002: Lamp
-    100004: Puma
-    100006: //RootNode
-    400000: Camera
-    400002: Lamp
-    400004: Puma
-    400006: //RootNode
-    2300000: Puma
-    3300000: Puma
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Puma
   materials:
     importMaterials: 1
