@@ -3,6 +3,13 @@ using System.Collections;
 
 public class PumaClimb : MonoBehaviour {
 
+	/**
+	 * Script for the climbing ability.
+	 * Needs to be redone.
+	 * Currently the climb is instant.
+	 * This will be changed to a climb over a defined amount of time so that a proper climbing animation can be played.
+	 **/
+
 	private float triggerDistance;
 	private UIHint climbHintText;
 	// Use this for initialization

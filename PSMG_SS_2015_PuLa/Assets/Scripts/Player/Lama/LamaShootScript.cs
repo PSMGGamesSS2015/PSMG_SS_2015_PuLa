@@ -3,13 +3,17 @@ using System.Collections;
 
 public class LamaShootScript : MonoBehaviour {
 
-
+	/**
+	 * Shooting script active while in FPS mode when controlling lama.
+	 * Bullets needs to be changed to an actual model.
+	 * For now, Bullets ignore gravity.
+	 * A bullet needs to be placed somewhere on the map and linked to this script;
+	 **/
 
 	// Use this for initialization
 	private Camera lamaCam;
-	private GameObject bullet;
+	public GameObject bullet;
 	void Start () {
-		bullet = GameObject.Find ("Bullet");
 		lamaCam = GetComponentInChildren<Camera> ();
 	}
 	
