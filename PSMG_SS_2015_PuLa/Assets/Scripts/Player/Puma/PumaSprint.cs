@@ -3,6 +3,14 @@ using System.Collections;
 
 public class PumaSprint : MonoBehaviour {
 
+	/**
+	 * sprinting ability
+	 * Pressing and holding SHIFT will increase the puma's movement speed for a short amount of time.
+	 * When all stamina is drained the movement speed of puma will decrease by a large amount of time.
+	 * During this, walking animation should be changed so that the puma looks more tired.
+	 * 
+	 **/
+
 	private float sprintSpeed;
 	private float walkingSpeed;
 	private float slowSpeed;

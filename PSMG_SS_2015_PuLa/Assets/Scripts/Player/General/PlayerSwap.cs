@@ -3,6 +3,11 @@ using System.Collections;
 
 public class PlayerSwap : MonoBehaviour {
 
+	/**
+	 * Key Script for the Game. 
+	 * By pressing E the player can swap between the two playable characters
+	 **/
+
 	private GameObject otherCharacter;
 	private static bool swapIsReady;
 	// Use this for initialization

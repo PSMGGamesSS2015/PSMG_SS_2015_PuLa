@@ -19,24 +19,6 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 
 	void Update()
 	{	
-
-		//transform.position = target.position + (new Vector3 (0, height, distance));
-
-		/**
-		float angle = Input.GetAxis ("Mouse Y") * 50;
-		Vector3 angleV = new Vector3 (angle, 0, 0);
-		transform.eulerAngles += angleV;
-		/**
-		behindTarget = target.position - (target.forward * distance);
-
-		transform.position = Vector3.Lerp (transform.position, behindTarget, Time.deltaTime * damping);
-		Quaternion wantedRotation = Quaternion.LookRotation(target.position - transform.position, target.up);
-		Quaternion test = Quaternion.LookRotation (angleV, Vector3.up);
-		wantedRotation += test;
-		transform.rotation = Quaternion.Lerp(transform.rotation, wantedRotation, Time.deltaTime * rotationDamping);
-
-	
-**/	
 		Vector3 wantedPosition;
 		if (followBehind)
 			wantedPosition = target.TransformPoint(0, height, -distance);
@@ -52,15 +34,6 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 			transform.rotation = Quaternion.Lerp(transform.rotation, wantedRotation, Time.deltaTime * rotationDamping);
 		}
 		else transform.LookAt(target, target.up);
-
-		/**
-		rotate = Input.GetMouseButton (0);
-		if(rotate){
-			float verticalInput = Input.GetAxis ("Mouse X") * mouseSpeed;
-			float horizontalInput = Input.GetAxis ("Mouse Y") * mouseSpeed;
-			transform.RotateAround(target.position, new Vector3(horizontalInput, verticalInput, 0), mouseSpeed * Time.deltaTime);
-		}
-		**/
 	}
 	
 }

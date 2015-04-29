@@ -3,7 +3,15 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-	// Use this for initialization
+	/**
+	 * General Player Movement Script
+	 * WASD Controlls to move forward, backwards and to strafe left and right
+	 * Using the Mouse the Player can rotate the X axis
+	 * By pressing Space the player can jump
+	 * Jumping is combined with a RayCast to prevent midair jumps.
+	 * 
+	 * Needs to be tweaked, so that move speed and direction cannot be changed while jumping
+	 **/
 
 	public float movePower;
 	public float jumpPower;
@@ -29,7 +37,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 	void doUpdate(){
-		//Jumping. Checks before if on ground to disable mid-air jumps
+		//Jumping. Checks before if unit is grounded to disable mid-air jumps
 		if(Input.GetKeyDown(KeyCode.Space)){
 			RaycastHit hit;
 			Ray jumpRay = new Ray (transform.position, -transform.up);
@@ -40,14 +48,10 @@ public class PlayerMovement : MonoBehaviour {
 			}
 		}
 
-			float horizontalRot = Input.GetAxis ("Mouse X") * rotPower;
-			transform.RotateAround(transform.position, new Vector3(0, horizontalRot, 0), 150*Time.deltaTime);
+		float horizontalRot = Input.GetAxis ("Mouse X") * rotPower;
+		transform.RotateAround(transform.position, new Vector3(0, horizontalRot, 0), 150*Time.deltaTime);
 		float verticalInput = Input.GetAxis ("Vertical") * movePower;
 		float horizontalInput = Input.GetAxis ("Horizontal") * movePower;
-		
-		//rigidBody.AddForce(new Vector3(horizontalInput, verticalInput, 0));
-		//transform.Rotate (0, horizontalInput, 0);
-
 		Vector3 moveDirection = new Vector3(horizontalInput ,rigidBody.velocity.y, verticalInput);
 		//Transform the vector3 to local space
 		moveDirection = transform.TransformDirection(moveDirection);

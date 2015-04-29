@@ -3,6 +3,12 @@ using System.Collections;
 
 public class LamaCamScript : MonoBehaviour {
 
+	/**
+	 * Script which controlls the camera attached to the lama.
+	 * This camera is used for the FPS mode.
+	 * Currently working fine, however camera needs to move a bit more smoothly.
+	 **/
+
 	// Use this for initialization
 	private Camera mainCam;
 	private Camera lamaCam;
