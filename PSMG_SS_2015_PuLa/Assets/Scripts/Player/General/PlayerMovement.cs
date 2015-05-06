@@ -9,9 +9,7 @@ public class PlayerMovement : MonoBehaviour {
 	 * Using the Mouse the Player can rotate the X axis
 	 * By pressing Space the player can jump
 	 * Jumping is combined with a RayCast to prevent midair jumps.
-	 * 
-	 * Needs to be tweaked, so that move speed and direction cannot be changed while jumping
-	 **/
+	 */
 
 	public float movePower;
 	public float jumpPower;
@@ -22,11 +20,17 @@ public class PlayerMovement : MonoBehaviour {
 	private bool rotate;
 	private float rotPower;
 
+	private float oldVelocityX;
+	private float oldVelocityZ;
+	private bool isMidAir;
+
 	void Start () {
 		rigidBody = GetComponent<Rigidbody> ();
 		jumpTrigger = 3;
 		jumpPower *= 3;
 		rotPower = 20;
+		oldVelocityX = 0;
+		oldVelocityZ = 0;
 
 	}
 	
@@ -38,26 +42,31 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	void doUpdate(){
 		//Jumping. Checks before if unit is grounded to disable mid-air jumps
-		if(Input.GetKeyDown(KeyCode.Space)){
 			RaycastHit hit;
 			Ray jumpRay = new Ray (transform.position, -transform.up);
-			if(Physics.Raycast (jumpRay, out hit, jumpTrigger)){
-				Vector3 jump = new Vector3(0, jumpPower, 0);
-				rigidBody.velocity = jump;
-				rigidBody.AddForce ( Vector3.up * 10);
+			if (Physics.Raycast (jumpRay, out hit, jumpTrigger)) {
+				isMidAir = false;
+			} else {
+				isMidAir = true;
 			}
+		if (Input.GetKeyDown (KeyCode.Space) && !isMidAir) {
+			Vector3 jump = new Vector3 (oldVelocityX, jumpPower, oldVelocityZ);
+			rigidBody.velocity = jump;
+			rigidBody.AddForce (Vector3.up * 10);
 		}
-
-		float horizontalRot = Input.GetAxis ("Mouse X") * rotPower;
-		transform.RotateAround(transform.position, new Vector3(0, horizontalRot, 0), 150*Time.deltaTime);
-		float verticalInput = Input.GetAxis ("Vertical") * movePower;
-		float horizontalInput = Input.GetAxis ("Horizontal") * movePower;
-		Vector3 moveDirection = new Vector3(horizontalInput ,rigidBody.velocity.y, verticalInput);
-		//Transform the vector3 to local space
-		moveDirection = transform.TransformDirection(moveDirection);
-		//set the velocity, so you can move
-		rigidBody.velocity = moveDirection;
-		rigidBody.AddForce (Vector3.up *  -10);
-		
+		if (!isMidAir) {
+			float horizontalRot = Input.GetAxis ("Mouse X") * rotPower;
+			transform.RotateAround (transform.position, new Vector3 (0, horizontalRot, 0), 150 * Time.deltaTime);
+			float verticalInput = Input.GetAxis ("Vertical") * movePower;
+			float horizontalInput = Input.GetAxis ("Horizontal") * movePower;
+			Vector3 moveDirection = new Vector3 (horizontalInput, rigidBody.velocity.y, verticalInput);
+			oldVelocityX = horizontalInput;
+			oldVelocityZ = verticalInput;
+			//Transform the vector3 to local space
+			moveDirection = transform.TransformDirection (moveDirection);
+			//set the velocity, so you can move
+			rigidBody.velocity = moveDirection;
+			rigidBody.AddForce (Vector3.up * -10);
+		}
 	}
 }
