@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
 		rigidBody = GetComponent<Rigidbody> ();
 		jumpTrigger = 3;
 		jumpPower *= 3;
-		rotPower = 20;
+		rotPower = 30;
 		oldVelocityX = 0;
 		oldVelocityZ = 0;
 		movementOption = false;
@@ -48,7 +48,11 @@ public class PlayerMovement : MonoBehaviour {
 	void doUpdate(){
 
 		if(Input.GetKeyDown(KeyCode.Alpha1)){
-			movementOption = false;
+			if(movementOption){
+				movementOption = false;
+			} else {
+				movementOption = true;
+			}
 		}
 		if (Input.GetKeyDown (KeyCode.Alpha2)) {
 			movementOption = true;

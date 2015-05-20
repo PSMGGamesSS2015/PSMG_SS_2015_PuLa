@@ -20,7 +20,7 @@ public class EnemyUnitMovement : MonoBehaviour {
 		rBody = GetComponent<Rigidbody> ();
 		isAlive = true;
 		isChasing = false;
-		movePower = 5f;
+		movePower = 2.5f;
 		damageOnHit = 1;
 
 	}
@@ -40,19 +40,27 @@ public class EnemyUnitMovement : MonoBehaviour {
 			target = hitObject.transform;
 			isChasing = true;
 		}
-		if (hitObject.tag == "Projectile") {
-			isAlive = false;
-			Destroy (this.gameObject);
-		}
 	}
 
 	void doUpdate(){
 		if (isChasing) {
-			transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
+			//transform.LookAt (target);
+			Vector3 dir = this.transform.position - target.transform.position;
+			//transform.rotation = Quaternion.LookRotation(dir);
+			dir = transform.TransformDirection( -dir / movePower );
+			rBody.velocity = dir;
+
+			/**
 			Vector3 move = transform.forward;
 			move.y = 0;
 			rBody.velocity = transform.TransformDirection(-move * movePower);
+			**/
 			rBody.AddForce (Vector3.up * -10);
 		}
+	}
+
+	public void destroy(){
+		isAlive = false;
+		Destroy (this.gameObject);
 	}
 }
