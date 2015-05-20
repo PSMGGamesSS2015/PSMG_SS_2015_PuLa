@@ -7,6 +7,8 @@ public class MoveScript : MonoBehaviour {
 	private bool active;
 	public GameObject moveTo;
 	private Vector3 wantedPosition;
+	private float time;
+	private float timeEnd;
 
 	void Start () {
 		active = false;
@@ -14,9 +16,9 @@ public class MoveScript : MonoBehaviour {
 	}
 
 	void DoUpdate(){
-		Debug.Log ("movingNow");
 		transform.position = Vector3.Lerp (transform.position, wantedPosition, Time.deltaTime);
-		if (transform.position == wantedPosition) {
+		time = Time.time;
+		if (time > timeEnd) {
 			active = false;
 		}
 	}
@@ -29,10 +31,9 @@ public class MoveScript : MonoBehaviour {
 	}
 
 	public void activate(){
-		Debug.Log ("TEST");
 		active = true;
-		//Timer 5 Seconds!
-
+		time = Time.time;
+		timeEnd = time + 5;
 	}
 
 	IEnumerator Wait (float duration){

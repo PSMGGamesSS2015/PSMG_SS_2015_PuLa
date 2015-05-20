@@ -13,6 +13,7 @@ public class LevelEndScript : MonoBehaviour {
 	private Transform posCamera;
 	private Transform posPuma;
 	private Transform posLama;
+	private Transform posLook;
 	// Use this for initialization
 	void Start () {
 		play = false;
@@ -22,6 +23,7 @@ public class LevelEndScript : MonoBehaviour {
 		posCamera = spotCamera.transform;
 		posLama = spotLama.transform;
 		posPuma = spotPuma.transform;
+		posLook = transform.Find ("LookAt");
 
 	}
 	
@@ -31,13 +33,21 @@ public class LevelEndScript : MonoBehaviour {
 			doUpdate ();
 		}
 	}
+	
 
 	void doUpdate(){
 
+		Vector3 moveDirection = this.transform.position - posLook.position;
+		moveDirection = transform.TransformDirection (-moveDirection/20);
+		puma.velocity = moveDirection;
+		lama.velocity = moveDirection;
+		puma.AddForce (Vector3.up * -10);
+		lama.AddForce (Vector3.up * -10);
 	}
 
 	void OnTriggerEnter(Collider collider){
 		if (collider.tag == "Player" && !play) {
+			collider.GetComponent<PlayerMovement>().active = false;
 			play = true;
 			positionForEndScene();
 		}
@@ -45,8 +55,12 @@ public class LevelEndScript : MonoBehaviour {
 
 	void positionForEndScene(){
 		lama.transform.position = posLama.position;
+		lama.transform.LookAt(posLook);
 		puma.transform.position = posPuma.position;
-		cam.transform.position = posCamera.position;
+		puma.transform.LookAt(posLook);
+		posCamera.LookAt (posLook);
+		cam.target = posCamera;
+
 
 	}
 

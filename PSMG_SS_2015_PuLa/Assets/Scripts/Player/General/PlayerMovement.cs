@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
 		rotPower = 20;
 		oldVelocityX = 0;
 		oldVelocityZ = 0;
-		movementOption = true;
+		movementOption = false;
 
 	}
 
