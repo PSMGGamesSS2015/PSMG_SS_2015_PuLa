@@ -41,11 +41,17 @@ public class LamaCamScript : MonoBehaviour {
 		if (mainCam.enabled) {
 			mainCam.enabled = false;
 			lamaCam.enabled = true;
+			centerCamera();
 			crosshair.showText();
 		} else {
 			lamaCam.enabled = false;
 			mainCam.enabled = true;
 			crosshair.hideText();
 		}
+	}
+
+	void centerCamera(){
+		Transform repositionCam = transform.parent.Find ("LookAt").transform;
+		transform.LookAt (repositionCam);
 	}
 }
