@@ -396,6 +396,7 @@ Transform:
   - {fileID: 1124522916}
   - {fileID: 331088496}
   - {fileID: 671497663}
+  - {fileID: 480569215}
   m_Father: {fileID: 0}
   m_RootOrder: 8
 --- !u!1 &238581489
@@ -1011,6 +1012,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 466325279}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &480569214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 480569215}
+  - 65: {fileID: 480569216}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &480569215
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 480569214}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 104.699997, y: -5.76999998, z: 40.5999985}
+  m_LocalScale: {x: 1, y: 1, z: 13.6851816}
+  m_Children: []
+  m_Father: {fileID: 227574045}
+  m_RootOrder: 7
+--- !u!65 &480569216
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 480569214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &482260060
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 9b45dd117e5184565be771796d9da33a, type: 3}
@@ -1080,8 +1121,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 460442, guid: 657d391b3a0294a33b8fea6ac69cf207, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2372480, guid: 657d391b3a0294a33b8fea6ac69cf207, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b2787d2d9d9e44d5a53afc7430734b2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 657d391b3a0294a33b8fea6ac69cf207, type: 2}
   m_IsPrefabParent: 0
@@ -1420,15 +1465,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 476730, guid: 163b2f1eeeae9409697899835e798a73, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 151.008606
+      value: -50.7999992
       objectReference: {fileID: 0}
     - target: {fileID: 476730, guid: 163b2f1eeeae9409697899835e798a73, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.57139826
+      value: -5.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 476730, guid: 163b2f1eeeae9409697899835e798a73, type: 2}
       propertyPath: m_LocalPosition.z
-      value: .803596497
+      value: .800000012
       objectReference: {fileID: 0}
     - target: {fileID: 476730, guid: 163b2f1eeeae9409697899835e798a73, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2322,7 +2367,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1389947293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: -1.27999961}
+  m_LocalPosition: {x: 0, y: 0, z: -1.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 302401488}
@@ -2669,15 +2714,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 435920, guid: 9c1eb3317cb9645a2b71c048a11431d8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 186.152145
+      value: 261.100006
       objectReference: {fileID: 0}
     - target: {fileID: 435920, guid: 9c1eb3317cb9645a2b71c048a11431d8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .0829939991
+      value: .100000001
       objectReference: {fileID: 0}
     - target: {fileID: 435920, guid: 9c1eb3317cb9645a2b71c048a11431d8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 68.5190506
+      value: 68.5
       objectReference: {fileID: 0}
     - target: {fileID: 435920, guid: 9c1eb3317cb9645a2b71c048a11431d8, type: 2}
       propertyPath: m_LocalRotation.x
