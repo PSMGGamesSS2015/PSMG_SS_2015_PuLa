@@ -42,6 +42,7 @@ public class EnemyUnitMovement : MonoBehaviour {
 		}
 		if (hitObject.tag == "Projectile") {
 			isAlive = false;
+			Destroy (this.gameObject);
 		}
 	}
 

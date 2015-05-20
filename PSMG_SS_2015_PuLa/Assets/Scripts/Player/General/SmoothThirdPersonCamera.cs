@@ -52,11 +52,21 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		transform.position = temp;
 		transform.LookAt (obj.transform);
 		StartCoroutine(Wait(5));
+		showMainCam ();
+	
 	}
 
 	IEnumerator Wait(float duration){
 		yield return new WaitForSeconds (duration);
 		active = true;
 	}
+
+	public void showMainCam(){
+		LamaCamScript lamaCam = GameObject.Find ("ShootCam").GetComponent<LamaCamScript> ();
+		GetComponent<Camera> ().enabled = true;
+		lamaCam.disableCamera ();
+	}
+
+
 	
 }

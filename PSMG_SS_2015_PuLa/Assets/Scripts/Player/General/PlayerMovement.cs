@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour {
 	private float oldVelocityZ;
 	private bool isMidAir;
 
+	private bool movementOption;
+
 	void Start () {
 		rigidBody = GetComponent<Rigidbody> ();
 		jumpTrigger = 3;
@@ -31,6 +33,7 @@ public class PlayerMovement : MonoBehaviour {
 		rotPower = 20;
 		oldVelocityX = 0;
 		oldVelocityZ = 0;
+		movementOption = true;
 
 	}
 
@@ -43,6 +46,14 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 	void doUpdate(){
+
+		if(Input.GetKeyDown(KeyCode.Alpha1)){
+			movementOption = false;
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha2)) {
+			movementOption = true;
+		}
+
 		//Jumping. Checks before if unit is grounded to disable mid-air jumps
 			RaycastHit hit;
 			Ray jumpRay = new Ray (transform.position, -transform.up);
@@ -51,15 +62,20 @@ public class PlayerMovement : MonoBehaviour {
 			} else {
 				isMidAir = true;
 			}
-		if (Input.GetKeyDown (KeyCode.Space) && !isMidAir) {
+		if (Input.GetKey (KeyCode.Space) && !isMidAir) {
 			Vector3 jump = new Vector3 (oldVelocityX, jumpPower, oldVelocityZ);
 			rigidBody.velocity = jump;
 			rigidBody.AddForce (Vector3.up * 10);
 		}
 			float horizontalRot = Input.GetAxis ("Mouse X") * rotPower;
 			transform.RotateAround (transform.position, new Vector3 (0, horizontalRot, 0), 150 * Time.deltaTime);
+
 			float verticalInput = Input.GetAxis ("Vertical") * movePower;
 			float horizontalInput = Input.GetAxis ("Horizontal") * movePower;
+		if (movementOption && isMidAir) {
+			verticalInput = oldVelocityZ;
+			horizontalInput = oldVelocityX;
+		}
 			Vector3 moveDirection = new Vector3 (horizontalInput, rigidBody.velocity.y, verticalInput);
 			oldVelocityX = horizontalInput;
 			oldVelocityZ = verticalInput;

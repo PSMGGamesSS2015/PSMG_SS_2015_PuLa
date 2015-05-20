@@ -31,6 +31,7 @@ public class MoveScript : MonoBehaviour {
 	public void activate(){
 		Debug.Log ("TEST");
 		active = true;
+		//Timer 5 Seconds!
 
 	}
 

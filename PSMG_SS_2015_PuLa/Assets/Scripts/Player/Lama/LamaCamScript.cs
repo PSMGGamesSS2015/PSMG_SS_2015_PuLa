@@ -54,4 +54,9 @@ public class LamaCamScript : MonoBehaviour {
 		Transform repositionCam = transform.parent.Find ("LookAt").transform;
 		transform.LookAt (repositionCam);
 	}
+
+	public void disableCamera(){
+		lamaCam.enabled = false;
+		crosshair.hideText ();
+	}
 }
