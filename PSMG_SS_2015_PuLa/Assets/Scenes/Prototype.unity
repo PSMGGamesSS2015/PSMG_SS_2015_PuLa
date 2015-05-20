@@ -1482,6 +1482,7 @@ GameObject:
   - 65: {fileID: 1468642843}
   - 23: {fileID: 1468642842}
   - 114: {fileID: 1468642845}
+  - 114: {fileID: 1468642846}
   m_Layer: 0
   m_Name: Objective_Lama
   m_TagString: Untagged
@@ -1556,6 +1557,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
+--- !u!114 &1468642846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1468642840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263981376ade0485b898abde1d0f3246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1527784907
 Prefab:
   m_ObjectHideFlags: 0
@@ -1921,6 +1933,7 @@ GameObject:
   - 65: {fileID: 1905785044}
   - 23: {fileID: 1905785043}
   - 114: {fileID: 1905785046}
+  - 114: {fileID: 1905785047}
   m_Layer: 0
   m_Name: Objective_Puma
   m_TagString: Untagged
@@ -1995,6 +2008,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
+--- !u!114 &1905785047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1905785041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263981376ade0485b898abde1d0f3246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1967813929
 GameObject:
   m_ObjectHideFlags: 0

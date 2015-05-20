@@ -22,8 +22,13 @@ public class EnemyUnitMovement : MonoBehaviour {
 		isChasing = false;
 		movePower = 5f;
 		damageOnHit = 1;
+
 	}
-	
+
+	void OnTest(string s){
+		Debug.Log (s + name);	
+	}
+
 	void FixedUpdate () {
 		if(isAlive){
 			doUpdate();
@@ -31,7 +36,6 @@ public class EnemyUnitMovement : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider hitObject){
-		Debug.Log (hitObject.name);
 		if (hitObject.tag == "Player" && !isChasing) {
 			target = hitObject.transform;
 			isChasing = true;

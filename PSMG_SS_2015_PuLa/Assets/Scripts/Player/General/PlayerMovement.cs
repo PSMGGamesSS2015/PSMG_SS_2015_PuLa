@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour {
 		oldVelocityZ = 0;
 
 	}
+
+
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -54,7 +56,6 @@ public class PlayerMovement : MonoBehaviour {
 			rigidBody.velocity = jump;
 			rigidBody.AddForce (Vector3.up * 10);
 		}
-		if (!isMidAir) {
 			float horizontalRot = Input.GetAxis ("Mouse X") * rotPower;
 			transform.RotateAround (transform.position, new Vector3 (0, horizontalRot, 0), 150 * Time.deltaTime);
 			float verticalInput = Input.GetAxis ("Vertical") * movePower;
@@ -67,6 +68,7 @@ public class PlayerMovement : MonoBehaviour {
 			//set the velocity, so you can move
 			rigidBody.velocity = moveDirection;
 			rigidBody.AddForce (Vector3.up * -10);
-		}
 	}
+
+
 }
