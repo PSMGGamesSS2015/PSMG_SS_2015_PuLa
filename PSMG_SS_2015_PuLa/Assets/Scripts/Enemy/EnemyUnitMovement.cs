@@ -14,6 +14,7 @@ public class EnemyUnitMovement : MonoBehaviour {
 	private bool isChasing;
 	private float movePower;
 	private float damageOnHit;
+	private Transform target;
 
 	void Start () {
 		rBody = GetComponent<Rigidbody> ();
@@ -21,15 +22,37 @@ public class EnemyUnitMovement : MonoBehaviour {
 		isChasing = false;
 		movePower = 5f;
 		damageOnHit = 1;
+
 	}
-	
+
+	void OnTest(string s){
+		Debug.Log (s + name);	
+	}
+
 	void FixedUpdate () {
 		if(isAlive){
 			doUpdate();
 		}
 	}
 
-	void doUpdate(){
+	void OnTriggerEnter (Collider hitObject){
+		if (hitObject.tag == "Player" && !isChasing) {
+			target = hitObject.transform;
+			isChasing = true;
+		}
+		if (hitObject.tag == "Projectile") {
+			isAlive = false;
+			Destroy (this.gameObject);
+		}
+	}
 
+	void doUpdate(){
+		if (isChasing) {
+			transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
+			Vector3 move = transform.forward;
+			move.y = 0;
+			rBody.velocity = transform.TransformDirection(-move * movePower);
+			rBody.AddForce (Vector3.up * -10);
+		}
 	}
 }

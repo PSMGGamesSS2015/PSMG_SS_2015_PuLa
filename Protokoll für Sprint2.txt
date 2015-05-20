@@ -1,0 +1,38 @@
+﻿Protokoll vom 06.05.2015
+
+Enemy Unit: 
+	Wenn sie sich nähern, fügen sie den Spielern Schaden zu
+	nervige Geräusche, wenn sie im Raum sind
+	tragen Speer
+	verstecken sich u.a. in Vasen (siehe Items)
+	Lama muss sie wegspucken/treten
+
+Puma und Lama: 
+	Verhalten während des Sprungs: 	Blickrichtung kann geändert werden, nicht aber Sprungrichtung
+					zu klären: double-jumps möglich?
+	Schaden durch Feinde:	der Spieler hat 3 oder 5 Leben
+				durch sich nähernde Feinde wird Energie verbraucht, ist die Energie aus, verliert der Spieler ein Leben und muss das Level neu 					starten
+				sind alle Leben verbraucht, muss das komplette Spiel neu gestartet werden
+UI-Konzept:
+	benötigte Komponenten: 
+		Anzeige Leben (Herzerl)
+		Anzeige Energie
+		Sound off/on
+		Hauptmenü
+		Inventar/Items (noch fehlende Items sind ausgegraut, so weiß man zugleich, in welchem Level man ist)
+		
+Items für den Zaubertrank:
+	sind in Vasen zu finden, die das Lama per Spucken sprengen muss
+	pro Level ein Item
+	mögliche Items: Rezept, Brille, Kochlöffel, Kraut/Blumen, Knochen
+
+Challenges:
+	Challenge #1: 	der nächste Raum ist nur über eine Treppe zu gelangen, zwei Treppenstufen fehlen
+			im Raum stehen Vasen, in einer der Vasen ist ein Schalter zu finden
+			das Lama muss die Vasen zerspucken, in anderen Vasen finden sich Tempelwächter, die besiegt werden müssen
+			ist der Schalter umgelegt, erscheinen die Treppenstufen, der Puma gelangt in den nächsten Raum, das Lama wird automatisch mitgezogen
+	mögliche weitere Challenges: 
+		Bilderpuzzle
+		vor der Tür steht Box, die weggetreten werden muss
+
+	

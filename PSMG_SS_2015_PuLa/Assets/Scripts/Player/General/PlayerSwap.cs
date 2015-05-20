@@ -47,5 +47,6 @@ public class PlayerSwap : MonoBehaviour {
 		camera.GetComponent<SmoothThirdPersonCamera> ().target = otherCharacter.transform;
 		otherCharacter.GetComponent<PlayerMovement> ().active = true;
 		swapIsReady = false;
+		camera.GetComponent<SmoothThirdPersonCamera> ().showMainCam ();
 	}
 }
