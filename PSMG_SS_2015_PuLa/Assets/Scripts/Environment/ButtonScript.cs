@@ -19,11 +19,10 @@ public class ButtonScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider){
 		if (collider.tag == "Player" && ready) {
-			Debug.Log ("moving");
-			Vector3 temp = target.transform.position;
-			temp.z = 72.2f;
-			target.transform.position = temp;
+			GameObject.Find("Main Camera").GetComponent<SmoothThirdPersonCamera>().CameraEvent(target);
+			target.GetComponent<MoveScript>().activate();
 			ready = false;
+
 		}
 	}
 }

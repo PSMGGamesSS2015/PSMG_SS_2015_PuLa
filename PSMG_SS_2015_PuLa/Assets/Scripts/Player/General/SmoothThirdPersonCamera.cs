@@ -11,13 +11,21 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 	public bool followBehind = true;
 	public float rotationDamping = 10.0f;
 	private Vector3 behindTarget;
+	private bool active;
 	
 
 	void Start(){
+		active = true;
 		transform.LookAt (target, target.up);
 	}
 
-	void Update()
+	void Update(){
+		if(active){
+			doUpdate();
+		}
+	}
+
+	void doUpdate()
 	{	
 		Vector3 wantedPosition;
 		if (followBehind)
@@ -34,6 +42,21 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 			transform.rotation = Quaternion.Lerp(transform.rotation, wantedRotation, Time.deltaTime * rotationDamping);
 		}
 		else transform.LookAt(target, target.up);
+	}
+
+	public void CameraEvent(GameObject obj){
+		active = false;
+		transform.position = (obj.transform.position - obj.transform.forward * 25);
+		Vector3 temp = transform.position;
+		temp.y += 5;
+		transform.position = temp;
+		transform.LookAt (obj.transform);
+		StartCoroutine(Wait(5));
+	}
+
+	IEnumerator Wait(float duration){
+		yield return new WaitForSeconds (duration);
+		active = true;
 	}
 	
 }
