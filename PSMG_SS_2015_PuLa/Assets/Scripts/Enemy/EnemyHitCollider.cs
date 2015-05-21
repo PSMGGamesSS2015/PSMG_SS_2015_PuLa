@@ -20,5 +20,9 @@ public class EnemyHitCollider : MonoBehaviour {
 			transform.parent.GetComponent<EnemyUnitMovement>().destroy();
 			collider.GetComponent<BulletScript>().destroy();
 		}
+
+		if (collider.tag == "Player") {
+			collider.GetComponent<PlayerMovement>().active = false;
+		}
 	}
 }

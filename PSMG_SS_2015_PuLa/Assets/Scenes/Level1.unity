@@ -290,7 +290,7 @@ GameObject:
   - 65: {fileID: 218639151}
   - 23: {fileID: 218639150}
   - 65: {fileID: 218639149}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: Wall12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3052,7 +3052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1873136004}
   distance: 7
-  height: 5
+  height: 4
   damping: 5
   smoothRotation: 1
   followBehind: 1
