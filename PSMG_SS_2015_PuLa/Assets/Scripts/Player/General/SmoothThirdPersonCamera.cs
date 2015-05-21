@@ -28,30 +28,35 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 	void doUpdate()
 	{	
 		Vector3 wantedPosition;
-		if (followBehind)
-			wantedPosition = target.TransformPoint(0, height, -distance);
-		else
-			wantedPosition = target.TransformPoint(0, height, distance);
-		
+		if (followBehind) {
+			wantedPosition = target.TransformPoint (0, height, -distance);
+		} else {
+			wantedPosition = target.TransformPoint (0, height, distance);
+		}
 			transform.position = Vector3.Lerp(transform.position, wantedPosition, Time.deltaTime * damping);
 
 		if (smoothRotation)
-		{
-			Quaternion wantedRotation = Quaternion.LookRotation(target.position - transform.position, target.up);
+		{	
+			Vector3 target1 = target.position;
+			// Since puma is a little bit shorter we have to adjust the camera a bit so the player can see more of the level
+			if(target.name == "Puma"){
+				target1 += new Vector3(0, 1, 0);
+			}
+			Quaternion wantedRotation = Quaternion.LookRotation(target1 - transform.position, target.up);
 			//wantedRotation.eulerAngles = transform.eulerAngles;
 			transform.rotation = Quaternion.Lerp(transform.rotation, wantedRotation, Time.deltaTime * rotationDamping);
 		}
 		else transform.LookAt(target, target.up);
 	}
 
-	public void CameraEvent(GameObject obj){
+	public void CameraEvent(GameObject obj, float waitDuration){
 		active = false;
 		transform.position = (obj.transform.position - obj.transform.forward * 25);
 		Vector3 temp = transform.position;
 		temp.y += 5;
 		transform.position = temp;
 		transform.LookAt (obj.transform);
-		StartCoroutine(Wait(5));
+		StartCoroutine(Wait(waitDuration));
 		showMainCam ();
 	
 	}

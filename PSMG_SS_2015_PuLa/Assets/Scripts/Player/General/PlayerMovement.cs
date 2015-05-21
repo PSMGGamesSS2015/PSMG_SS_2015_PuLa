@@ -25,15 +25,18 @@ public class PlayerMovement : MonoBehaviour {
 	private bool isMidAir;
 
 	private bool movementOption;
+	public enum States{idle, walk, jump};
+	private States state;
 
 	void Start () {
 		rigidBody = GetComponent<Rigidbody> ();
 		jumpTrigger = 3;
 		jumpPower *= 3;
-		rotPower = 20;
+		rotPower = 30;
 		oldVelocityX = 0;
 		oldVelocityZ = 0;
-		movementOption = true;
+		movementOption = false;
+		state = States.idle;
 
 	}
 
@@ -48,7 +51,11 @@ public class PlayerMovement : MonoBehaviour {
 	void doUpdate(){
 
 		if(Input.GetKeyDown(KeyCode.Alpha1)){
-			movementOption = false;
+			if(movementOption){
+				movementOption = false;
+			} else {
+				movementOption = true;
+			}
 		}
 		if (Input.GetKeyDown (KeyCode.Alpha2)) {
 			movementOption = true;
@@ -65,7 +72,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetKey (KeyCode.Space) && !isMidAir) {
 			Vector3 jump = new Vector3 (oldVelocityX, jumpPower, oldVelocityZ);
 			rigidBody.velocity = jump;
-			rigidBody.AddForce (Vector3.up * 10);
+			state = States.jump;
 		}
 			float horizontalRot = Input.GetAxis ("Mouse X") * rotPower;
 			transform.RotateAround (transform.position, new Vector3 (0, horizontalRot, 0), 150 * Time.deltaTime);
@@ -83,8 +90,13 @@ public class PlayerMovement : MonoBehaviour {
 			moveDirection = transform.TransformDirection (moveDirection);
 			//set the velocity, so you can move
 			rigidBody.velocity = moveDirection;
+		if (rigidBody.velocity != new Vector3 (0, 0, 0)) {
+			state = States.walk;
+		}
 			rigidBody.AddForce (Vector3.up * -10);
 	}
 
-
+	public States getState(){
+		return state;
+	}
 }

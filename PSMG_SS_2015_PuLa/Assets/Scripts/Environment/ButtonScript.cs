@@ -7,6 +7,7 @@ public class ButtonScript : MonoBehaviour {
 	private bool ready;
 
 	public GameObject target;
+	public float CameraLookDuration;
 
 	void Start () {
 		ready = true;
@@ -19,7 +20,7 @@ public class ButtonScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider){
 		if (collider.tag == "Player" && ready) {
-			GameObject.Find("Main Camera").GetComponent<SmoothThirdPersonCamera>().CameraEvent(target);
+			GameObject.Find("Main Camera").GetComponent<SmoothThirdPersonCamera>().CameraEvent(target, CameraLookDuration);
 			target.GetComponent<MoveScript>().activate();
 			ready = false;
 
