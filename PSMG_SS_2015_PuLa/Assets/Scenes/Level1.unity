@@ -851,6 +851,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 5.35059071
       objectReference: {fileID: 0}
+    - target: {fileID: 2340084, guid: 6939560e95871ee46ab4b4a68e4cdf45, type: 2}
+      propertyPath: m_UseLightProbes
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6939560e95871ee46ab4b4a68e4cdf45, type: 2}
   m_IsPrefabParent: 0
@@ -4051,6 +4055,10 @@ Prefab:
     - target: {fileID: 472416, guid: 6939560e95871ee46ab4b4a68e4cdf45, type: 2}
       propertyPath: m_LocalScale.x
       value: 5.35059071
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340084, guid: 6939560e95871ee46ab4b4a68e4cdf45, type: 2}
+      propertyPath: m_UseLightProbes
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6939560e95871ee46ab4b4a68e4cdf45, type: 2}
