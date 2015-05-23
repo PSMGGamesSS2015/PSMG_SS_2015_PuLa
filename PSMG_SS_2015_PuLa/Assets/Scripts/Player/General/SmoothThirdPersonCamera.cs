@@ -54,8 +54,8 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		//transform.RotateAround (target.position, target.up, Input.GetAxis ("Mouse X"));
 
 		if (Input.GetMouseButton (1)) {
-			velocityX += xSpeed * Input.GetAxis ("Mouse X") * distance * 0.02f;
-			velocityY += ySpeed * Input.GetAxis ("Mouse Y") * 0.02f;
+			velocityX += xSpeed * Input.GetAxis ("Mouse X") * distance * 0.004f;
+			velocityY += ySpeed * Input.GetAxis ("Mouse Y") * 0.004f;
 		
 			rotationYAxis += velocityX;
 			rotationXAxis -= velocityY;
