@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour {
 	public float jumpPower;
 	public bool active;
 
+	private float rotatePower = 8f;
+	private float rotateState = 0;
+
 	private Rigidbody rigidBody;
 	private float jumpTrigger;
 	private bool rotate;
@@ -77,21 +80,22 @@ public class PlayerMovement : MonoBehaviour {
 			state = States.jump;
 		}
 			float verticalInput = Input.GetAxis ("Vertical") * movePower;
-			float horizontalInput = Input.GetAxis ("Horizontal") * movePower;
-			float horizontalInput1 = 0;
+			rotateState = 0;
+		if (Input.GetKey (KeyCode.A))
+			rotateState = -1;
+		if (Input.GetKey (KeyCode.D))
+			rotateState = 1;
 		if (lamaCam.enabled) {
-			horizontalInput1 = horizontalInput;
+			rotateState = 0;
 		}
 		if (!lamaCam.enabled) {
-			transform.RotateAround (transform.position, new Vector3 (0, horizontalInput, 0), 150 * Time.deltaTime);
+			transform.RotateAround (transform.position, new Vector3 (0, rotatePower * rotateState, 0), 150 * Time.deltaTime);
 		}
 		if (movementOption && isMidAir) {
 			verticalInput = oldVelocityZ;
-			horizontalInput = oldVelocityX;
 		}
-			Vector3 moveDirection = new Vector3 (horizontalInput1, rigidBody.velocity.y, verticalInput);
+			Vector3 moveDirection = new Vector3 (rotatePower * rotateState, rigidBody.velocity.y, verticalInput);
 			
-			oldVelocityX = horizontalInput;
 			oldVelocityZ = verticalInput;
 			//Transform the vector3 to local space
 			moveDirection = transform.TransformDirection (moveDirection);
