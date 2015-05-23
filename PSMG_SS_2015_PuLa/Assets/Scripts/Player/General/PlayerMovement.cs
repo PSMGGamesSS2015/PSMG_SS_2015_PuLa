@@ -80,6 +80,8 @@ public class PlayerMovement : MonoBehaviour {
 			state = States.jump;
 		}
 			float verticalInput = Input.GetAxis ("Vertical") * movePower;
+		float horizontalInput = 0f;
+
 			rotateState = 0;
 		if (Input.GetKey (KeyCode.A))
 			rotateState = -1;
@@ -87,14 +89,15 @@ public class PlayerMovement : MonoBehaviour {
 			rotateState = 1;
 		if (lamaCam.enabled) {
 			rotateState = 0;
+			horizontalInput = Input.GetAxis ("Horizontal") * movePower;
 		}
 		if (!lamaCam.enabled) {
 			transform.RotateAround (transform.position, new Vector3 (0, rotatePower * rotateState, 0), 150 * Time.deltaTime);
-		}
+		} 
 		if (movementOption && isMidAir) {
 			verticalInput = oldVelocityZ;
 		}
-			Vector3 moveDirection = new Vector3 (rotatePower * rotateState, rigidBody.velocity.y, verticalInput);
+			Vector3 moveDirection = new Vector3 (horizontalInput, rigidBody.velocity.y, verticalInput);
 			
 			oldVelocityZ = verticalInput;
 			//Transform the vector3 to local space
