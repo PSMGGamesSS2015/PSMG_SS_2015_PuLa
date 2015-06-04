@@ -35,18 +35,24 @@ public class PlayerSwap : MonoBehaviour {
 					doSwap ();
 				}
 			}
-		} else {
-			swapIsReady = true;
-		}
+		} 
 	}
 
 	private void doSwap()
 	{	
+		Debug.Log ("Swapping to " + otherCharacter.name);
 		GameObject camera = GameObject.FindGameObjectWithTag ("MainCamera");
 		gameObject.GetComponent<PlayerMovement> ().active = false;	
 		camera.GetComponent<SmoothThirdPersonCamera> ().target = otherCharacter.transform;
 		otherCharacter.GetComponent<PlayerMovement> ().active = true;
 		swapIsReady = false;
 		camera.GetComponent<SmoothThirdPersonCamera> ().showMainCam ();
+		StartCoroutine (cooldown ());
+	}
+
+	private IEnumerator cooldown(){
+
+		yield return new WaitForSeconds(1f);
+		swapIsReady = true;
 	}
 }

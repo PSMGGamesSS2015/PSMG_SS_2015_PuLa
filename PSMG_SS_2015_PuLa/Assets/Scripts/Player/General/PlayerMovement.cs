@@ -25,12 +25,16 @@ public class PlayerMovement : MonoBehaviour {
 
 	private float oldVelocityX;
 	private float oldVelocityZ;
-	private bool isMidAir;
+	public bool isMidAir;
+	public bool isStuckInWall;
 
 	private bool movementOption;
 	public enum States{idle, walk, jump};
 	private States state;
 	private Camera lamaCam;
+
+	private PumaAnimationScript anim;
+
 
 	void Start () {
 		rigidBody = GetComponent<Rigidbody> ();
@@ -42,6 +46,9 @@ public class PlayerMovement : MonoBehaviour {
 		movementOption = false;
 		state = States.idle;
 		lamaCam = GameObject.Find ("ShootCam").GetComponent<Camera> ();
+		if (name == "Puma") {
+			anim = GetComponent<PumaAnimationScript>();
+		}
 
 	}
 
@@ -66,18 +73,13 @@ public class PlayerMovement : MonoBehaviour {
 			movementOption = true;
 		}
 
-		//Jumping. Checks before if unit is grounded to disable mid-air jumps
-			RaycastHit hit;
-			Ray jumpRay = new Ray (transform.position, -transform.up);
-			if (Physics.Raycast (jumpRay, out hit, jumpTrigger)) {
-				isMidAir = false;
-			} else {
-				isMidAir = true;
-			}
 		if (Input.GetKey (KeyCode.Space) && !isMidAir) {
 			Vector3 jump = new Vector3 (oldVelocityX, jumpPower, oldVelocityZ);
 			rigidBody.velocity = jump;
 			state = States.jump;
+			if(name == "Puma"){
+ 				anim.JumpAnimation();
+			}
 		}
 			float verticalInput = Input.GetAxis ("Vertical") * movePower;
 		float horizontalInput = 0f;
@@ -102,8 +104,10 @@ public class PlayerMovement : MonoBehaviour {
 			oldVelocityZ = verticalInput;
 			//Transform the vector3 to local space
 			moveDirection = transform.TransformDirection (moveDirection);
+		if (!isStuckInWall || verticalInput < 0) {
 			//set the velocity, so you can move
 			rigidBody.velocity = moveDirection;
+		}
 		if (rigidBody.velocity != new Vector3 (0, 0, 0)) {
 			state = States.walk;
 		}

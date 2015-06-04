@@ -19,7 +19,7 @@ public class PumaSprint : MonoBehaviour {
 	private float staminaDrain;
 	private float staminaGain;
 	private bool isSprintOn;
-	private bool tired;
+	public bool tired;
 	// Use this for initialization
 	void Start () {
 		walkingSpeed = GetComponent<PlayerMovement> ().movePower;
