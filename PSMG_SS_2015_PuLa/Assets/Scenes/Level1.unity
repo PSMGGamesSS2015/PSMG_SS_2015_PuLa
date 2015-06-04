@@ -822,6 +822,7 @@ MonoBehaviour:
   jumpPower: 4
   active: 1
   isMidAir: 0
+  isStuckInWall: 0
 --- !u!54 &276011686
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1921,6 +1922,58 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 472416, guid: 6939560e95871ee46ab4b4a68e4cdf45, type: 2}
   m_PrefabInternal: {fileID: 1548018857}
+--- !u!1 &637869030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 637869031}
+  - 65: {fileID: 637869033}
+  - 114: {fileID: 637869032}
+  m_Layer: 0
+  m_Name: StickyWallTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &637869031
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 637869030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 276011681}
+  m_RootOrder: 3
+--- !u!114 &637869032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 637869030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905a0a38c0d3846c2925ecd26a22bdcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &637869033
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 637869030}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.46127319, y: 3.37165928, z: 7.20240688}
+  m_Center: {x: -.178588867, y: 2.31310177, z: .215122223}
 --- !u!1001 &662958496
 Prefab:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class StickyWallsScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider collider){
+		Debug.Log (collider.tag);
 		player.isStuckInWall = true;
 	}
 
