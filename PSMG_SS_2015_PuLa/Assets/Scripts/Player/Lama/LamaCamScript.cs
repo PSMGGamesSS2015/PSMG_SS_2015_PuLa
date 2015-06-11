@@ -13,7 +13,9 @@ public class LamaCamScript : MonoBehaviour {
 	private Camera mainCam;
 	private Camera lamaCam;
 	private UIHint crosshair;
+	private PlayerMovement lama;
 	void Start () {
+		lama = GetComponentInParent<PlayerMovement> ();
 		mainCam = GameObject.Find ("Main Camera").GetComponent<Camera> ();
 		lamaCam = GetComponent<Camera> ();
 		crosshair = GameObject.Find ("CrossHair").GetComponent<UIHint> ();
@@ -23,18 +25,24 @@ public class LamaCamScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (GetComponentInParent<PlayerMovement> ().active) {
+		if (lama.active) {
 			doUpdate();
 		}
 	}
 
 	void doUpdate(){
-		float angle = Input.GetAxis ("Mouse Y") * 20 * -1;
-		Vector3 angleV = new Vector3 (angle, 0, 0);
-		transform.eulerAngles += angleV;
+
 		if(Input.GetKeyDown(KeyCode.Q)){
 			switchToFirstPerson();
 		}
+		if (lamaCam.enabled) {
+			float angle = Input.GetAxis ("Mouse Y") * 20 * -1;
+			float rot = Input.GetAxis ("Mouse X") * 20;
+			Vector3 angleV = new Vector3 (angle, 0, 0);
+			lama.transform.Rotate (new Vector3 (0, rot, 0));
+			transform.eulerAngles += angleV;
+		}
+
 	}
 
 	void switchToFirstPerson(){

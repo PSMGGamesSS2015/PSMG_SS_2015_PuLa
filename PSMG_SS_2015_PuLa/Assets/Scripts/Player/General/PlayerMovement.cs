@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour {
 	public float jumpPower;
 	public bool active;
 
+	private float rotatePower = 8f;
+	private float rotateState = 0;
+
 	private Rigidbody rigidBody;
 	private float jumpTrigger;
 	private bool rotate;
@@ -27,6 +30,7 @@ public class PlayerMovement : MonoBehaviour {
 	private bool movementOption;
 	public enum States{idle, walk, jump};
 	private States state;
+	private Camera lamaCam;
 
 	void Start () {
 		rigidBody = GetComponent<Rigidbody> ();
@@ -37,6 +41,7 @@ public class PlayerMovement : MonoBehaviour {
 		oldVelocityZ = 0;
 		movementOption = false;
 		state = States.idle;
+		lamaCam = GameObject.Find ("ShootCam").GetComponent<Camera> ();
 
 	}
 
@@ -74,17 +79,23 @@ public class PlayerMovement : MonoBehaviour {
 			rigidBody.velocity = jump;
 			state = States.jump;
 		}
-			float horizontalRot = Input.GetAxis ("Mouse X") * rotPower;
-			transform.RotateAround (transform.position, new Vector3 (0, horizontalRot, 0), 150 * Time.deltaTime);
-
 			float verticalInput = Input.GetAxis ("Vertical") * movePower;
-			float horizontalInput = Input.GetAxis ("Horizontal") * movePower;
+			rotateState = 0;
+		if (Input.GetKey (KeyCode.A))
+			rotateState = -1;
+		if (Input.GetKey (KeyCode.D))
+			rotateState = 1;
+		if (lamaCam.enabled) {
+			rotateState = 0;
+		}
+		if (!lamaCam.enabled) {
+			transform.RotateAround (transform.position, new Vector3 (0, rotatePower * rotateState, 0), 150 * Time.deltaTime);
+		}
 		if (movementOption && isMidAir) {
 			verticalInput = oldVelocityZ;
-			horizontalInput = oldVelocityX;
 		}
-			Vector3 moveDirection = new Vector3 (horizontalInput, rigidBody.velocity.y, verticalInput);
-			oldVelocityX = horizontalInput;
+			Vector3 moveDirection = new Vector3 (rotatePower * rotateState, rigidBody.velocity.y, verticalInput);
+			
 			oldVelocityZ = verticalInput;
 			//Transform the vector3 to local space
 			moveDirection = transform.TransformDirection (moveDirection);
