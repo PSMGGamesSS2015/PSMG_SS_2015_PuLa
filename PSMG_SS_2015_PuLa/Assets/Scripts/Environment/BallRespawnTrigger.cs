@@ -3,9 +3,10 @@ using System.Collections;
 
 public class BallRespawnTrigger : MonoBehaviour {
 
+	float waitDuration;
 	// Use this for initialization
 	void Start () {
-	
+		waitDuration = 2f;
 	}
 	
 	// Update is called once per frame
@@ -22,12 +23,17 @@ public class BallRespawnTrigger : MonoBehaviour {
 	}
 
 	void respawnBall(GameObject obj){
-		Debug.Log (obj);
-		Debug.Log (obj.transform.parent);
-		GameObject.Find ("ChallengeBall").transform.position = transform.FindChild ("BallRespawnPosition").position;
+		StartCoroutine(Wait(waitDuration));
 	}
 
 	void respawnPlayer(GameObject obj){
 		obj.transform.parent.transform.position = transform.FindChild ("PlayerRespawnPosition").position;
 	}
+
+	IEnumerator Wait (float duration){
+		yield return new WaitForSeconds(duration);
+		GameObject.Find ("ChallengeBall").transform.position = transform.FindChild ("BallRespawnPosition").position;
+
+	}
+	
 }
