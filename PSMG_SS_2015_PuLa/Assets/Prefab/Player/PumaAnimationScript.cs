@@ -20,9 +20,11 @@ public class PumaAnimationScript: MonoBehaviour {
 			anim.SetBool("Tired", sprint.tired);
 			float movement = Mathf.Abs (Input.GetAxis ("Vertical")) + Mathf.Abs (Input.GetAxis ("Horizontal"));
 			anim.SetFloat ("Speed", movement);
+			Debug.Log (movement);
+			/**
 			if(movement == 0){
 				anim.Play("Idle");
-			}
+			}**/
 		}
 	}
 

@@ -1,0 +1,374 @@
+fileFormatVersion: 2
+guid: 322e0b60ab23a49b5b182b417a01a16d
+timeCreated: 1435844603
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Armature.001
+    100004: Bone
+    100006: Bone 1
+    100008: Bone.001
+    100010: Bone.001 1
+    100012: Bone.002
+    100014: Bone.002 1
+    100016: Bone.003
+    100018: Bone.003 1
+    100020: Bone.003_end
+    100022: Bone.003_end 1
+    100024: Bone.003_end_end
+    100026: Bone.004
+    100028: Bone.004 1
+    100030: Bone.005
+    100032: Bone.005 1
+    100034: Bone.005_end
+    100036: Bone.005_end 1
+    100038: Bone.005_end_end
+    100040: Bone.006
+    100042: Bone.006 1
+    100044: Bone.006_end
+    100046: Bone.006_end 1
+    100048: Bone.006_end_end
+    100050: Bone.007
+    100052: Bone.007 1
+    100054: Bone.008
+    100056: Bone.008 1
+    100058: Bone.008_end
+    100060: Bone.008_end 1
+    100062: Bone.008_end_end
+    100064: Bone.009
+    100066: Bone.009 1
+    100068: Bone.009_end
+    100070: Bone.009_end 1
+    100072: Bone.009_end_end
+    100074: Bone.010
+    100076: Bone.010 1
+    100078: Bone.010_end
+    100080: Bone.010_end 1
+    100082: Bone.010_end_end
+    100084: Bone.011
+    100086: Bone.011 1
+    100088: Bone.012
+    100090: Bone.012 1
+    100092: Bone.013
+    100094: Bone.013 1
+    100096: Bone.014
+    100098: Bone.014 1
+    100100: Bone.015
+    100102: Bone.015 1
+    100104: Bone.016
+    100106: Bone.016 1
+    100108: Bone.016_end
+    100110: Bone.016_end 1
+    100112: Bone.016_end_end
+    100114: Bone.017
+    100116: Bone.017 1
+    100118: Bone.018
+    100120: Bone.018 1
+    100122: Bone.019
+    100124: Bone.019 1
+    100126: Bone.020
+    100128: Bone.020 1
+    100130: Bone.020_end
+    100132: Bone.020_end 1
+    100134: Bone.020_end_end
+    100136: Bone.021
+    100138: Bone.021 1
+    100140: Bone.021_end
+    100142: Bone.021_end 1
+    100144: Bone.021_end_end
+    100146: Bone.022
+    100148: Bone.022 1
+    100150: Bone.022_end
+    100152: Bone.022_end 1
+    100154: Bone.022_end_end
+    100156: Bone.023
+    100158: Bone.023 1
+    100160: Bone.023_end
+    100162: Bone.023_end 1
+    100164: Bone.023_end_end
+    100166: Bone.024
+    100168: Bone.024 1
+    100170: Bone.024_end
+    100172: Bone.024_end 1
+    100174: Bone.024_end_end
+    100176: Bone.025
+    100178: Bone.025 1
+    100180: Bone.025_end
+    100182: Bone.025_end 1
+    100184: Bone.025_end_end
+    100186: Bone.026
+    100188: Bone.026 1
+    100190: Bone.026_end
+    100192: Bone.026_end 1
+    100194: Bone.026_end_end
+    100196: Bone.027
+    100198: Bone.027 1
+    100200: Bone.028
+    100202: Bone.028 1
+    100204: Bone.029
+    100206: Bone.029 1
+    100208: Bone.030
+    100210: Bone.030 1
+    100212: Bone.031
+    100214: Bone.031 1
+    100216: Bone.031_end
+    100218: Bone.031_end 1
+    100220: Bone.031_end_end
+    100222: Bone.032
+    100224: Bone.032 1
+    100226: Bone.033
+    100228: Bone.033 1
+    100230: Bone.034
+    100232: Bone.034 1
+    100234: Bone.034_end
+    100236: Bone.034_end 1
+    100238: Bone.034_end_end
+    100240: Bone.035
+    100242: Bone.035 1
+    100244: Bone.035_end
+    100246: Bone.035_end 1
+    100248: Bone.035_end_end
+    100250: Camera
+    100252: Ludwig
+    100254: Ludwig.001
+    100256: Ludwig.002
+    100258: Ludwig.003
+    100260: //RootNode
+    100262: Sun
+    400000: Armature
+    400002: Armature.001
+    400004: Bone
+    400006: Bone 1
+    400008: Bone.001
+    400010: Bone.001 1
+    400012: Bone.002
+    400014: Bone.002 1
+    400016: Bone.003
+    400018: Bone.003 1
+    400020: Bone.003_end
+    400022: Bone.003_end 1
+    400024: Bone.003_end_end
+    400026: Bone.004
+    400028: Bone.004 1
+    400030: Bone.005
+    400032: Bone.005 1
+    400034: Bone.005_end
+    400036: Bone.005_end 1
+    400038: Bone.005_end_end
+    400040: Bone.006
+    400042: Bone.006 1
+    400044: Bone.006_end
+    400046: Bone.006_end 1
+    400048: Bone.006_end_end
+    400050: Bone.007
+    400052: Bone.007 1
+    400054: Bone.008
+    400056: Bone.008 1
+    400058: Bone.008_end
+    400060: Bone.008_end 1
+    400062: Bone.008_end_end
+    400064: Bone.009
+    400066: Bone.009 1
+    400068: Bone.009_end
+    400070: Bone.009_end 1
+    400072: Bone.009_end_end
+    400074: Bone.010
+    400076: Bone.010 1
+    400078: Bone.010_end
+    400080: Bone.010_end 1
+    400082: Bone.010_end_end
+    400084: Bone.011
+    400086: Bone.011 1
+    400088: Bone.012
+    400090: Bone.012 1
+    400092: Bone.013
+    400094: Bone.013 1
+    400096: Bone.014
+    400098: Bone.014 1
+    400100: Bone.015
+    400102: Bone.015 1
+    400104: Bone.016
+    400106: Bone.016 1
+    400108: Bone.016_end
+    400110: Bone.016_end 1
+    400112: Bone.016_end_end
+    400114: Bone.017
+    400116: Bone.017 1
+    400118: Bone.018
+    400120: Bone.018 1
+    400122: Bone.019
+    400124: Bone.019 1
+    400126: Bone.020
+    400128: Bone.020 1
+    400130: Bone.020_end
+    400132: Bone.020_end 1
+    400134: Bone.020_end_end
+    400136: Bone.021
+    400138: Bone.021 1
+    400140: Bone.021_end
+    400142: Bone.021_end 1
+    400144: Bone.021_end_end
+    400146: Bone.022
+    400148: Bone.022 1
+    400150: Bone.022_end
+    400152: Bone.022_end 1
+    400154: Bone.022_end_end
+    400156: Bone.023
+    400158: Bone.023 1
+    400160: Bone.023_end
+    400162: Bone.023_end 1
+    400164: Bone.023_end_end
+    400166: Bone.024
+    400168: Bone.024 1
+    400170: Bone.024_end
+    400172: Bone.024_end 1
+    400174: Bone.024_end_end
+    400176: Bone.025
+    400178: Bone.025 1
+    400180: Bone.025_end
+    400182: Bone.025_end 1
+    400184: Bone.025_end_end
+    400186: Bone.026
+    400188: Bone.026 1
+    400190: Bone.026_end
+    400192: Bone.026_end 1
+    400194: Bone.026_end_end
+    400196: Bone.027
+    400198: Bone.027 1
+    400200: Bone.028
+    400202: Bone.028 1
+    400204: Bone.029
+    400206: Bone.029 1
+    400208: Bone.030
+    400210: Bone.030 1
+    400212: Bone.031
+    400214: Bone.031 1
+    400216: Bone.031_end
+    400218: Bone.031_end 1
+    400220: Bone.031_end_end
+    400222: Bone.032
+    400224: Bone.032 1
+    400226: Bone.033
+    400228: Bone.033 1
+    400230: Bone.034
+    400232: Bone.034 1
+    400234: Bone.034_end
+    400236: Bone.034_end 1
+    400238: Bone.034_end_end
+    400240: Bone.035
+    400242: Bone.035 1
+    400244: Bone.035_end
+    400246: Bone.035_end 1
+    400248: Bone.035_end_end
+    400250: Camera
+    400252: Ludwig
+    400254: Ludwig.001
+    400256: Ludwig.002
+    400258: Ludwig.003
+    400260: //RootNode
+    400262: Sun
+    4300000: Ludwig.003
+    4300002: Ludwig.002
+    4300004: Ludwig.001
+    4300006: Ludwig
+    7400000: Sun|CameraAction
+    7400002: Sun|Ludwig.001Action
+    7400004: Sun|Ludwig.002Action
+    7400006: Sun|SunAction
+    7400008: Camera|CameraAction
+    7400010: Camera|Ludwig.001Action
+    7400012: Camera|Ludwig.002Action
+    7400014: Camera|SunAction
+    7400016: Armature.001|Armature.001|Armature|ArmatureAction|Armature|ArmatureAction
+    7400018: Armature.001|ArmatureAction
+    7400020: Armature.001|CameraAction
+    7400022: Armature.001|Ludwig.001Action
+    7400024: Armature.001|Ludwig.002Action
+    7400026: Armature.001|SunAction
+    7400028: Ludwig.003|CameraAction
+    7400030: Ludwig.003|Ludwig.001Action
+    7400032: Ludwig.003|Ludwig.002Action
+    7400034: Ludwig.003|SunAction
+    7400036: Ludwig.002|CameraAction
+    7400038: Ludwig.002|Ludwig.001Action
+    7400040: Ludwig.002|Ludwig.002Action
+    7400042: Ludwig.002|SunAction
+    7400044: Ludwig.001|CameraAction
+    7400046: Ludwig.001|Ludwig.001Action
+    7400048: Ludwig.001|Ludwig.002Action
+    7400050: Ludwig.001|SunAction
+    7400052: Armature|Armature.001|Armature|ArmatureAction|Armature|ArmatureAction
+    7400054: Armature|ArmatureAction
+    7400056: Armature|CameraAction
+    7400058: Armature|Ludwig.001Action
+    7400060: Armature|Ludwig.002Action
+    7400062: Armature|SunAction
+    7400064: Ludwig|CameraAction
+    7400066: Ludwig|Ludwig.001Action
+    7400068: Ludwig|Ludwig.002Action
+    7400070: Ludwig|SunAction
+    9500000: //RootNode
+    13700000: Ludwig
+    13700002: Ludwig.001
+    13700004: Ludwig.002
+    13700006: Ludwig.003
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
