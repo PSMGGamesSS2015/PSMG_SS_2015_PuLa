@@ -43,6 +43,7 @@ public class LevelEndScript : MonoBehaviour {
 		lama.velocity = moveDirection;
 		puma.AddForce (Vector3.up * -10);
 		lama.AddForce (Vector3.up * -10);
+		cam.distance = 5f;
 	}
 
 	void OnTriggerEnter(Collider collider){
