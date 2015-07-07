@@ -36,8 +36,8 @@ public class LamaCamScript : MonoBehaviour {
 			switchToFirstPerson();
 		}
 		if (lamaCam.enabled) {
-			float angle = Input.GetAxis ("Mouse Y") * 20 * -1;
-			float rot = Input.GetAxis ("Mouse X") * 20;
+			float angle = Input.GetAxis ("Mouse Y") * 2 * -1;
+			float rot = Input.GetAxis ("Mouse X") * 2;
 			Vector3 angleV = new Vector3 (angle, 0, 0);
 			lama.transform.Rotate (new Vector3 (0, rot, 0));
 			transform.eulerAngles += angleV;
