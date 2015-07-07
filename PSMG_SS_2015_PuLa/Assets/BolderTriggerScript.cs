@@ -16,7 +16,7 @@ public class BolderTriggerScript : MonoBehaviour {
 	void OnTriggerEnter (Collider collider){
 		if (collider.tag != "Asdasds") {
 			Debug.Log ("Hit");
-			transform.parent.gameObject.GetComponent<BolderFallDownScript> ().isFalling = false;
+//un			transform.parent.gameObject.GetComponent<BolderFallDownScript> ().isFalling = false;
 		}
 	}
 }
