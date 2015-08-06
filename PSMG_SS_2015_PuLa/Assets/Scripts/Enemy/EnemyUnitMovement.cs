@@ -45,22 +45,9 @@ public class EnemyUnitMovement : MonoBehaviour {
 
 	void doUpdate(){
 		if (isChasing) {
-			if(lookAtCounter < 100){
-				transform.LookAt(target);
-				lookAtCounter = 0;
-			}
-
-			Vector3 dir = this.transform.position - target.transform.position;
-			dir = transform.TransformDirection( -dir / movePower );
-			rBody.velocity = dir;
-			/**
-			Vector3 move = transform.forward;
-			move.y = 0;
-			rBody.velocity = transform.TransformDirection(-move * movePower);
-			**/
-			rBody.AddForce (Vector3.up * -10);
+			transform.LookAt(target);
+			transform.position += transform.forward*movePower*Time.deltaTime;
 		}
-		lookAtCounter ++;
 	}
 
 	public void destroy(){
