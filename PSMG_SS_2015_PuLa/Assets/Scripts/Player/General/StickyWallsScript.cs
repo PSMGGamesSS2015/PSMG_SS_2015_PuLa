@@ -4,24 +4,24 @@ using System.Collections;
 public class StickyWallsScript : MonoBehaviour {
 
 	private PlayerMovement player;
+	private float triggerDistance;
 	// Use this for initialization
 	void Start () {
-		player = transform.parent.GetComponent<PlayerMovement> ();
+		triggerDistance = 2f;
+		player = GetComponent<PlayerMovement> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		player.isStuckInWall = checkIfStuckInWall ();
 	}
 
-	void OnTriggerEnter(Collider collider){
-		if (!collider.isTrigger) {
-			player.isStuckInWall = true;
+	private bool checkIfStuckInWall() {
+		RaycastHit hit;
+		Ray checkForWallsRay = new Ray (transform.position, transform.forward);
+		if (Physics.Raycast (checkForWallsRay, out hit, triggerDistance)) {
+			return true;
 		}
+		return false;
 	}
-
-	void OnTriggerExit(Collider collider){
-		player.isStuckInWall = false;
-	}
-
 }

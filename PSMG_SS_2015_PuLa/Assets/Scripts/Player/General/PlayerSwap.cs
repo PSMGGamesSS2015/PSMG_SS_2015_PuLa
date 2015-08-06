@@ -31,7 +31,7 @@ public class PlayerSwap : MonoBehaviour {
 	void FixedUpdate () {
 		if (swapIsReady) {
 			if (gameObject.GetComponent<PlayerMovement> ().active) {
-				if (Input.GetKeyDown (KeyCode.E)) {
+				if (Input.GetKeyDown (KeyCode.Tab)) {
 					doSwap ();
 				}
 			}

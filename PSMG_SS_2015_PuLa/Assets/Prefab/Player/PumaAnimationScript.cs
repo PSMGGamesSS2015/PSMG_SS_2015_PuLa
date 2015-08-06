@@ -6,11 +6,11 @@ public class PumaAnimationScript: MonoBehaviour {
 	// Use this for initialization
 	private Animator anim;
 	private PlayerMovement player;
-	private PumaSprint sprint;
+	private PumaMovement sprint;
 
 	void Start () {
 		player = GetComponent<PlayerMovement> ();
-		sprint = GetComponent<PumaSprint> ();
+		sprint = GetComponent<PumaMovement> ();
 		anim = GetComponent<Animator> ();
 	}
 	
