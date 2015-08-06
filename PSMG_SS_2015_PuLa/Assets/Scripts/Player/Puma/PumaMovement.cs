@@ -1,16 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PumaSprint : MonoBehaviour {
+public class PumaMovement : MonoBehaviour {
 
-	/**
-	 * sprinting ability
-	 * Pressing and holding SHIFT will increase the puma's movement speed for a short amount of time.
-	 * When all stamina is drained the movement speed of puma will decrease by a large amount of time.
-	 * During this, walking animation should be changed so that the puma looks more tired.
-	 * 
-	 **/
+	// Use this for initialization
 
+	private float triggerDistance;
+	private UIHint climbHintText;
 	private float sprintSpeed;
 	private float walkingSpeed;
 	private float slowSpeed;
@@ -20,8 +16,10 @@ public class PumaSprint : MonoBehaviour {
 	private float staminaGain;
 	private bool isSprintOn;
 	public bool tired;
-	// Use this for initialization
+
 	void Start () {
+		triggerDistance = 3f;
+		climbHintText = GameObject.Find ("ClimbHint").GetComponent<UIHint>();
 		walkingSpeed = GetComponent<PlayerMovement> ().movePower;
 		slowSpeed = 2;
 		sprintSpeed = 25;
@@ -31,15 +29,31 @@ public class PumaSprint : MonoBehaviour {
 		isSprintOn = false;
 		tired = false;
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (GetComponent<PlayerMovement> ().active) {
-			doUpdate();
+			doFixedUpdate();
 		}
 	}
 
-	void doUpdate(){
+
+	// Update is called once per frame
+	void doFixedUpdate () {
+		RaycastHit hit;
+		Ray climbRay = new Ray (transform.position, transform.forward);
+		if(Physics.Raycast (climbRay, out hit, triggerDistance)){
+			if(hit.collider.tag == "Climbable"){
+				climbHintText.showText();
+			} 
+		} else {
+			climbHintText.hideText();
+		}
+		if(Input.GetKeyDown(KeyCode.Q)){
+			if(climbHintText.isEnabled()){
+				doClimb(hit.collider);
+			}
+		}
 		if (Input.GetKey (KeyCode.LeftShift)) {
 			if (stamina > 0 && !tired) {
 				isSprintOn = true;
@@ -49,7 +63,6 @@ public class PumaSprint : MonoBehaviour {
 		} else {
 			isSprintOn = false;
 		}
-
 		if (stamina == 0) {
 			tired = true;
 		}
@@ -61,16 +74,25 @@ public class PumaSprint : MonoBehaviour {
 		} else {
 			GetComponent<PlayerMovement>().movePower = walkingSpeed;
 		}
-	
-
+		
+		
 		if (isSprintOn) {
 			GetComponent<PlayerMovement>().movePower = sprintSpeed;
 			stamina -= staminaDrain;
 		} else {
-
+			
 			if(stamina < MAX_STAMINA){
 				stamina += staminaGain;
 			}
 		}
+
+	}
+
+	void doClimb(Collider hit){
+		Vector3 endOfClimb = transform.position;
+		endOfClimb.y += hit.GetComponentInParent<MeshFilter>().mesh.bounds.size.y * hit.transform.lossyScale.y + transform.lossyScale.y;
+		endOfClimb += transform.forward * 2;
+		transform.position = endOfClimb;
+		
 	}
 }
