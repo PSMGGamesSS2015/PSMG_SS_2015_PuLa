@@ -24,7 +24,7 @@ public class LamaCamScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (lama.active) {
 			doUpdate();
 		}

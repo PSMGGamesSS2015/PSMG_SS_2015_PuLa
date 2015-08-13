@@ -44,6 +44,7 @@ public class PlayerSwap : MonoBehaviour {
 		GameObject camera = GameObject.FindGameObjectWithTag ("MainCamera");
 		gameObject.GetComponent<PlayerMovement> ().active = false;	
 		camera.GetComponent<SmoothThirdPersonCamera> ().target = otherCharacter.transform;
+		camera.GetComponent<SmoothThirdPersonCamera> ().pointTo = otherCharacter.transform.Find ("PointTo");
 		otherCharacter.GetComponent<PlayerMovement> ().active = true;
 		swapIsReady = false;
 		camera.GetComponent<SmoothThirdPersonCamera> ().showMainCam ();
