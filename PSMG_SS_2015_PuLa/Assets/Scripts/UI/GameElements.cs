@@ -38,15 +38,9 @@ public class GameElements : MonoBehaviour {
 		pabloLives = pabloLives.GetComponent<Image> ();
 		pabloLives.enabled = false;
 
-	
-	
-
-
-
 	}
 
-	void OnGUI() {
-	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -73,7 +67,7 @@ public class GameElements : MonoBehaviour {
 
 	public void lamaGotDamaged(float damage, float livesDecrease) {
 		if (ludwigHealthBar.fillAmount <= 0.09f) {
-			ludwigLives.fillAmount = ludwigLives.fillAmount+1/livesDecrease;
+			ludwigLives.fillAmount = ludwigLives.fillAmount-1/livesDecrease;
 			ludwigHealthBar.fillAmount = 1;
 			
 		}
@@ -83,7 +77,7 @@ public class GameElements : MonoBehaviour {
 	public void pumaGotDamaged(float damage, float livesDecrease){
 		pabloHealthBar.fillAmount -= damage;
 		if (pabloHealthBar.fillAmount <= 0.09f) {
-			pabloLives.fillAmount = pabloLives.fillAmount+1/livesDecrease;
+			pabloLives.fillAmount = pabloLives.fillAmount-1/livesDecrease;
 			pabloHealthBar.fillAmount = 1;
 			
 		}
