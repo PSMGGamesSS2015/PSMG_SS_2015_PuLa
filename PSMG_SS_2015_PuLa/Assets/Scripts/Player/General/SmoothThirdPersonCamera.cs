@@ -4,6 +4,7 @@ using System.Collections;
 public class SmoothThirdPersonCamera : MonoBehaviour {
 	
 	public Transform target;
+	public Transform pointTo;
 	public float distance = 5.0f;
 	public float height = 3.0f;
 	public float damping = 5.0f;
@@ -13,6 +14,9 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 	private Vector3 behindTarget;
 	private bool active;
 
+	//Camera Collision
+	private bool isColliding;
+	private float distanceChangeOffset = 0.15f;
 
 
 	//public float distance = 5.0f;
@@ -33,9 +37,14 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 	float velocityX = 0.0f;
 	float velocityY = 0.0f;
 
+	Camera thisCam;
+
 	void Start(){
 		active = true;
+		pointTo = target.transform.Find ("PointTo");
+		isColliding = false;
 		focusOnTarget ();
+		thisCam = gameObject.GetComponent<Camera> ();
 
 		
 		Vector3 angles = transform.eulerAngles;
@@ -44,7 +53,7 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 
 	}
 
-	void Update(){
+	void FixedUpdate(){
 		if(active){
 			doUpdate1();
 		}
@@ -121,6 +130,23 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		}
 		else transform.LookAt(target, target.up);
 		distance = Mathf.Clamp (distance - Input.GetAxis ("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
+
+
+			// Changing distance of camera 
+			if (isColliding) {
+				distance -= distanceChangeOffset;
+			} else {
+
+			}
+		if(thisCam.enabled) {
+			Debug.Log ("Cam enabled");
+			// Camerac Collision Detection using Raycast
+			if (CheckCollisionWithScreenCorners ()) {
+				isColliding = true;
+			} else {
+				isColliding = false;
+			}
+		}
 	}
 
 	public void CameraEvent(GameObject obj, float waitDuration){
@@ -146,7 +172,7 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		LamaCamScript lamaCam = GameObject.Find ("ShootCam").GetComponent<LamaCamScript> ();
 		GetComponent<Camera> ().enabled = true;
 		lamaCam.disableCamera ();
-	}
+	} 
 
 	public static float ClampAngle(float angle, float min, float max)
 	{
@@ -157,6 +183,55 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		return Mathf.Clamp(angle, min, max);
 	}
 
+	void OnTriggerEnter(Collider collider) {
+		isColliding = true;
+		Debug.Log ("OnTriggerEnter");
+	}
 
-	
+	void OnTriggerExit(Collider collider) {
+		isColliding = false;
+		Debug.Log ("OnTriggerExit");
+	}
+
+	private bool CheckCollisionWithScreenCorners() {
+		RaycastHit hit;
+		float distanceFromCameraPointToPlayer;
+		Debug.DrawLine (Camera.main.ScreenToWorldPoint (new Vector3 (0, 0, Camera.main.nearClipPlane)), pointTo.position);
+		Ray checkForWallsRay = new Ray (Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane)), pointTo.position);
+		Debug.Log (checkForWallsRay.origin + ", " + pointTo.position);
+		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
+		if (Physics.Raycast (checkForWallsRay, out hit, distanceFromCameraPointToPlayer)) {
+			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
+				Debug.Log (hit.collider.tag);
+				return true;
+			}
+		}
+		checkForWallsRay = new Ray (Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, Camera.main.nearClipPlane)), pointTo.position);
+		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
+		if (Physics.Raycast (checkForWallsRay, out hit, distanceFromCameraPointToPlayer)) {
+			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
+				Debug.Log (hit.collider.tag);
+				return true;
+			}		}
+		checkForWallsRay = new Ray (Camera.main.ScreenToWorldPoint(new Vector3(0, Camera.main.pixelHeight, Camera.main.nearClipPlane)), pointTo.position);
+		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
+		if (Physics.Raycast (checkForWallsRay, out hit, distanceFromCameraPointToPlayer)) {
+			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
+				Debug.Log (hit.collider.tag);
+				return true;
+			}		}
+		checkForWallsRay = new Ray (Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight, Camera.main.nearClipPlane)), pointTo.position);
+		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
+		if (Physics.Raycast (checkForWallsRay, out hit, distanceFromCameraPointToPlayer)) {
+			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
+				Debug.Log (hit.collider.tag);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private float distanceBetweenTwoVectors(Vector3 from, Vector3 to) {
+		return Mathf.Sqrt (Mathf.Pow ((from.x - to.x), 2) + Mathf.Pow ((from.y - to.y), 2) + Mathf.Pow ((from.z - to.z), 2));
+	}
 }
