@@ -66,8 +66,8 @@ public class GameElements : MonoBehaviour {
 	}
 
 	public void lamaGotDamaged(float damage, float livesDecrease) {
-		if (ludwigHealthBar.fillAmount <= 0.09f) {
-			ludwigLives.fillAmount = ludwigLives.fillAmount-1/livesDecrease;
+		if (ludwigHealthBar.fillAmount <= 0.1f) {
+			ludwigLives.fillAmount -= livesDecrease;
 			ludwigHealthBar.fillAmount = 1;
 			
 		}
@@ -77,7 +77,7 @@ public class GameElements : MonoBehaviour {
 	public void pumaGotDamaged(float damage, float livesDecrease){
 		pabloHealthBar.fillAmount -= damage;
 		if (pabloHealthBar.fillAmount <= 0.09f) {
-			pabloLives.fillAmount = pabloLives.fillAmount-1/livesDecrease;
+			pabloLives.fillAmount -= livesDecrease;
 			pabloHealthBar.fillAmount = 1;
 			
 		}

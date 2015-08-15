@@ -4,8 +4,8 @@ using System.Collections;
 public class EnemyHitCollider : MonoBehaviour {
 
 	private GameElements ui;
-	private float healthDecrease = 0.1f;
-	private float livesDecrease = 3f;
+	private float healthDecrease = 0.206f;
+	private float livesDecrease = 0.33339f;
 
 	// Use this for initialization
 
