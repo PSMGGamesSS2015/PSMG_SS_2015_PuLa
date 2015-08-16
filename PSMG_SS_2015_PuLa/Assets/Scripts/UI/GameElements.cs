@@ -8,10 +8,10 @@ public class GameElements : MonoBehaviour {
 	public Canvas pabloIcon;
 	private PlayerMovement pablo;
 	private PlayerMovement ludwig;
-	public Image ludwigHealthBar;
-	public Image pabloHealthBar;
-	public Image pabloLives;
-	public Image ludwigLives;
+	Image ludwigHealthBar;
+	Image pabloHealthBar;
+	Image pabloLives;
+	Image ludwigLives;
 	private int pabloLivesLeft = 3;
 	private int ludwigLivesLeft = 3;
 
@@ -22,22 +22,22 @@ public class GameElements : MonoBehaviour {
 		pablo = GameObject.Find ("Puma").GetComponent<PlayerMovement> ();
 		ludwig = GameObject.Find ("Lama").GetComponent<PlayerMovement> ();
 
-		ludwigIcon = ludwigIcon.GetComponent<Canvas> ();
 		ludwigIcon.enabled = false;
 
-		ludwigLives = ludwigLives.GetComponent<Image> ();
+		ludwigLives = ludwigIcon.transform.Find("LudwigLives").GetComponent<Image> ();
 		ludwigLives.enabled = false;
 
-		ludwigHealthBar = ludwigHealthBar.GetComponent<Image> ();
+		ludwigHealthBar = ludwigIcon.transform.Find("LudwigEnergyBar").GetComponent<Image> ();
 		ludwigHealthBar.enabled = false;
 
-		pabloHealthBar = pabloHealthBar.GetComponent<Image> ();
-		pabloHealthBar.enabled = false;
-
-		pabloIcon = pabloIcon.GetComponent<Canvas> ();
 		pabloIcon.enabled = false;
 
-		pabloLives = pabloLives.GetComponent<Image> ();
+		pabloHealthBar = pabloIcon.transform.Find ("PabloEnergyBar").GetComponent<Image> ();
+		pabloHealthBar.enabled = false;
+
+	
+
+		pabloLives = pabloIcon.transform.Find("PabloLives").GetComponent<Image> ();
 		pabloLives.enabled = false;
 
 	}
@@ -48,8 +48,8 @@ public class GameElements : MonoBehaviour {
 	void Update () {
 		if (pablo.active) {
 			pabloIcon.enabled = true;
-			pabloHealthBar.enabled = true;
 			pabloLives.enabled = true;
+			pabloHealthBar.enabled = true;
 			ludwigIcon.enabled = false;
 			ludwigHealthBar.enabled = false;
 			ludwigLives.enabled = false;

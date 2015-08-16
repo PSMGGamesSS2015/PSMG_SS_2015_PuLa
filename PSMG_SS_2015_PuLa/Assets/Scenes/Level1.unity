@@ -14474,10 +14474,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ludwigIcon: {fileID: 626761543}
   pabloIcon: {fileID: 289593384}
-  ludwigHealthBar: {fileID: 0}
-  pabloHealthBar: {fileID: 0}
-  pabloLives: {fileID: 0}
-  ludwigLives: {fileID: 0}
 --- !u!1001 &628045281
 Prefab:
   m_ObjectHideFlags: 0
@@ -34759,10 +34755,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ludwigIcon: {fileID: 626761543}
   pabloIcon: {fileID: 289593384}
-  ludwigHealthBar: {fileID: 1697165922}
-  pabloHealthBar: {fileID: 886522002}
-  pabloLives: {fileID: 322832948}
-  ludwigLives: {fileID: 146088733}
 --- !u!82 &1595669726
 AudioSource:
   m_ObjectHideFlags: 0
