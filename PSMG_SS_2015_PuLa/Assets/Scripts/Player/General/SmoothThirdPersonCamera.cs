@@ -139,7 +139,6 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 
 			}
 		if(thisCam.enabled) {
-			Debug.Log ("Cam enabled");
 			// Camerac Collision Detection using Raycast
 			if (CheckCollisionWithScreenCorners ()) {
 				isColliding = true;
@@ -185,44 +184,51 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider) {
 		isColliding = true;
-		Debug.Log ("OnTriggerEnter");
 	}
 
 	void OnTriggerExit(Collider collider) {
 		isColliding = false;
-		Debug.Log ("OnTriggerExit");
 	}
 
 	private bool CheckCollisionWithScreenCorners() {
 		RaycastHit hit;
 		float distanceFromCameraPointToPlayer;
-		Debug.DrawLine (Camera.main.ScreenToWorldPoint (new Vector3 (0, 0, Camera.main.nearClipPlane)), pointTo.position);
-		Ray checkForWallsRay = new Ray (Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane)), pointTo.position);
+		Vector3 cameraCorner;
+//		Debug.DrawLine (Camera.main.ScreenToWorldPoint (new Vector3 (0, 0, Camera.main.nearClipPlane)), pointTo.position);
+		cameraCorner = Camera.main.ScreenToWorldPoint (new Vector3 (0, 0, Camera.main.nearClipPlane));
+		Ray checkForWallsRay = new Ray (cameraCorner, (pointTo.position - cameraCorner).normalized);
+		Debug.DrawRay (checkForWallsRay.origin, checkForWallsRay.direction);
 		Debug.Log (checkForWallsRay.origin + ", " + pointTo.position);
-		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
-		if (Physics.Raycast (checkForWallsRay, out hit, distanceFromCameraPointToPlayer)) {
+		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (cameraCorner, pointTo.position);
+		if (Physics.Raycast (checkForWallsRay, out hit, Vector3.Distance(cameraCorner, pointTo.position))) {
+			Debug.Log (hit.collider.name);
 			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
-				Debug.Log (hit.collider.tag);
+	
 				return true;
 			}
 		}
-		checkForWallsRay = new Ray (Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, 0, Camera.main.nearClipPlane)), pointTo.position);
+		cameraCorner = Camera.main.ScreenToWorldPoint (new Vector3 (Camera.main.pixelWidth, 0, Camera.main.nearClipPlane));
+		checkForWallsRay = new Ray (cameraCorner, (pointTo.position - cameraCorner).normalized);		
 		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
-		if (Physics.Raycast (checkForWallsRay, out hit, distanceFromCameraPointToPlayer)) {
+		if (Physics.Raycast (checkForWallsRay, out hit, Vector3.Distance(cameraCorner, pointTo.position))) {
 			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
 				Debug.Log (hit.collider.tag);
 				return true;
-			}		}
-		checkForWallsRay = new Ray (Camera.main.ScreenToWorldPoint(new Vector3(0, Camera.main.pixelHeight, Camera.main.nearClipPlane)), pointTo.position);
+			}		
+		}
+		cameraCorner = Camera.main.ScreenToWorldPoint(new Vector3(0, Camera.main.pixelHeight, Camera.main.nearClipPlane));
+		checkForWallsRay = new Ray (cameraCorner, (pointTo.position - cameraCorner).normalized);		
 		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
-		if (Physics.Raycast (checkForWallsRay, out hit, distanceFromCameraPointToPlayer)) {
+		if (Physics.Raycast (checkForWallsRay, out hit, Vector3.Distance(cameraCorner, pointTo.position))) {
 			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
 				Debug.Log (hit.collider.tag);
 				return true;
-			}		}
-		checkForWallsRay = new Ray (Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight, Camera.main.nearClipPlane)), pointTo.position);
+			}		
+		}
+		cameraCorner = Camera.main.ScreenToWorldPoint (new Vector3 (Camera.main.pixelWidth, Camera.main.pixelHeight, Camera.main.nearClipPlane));
+		checkForWallsRay = new Ray (cameraCorner, (pointTo.position - cameraCorner).normalized);
 		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
-		if (Physics.Raycast (checkForWallsRay, out hit, distanceFromCameraPointToPlayer)) {
+		if (Physics.Raycast (checkForWallsRay, out hit, Vector3.Distance(cameraCorner, pointTo.position))) {
 			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
 				Debug.Log (hit.collider.tag);
 				return true;
