@@ -12,6 +12,8 @@ public class GameElements : MonoBehaviour {
 	public Image pabloHealthBar;
 	public Image pabloLives;
 	public Image ludwigLives;
+	private int pabloLivesLeft = 3;
+	private int ludwigLivesLeft = 3;
 
 
 	// Use this for initialization
@@ -67,20 +69,32 @@ public class GameElements : MonoBehaviour {
 
 	public void lamaGotDamaged(float damage, float livesDecrease) {
 		if (ludwigHealthBar.fillAmount <= 0.1f) {
+			ludwigLivesLeft--;
 			ludwigLives.fillAmount -= livesDecrease;
 			ludwigHealthBar.fillAmount = 1;
 			
 		}
 		ludwigHealthBar.fillAmount -= damage;
+		if (ludwigLivesLeft == 0) {
+			ludwigHealthBar.enabled = false;
+			ludwig.active = false;
+		}
+
 	}
 
 	public void pumaGotDamaged(float damage, float livesDecrease){
 		pabloHealthBar.fillAmount -= damage;
-		if (pabloHealthBar.fillAmount <= 0.09f) {
+		if (pabloHealthBar.fillAmount <= 0.1f) {
+			pabloLivesLeft --;
 			pabloLives.fillAmount -= livesDecrease;
 			pabloHealthBar.fillAmount = 1;
 			
 		}
+		if (pabloLivesLeft == 0) {
+			pabloHealthBar.enabled = false;
+			pablo.active = false;
+		}
+
 	}
 
 }

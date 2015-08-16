@@ -6,6 +6,8 @@ public class EnemyHitCollider : MonoBehaviour {
 	private GameElements ui;
 	private float healthDecrease = 0.206f;
 	private float livesDecrease = 0.33339f;
+	private bool pabloTriggerStay = false;
+	private bool ludwigTriggerStay = false;
 
 	// Use this for initialization
 
@@ -25,12 +27,26 @@ public class EnemyHitCollider : MonoBehaviour {
 			collider.GetComponent<BulletScript>().destroy();
 		}
 
-		if (collider.name == "Lama") {
+		if (collider.name == "Lama" | ludwigTriggerStay) {
 			ui.lamaGotDamaged(healthDecrease, livesDecrease);
 		}
-		if (collider.name == "Puma") {
+		if (collider.name == "Puma" | pabloTriggerStay) {
 			ui.pumaGotDamaged(healthDecrease, livesDecrease);
 
 		}
 	}
+
+	void OnTriggerStay(Collider collider){
+		if (collider.name == "Lama") {
+			ludwigTriggerStay = true;
+		}
+		if (collider.name == "Puma") {
+			pabloTriggerStay = true; 
+			
+		}
+	
+	
+	}
+
+
 }
