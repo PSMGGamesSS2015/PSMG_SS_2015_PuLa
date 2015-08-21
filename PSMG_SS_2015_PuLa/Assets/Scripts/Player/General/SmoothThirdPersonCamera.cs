@@ -136,7 +136,7 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 			if (isColliding) {
 				distance -= distanceChangeOffset;
 			} else {
-
+//				distance += distanceChangeOffset;
 			}
 		if(thisCam.enabled) {
 			// Camerac Collision Detection using Raycast
