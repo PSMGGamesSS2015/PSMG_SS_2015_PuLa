@@ -14,17 +14,21 @@ public class GameElements : MonoBehaviour {
 	Image ludwigLives;
 	private int pabloLivesLeft = 3;
 	private int ludwigLivesLeft = 3;
-
+	private Persistence p;
+	float ludwigLive;	
 
 	// Use this for initialization
 	void Start () {
-		
 		pablo = GameObject.Find ("Puma").GetComponent<PlayerMovement> ();
 		ludwig = GameObject.Find ("Lama").GetComponent<PlayerMovement> ();
+		p = GameObject.Find ("Persistence").GetComponent<Persistence> ();
 
 		ludwigIcon.enabled = false;
 
 		ludwigLives = ludwigIcon.transform.Find("LudwigLives").GetComponent<Image> ();
+		ludwigLive = p.setLudwigLives ();
+
+		Debug.Log ("lkajöldkfölasjdflksaökf" + "ludwigLivesFillAmount     " + ludwigLives.fillAmount);
 		ludwigLives.enabled = false;
 
 		ludwigHealthBar = ludwigIcon.transform.Find("LudwigEnergyBar").GetComponent<Image> ();
@@ -36,10 +40,9 @@ public class GameElements : MonoBehaviour {
 		pabloHealthBar.enabled = false;
 
 	
-
 		pabloLives = pabloIcon.transform.Find("PabloLives").GetComponent<Image> ();
 		pabloLives.enabled = false;
-
+			
 	}
 
 
@@ -60,6 +63,7 @@ public class GameElements : MonoBehaviour {
 		if (ludwig.active) {
 			ludwigIcon.enabled = true;
 			ludwigHealthBar.enabled = true;
+			//ludwigLives.fillAmount = p.setLudwigLives ();
 			ludwigLives.enabled = true;
 			pabloIcon.enabled = false;
 			pabloHealthBar.enabled = false;
@@ -79,7 +83,8 @@ public class GameElements : MonoBehaviour {
 			ludwigHealthBar.enabled = false;
 			ludwig.active = false;
 		}
-
+		PlayerPrefs.SetFloat ("ludwigLivesLeft", ludwigLives.fillAmount);
+		PlayerPrefs.SetFloat ("ludwigHealthBar", ludwigHealthBar.fillAmount);
 	}
 
 	public void pumaGotDamaged(float damage, float livesDecrease){
@@ -96,5 +101,32 @@ public class GameElements : MonoBehaviour {
 		}
 
 	}
+
+	public float getLudwigLives(){
+		return ludwigLives.fillAmount;
+	}
+
+	public float getLudwigHealth(){
+		return ludwigHealthBar.fillAmount;
+	}
+
+	public float getPabloLives(){
+		return pabloLives.fillAmount;
+	}
+
+
+	public float getPabloHealth(){
+		return pabloHealthBar.fillAmount;
+	}
+
+
+
+
+
+
+
+
+
+
 
 }
