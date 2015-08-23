@@ -59601,11 +59601,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 463192, guid: 6595c37e90b5b4198834effc49c93e0a, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 115698, guid: 6595c37e90b5b4198834effc49c93e0a, type: 2}
       propertyPath: m_Name
       value: Puma
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598994, guid: 6595c37e90b5b4198834effc49c93e0a, type: 2}
+      propertyPath: m_Size.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598994, guid: 6595c37e90b5b4198834effc49c93e0a, type: 2}
+      propertyPath: m_Center.y
+      value: -2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6595c37e90b5b4198834effc49c93e0a, type: 2}
