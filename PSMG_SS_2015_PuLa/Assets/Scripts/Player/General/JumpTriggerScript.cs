@@ -13,14 +13,14 @@ public class JumpTriggerScript : MonoBehaviour {
 	void Update () {
 	}
 	
-	void OnTriggerEnter(Collider collider){
-		if (collider.tag != "Player") {
+	void OnTriggerStay(Collider collider){
+		if (collider.tag != "Player" && collider.tag != "EditorOnly") {
 			player.isMidAir = false;
 		}
 	}
 	
 	void OnTriggerExit(Collider collider){
-		if (collider.tag != "Player") {
+		if (collider.tag != "Player" && collider.tag != "EditorOnly") {
 			player.isMidAir = true;
 		}
 	}
