@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Breakable
   - Enemy
+  - Plattform
   layers:
   - Default
   - TransparentFX
