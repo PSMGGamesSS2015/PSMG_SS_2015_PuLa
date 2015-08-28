@@ -4,6 +4,7 @@ using System.Collections;
 public class AccelerationTriggerScript : MonoBehaviour {
 
 	// Use this for initialization
+	public int direction;
 	void Start () {
 	}
 	
@@ -13,9 +14,9 @@ public class AccelerationTriggerScript : MonoBehaviour {
 	}
 
 	void OnTriggerStay (Collider collider){
-		if (collider.name == "ChallengeBall") {
+		if (collider.tag == "SpeedUpObject") {
 			Rigidbody sphere = collider.GetComponent<Rigidbody>();
-			sphere.AddForce (-Vector3.right * 3);
+			sphere.AddForce ( direction * Vector3.right * 3);
 		}
 	}
 }

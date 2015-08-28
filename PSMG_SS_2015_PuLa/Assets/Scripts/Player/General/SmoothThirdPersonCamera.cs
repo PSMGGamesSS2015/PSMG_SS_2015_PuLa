@@ -199,7 +199,6 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		Ray checkForWallsRay = new Ray (cameraCorner, (pointTo.position - cameraCorner).normalized);
 		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (cameraCorner, pointTo.position);
 		if (Physics.Raycast (checkForWallsRay, out hit, Vector3.Distance(cameraCorner, pointTo.position))) {
-			Debug.Log (hit.collider.name);
 			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
 	
 				return true;
@@ -210,7 +209,6 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
 		if (Physics.Raycast (checkForWallsRay, out hit, Vector3.Distance(cameraCorner, pointTo.position))) {
 			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
-				Debug.Log (hit.collider.tag);
 				return true;
 			}		
 		}
@@ -219,7 +217,6 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
 		if (Physics.Raycast (checkForWallsRay, out hit, Vector3.Distance(cameraCorner, pointTo.position))) {
 			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
-				Debug.Log (hit.collider.tag);
 				return true;
 			}		
 		}
@@ -228,7 +225,6 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
 		if (Physics.Raycast (checkForWallsRay, out hit, Vector3.Distance(cameraCorner, pointTo.position))) {
 			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
-				Debug.Log (hit.collider.tag);
 				return true;
 			}
 		}

@@ -14,7 +14,6 @@ public class PlattformTriggerScript : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider collider) {
 		if (collider.tag == "Plattform") {
-			Debug.Log ("Trigger");
 			collider.GetComponent<PlattformMovementScript>().movingDirection *= -1;
 		}
 	}
