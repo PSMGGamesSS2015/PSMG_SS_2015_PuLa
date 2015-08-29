@@ -522,7 +522,7 @@ ModelImporter:
       name: jumping
       takeName: Ludwig Armature|Armature.001|Armature|ArmatureAction|Armature|ArmatureAction
       firstFrame: 140
-      lastFrame: 160
+      lastFrame: 145
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

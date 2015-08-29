@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (name == "Puma") {
 			anim = GetComponent<PumaAnimationScript>();
 		}
-		if (name == "Puma") {
+		if (name == "Lama") {
 			animLama = GetComponent<LamaAnimationScript>();
 		}
 		
@@ -78,14 +78,19 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		
 		if (Input.GetKey (KeyCode.Space) && !isMidAir) {
-			Vector3 jump = new Vector3 (oldVelocityX, jumpPower, oldVelocityZ);
-			rigidBody.velocity = jump;
-			state = States.jump;
 			if(name == "Puma"){
+				Vector3 jump = new Vector3 (oldVelocityX, jumpPower, oldVelocityZ);
+				rigidBody.velocity = jump;
+				state = States.jump;
 				anim.JumpAnimationPuma();
 			}
 			if(name == "Lama") {
 				animLama.JumpAnimationLama();
+
+				StartCoroutine(Wait());
+
+
+
 			}
 		}
 		float verticalInput = Input.GetAxis ("Vertical") * movePower;
@@ -119,6 +124,15 @@ public class PlayerMovement : MonoBehaviour {
 			state = States.walk;
 		}
 		rigidBody.AddForce (Vector3.up * -10);
+	}
+
+	IEnumerator Wait(){
+		float duration = 0.2200f;
+		//This is a coroutine
+		yield return new WaitForSeconds(duration);   //Wait
+		Vector3 jump = new Vector3 (oldVelocityX, jumpPower, oldVelocityZ);
+		rigidBody.velocity = jump;
+		state = States.jump;
 	}
 	
 	public States getState(){

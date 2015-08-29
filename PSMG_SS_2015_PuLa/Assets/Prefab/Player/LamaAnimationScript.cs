@@ -20,12 +20,15 @@ public class LamaAnimationScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			anim.SetBool ("isJumping", true);
-		} else {
-			anim.SetBool ("isJumping", false);
-
-		}
+//		if (jump) {
+//			Debug.Log("Sollte False sein: " + anim.GetBool ("isJumping"));
+//			anim.SetBool ("isJumping", true);
+//			Debug.Log("Sollte True sein: " + anim.GetBool ("isJumping"));
+//			jump = false;
+//		} else {
+//			anim.SetBool ("isJumping", false);
+//	
+//		}	
 		if (Input.GetKeyDown (KeyCode.X)) {
 			cloutCounterCheet++;
 		}
@@ -46,6 +49,6 @@ public class LamaAnimationScript : MonoBehaviour {
 		}
 	}
 	public void JumpAnimationLama(){
-		anim.Play ("Jumping");
+		anim.Play("jumping");
 	}
 }
