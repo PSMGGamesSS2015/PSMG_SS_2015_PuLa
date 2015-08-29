@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class animControllerLudwig : MonoBehaviour {
+public class LamaAnimationScript : MonoBehaviour {
 
+	private int cloutCounterCheet = 0;
 	private Animator anim;
 	private PlayerMovement player;
 	private PumaMovement sprint;
@@ -25,8 +26,13 @@ public class animControllerLudwig : MonoBehaviour {
 			anim.SetBool ("isJumping", false);
 
 		}
-		if (Input.GetKeyDown(KeyCode.X)) {
+		if (Input.GetKeyDown (KeyCode.X)) {
+			cloutCounterCheet++;
+		}
+		
+		if (cloutCounterCheet == 3) {
 			anim.SetBool ("clout", true);
+			cloutCounterCheet = 0;
 		} else { 
 			anim.SetBool ("clout", false);	
 		}
