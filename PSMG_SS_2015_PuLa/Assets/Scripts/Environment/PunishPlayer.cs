@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PunishPlayer : MonoBehaviour {
 
+
 	// Use this for initialization
 	public GameObject sendBackTo;
 	void Start () {
