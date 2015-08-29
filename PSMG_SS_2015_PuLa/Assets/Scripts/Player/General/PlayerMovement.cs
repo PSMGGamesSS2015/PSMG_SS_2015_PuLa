@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour {
 	private Camera lamaCam;
 	
 	private PumaAnimationScript anim;
+	private LamaAnimationScript animLama;
 	
 	
 	void Start () {
@@ -48,6 +49,9 @@ public class PlayerMovement : MonoBehaviour {
 		lamaCam = GameObject.Find ("ShootCam").GetComponent<Camera> ();
 		if (name == "Puma") {
 			anim = GetComponent<PumaAnimationScript>();
+		}
+		if (name == "Puma") {
+			animLama = GetComponent<LamaAnimationScript>();
 		}
 		
 	}
@@ -78,7 +82,10 @@ public class PlayerMovement : MonoBehaviour {
 			rigidBody.velocity = jump;
 			state = States.jump;
 			if(name == "Puma"){
-				anim.JumpAnimation();
+				anim.JumpAnimationPuma();
+			}
+			if(name == "Lama") {
+				animLama.JumpAnimationLama();
 			}
 		}
 		float verticalInput = Input.GetAxis ("Vertical") * movePower;
