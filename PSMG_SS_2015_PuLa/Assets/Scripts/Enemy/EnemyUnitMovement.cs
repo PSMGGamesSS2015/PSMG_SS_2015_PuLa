@@ -59,7 +59,7 @@ public class EnemyUnitMovement : MonoBehaviour {
 		isAlive = false;
 		anim.SetBool("isDead", true);
 		Vector3 pos = transform.position;
-		pos.y += 0.5f;
+		pos.y += 0.3f;
 		transform.position = pos;
 		rBody.isKinematic = true;
 
