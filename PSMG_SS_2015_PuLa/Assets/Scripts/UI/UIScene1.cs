@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIScene1 : MonoBehaviour {
 
@@ -15,38 +16,39 @@ public class UIScene1 : MonoBehaviour {
 	private int pabloLivesLeft = 3;
 	private int ludwigLivesLeft = 3;
 	public bool levelEnd = false;
-	public Canvas muteIcon;
-	public Canvas mainMenu;
-	public Button ludwigButton;
-	public Button pabloButton;
-	public Button muteButton;
-	public Button mainMenuButton;
 	public AudioSource backgroundMusic;
-	
+	public Button unmute;
+	public Button resume;
+	public Button mainMenu;
+	public Canvas inGameMenu;
 
-	
 
-	
+
 	
 	// Use this for initialization
 	void Start () {
 		
 		pablo = GameObject.Find ("Puma").GetComponent<PlayerMovement> ();
 		ludwig = GameObject.Find ("Lama").GetComponent<PlayerMovement> ();
-		
-		ludwigButton = GameObject.Find ("LudwigActiveIcon").GetComponent < Button >();
-		pabloButton = GameObject.Find ("PabloActiveIcon").GetComponent<Button> ();
-		backgroundMusic = GameObject.Find ("UI").GetComponent<AudioSource> ();
-		backgroundMusic.enabled = true;
-		
-		muteButton = GameObject.Find ("Mute").GetComponent<Button> ();
-		muteIcon = GameObject.Find ("Mute").GetComponent<Canvas> ();
-		muteIcon.enabled = false;
-		
-		mainMenuButton = GameObject.Find ("MainMenu").GetComponent<Button> ();
-		mainMenu = GameObject.Find ("MainMenu").GetComponent<Canvas> ();
-		mainMenu.enabled = false;
 
+		inGameMenu = GameObject.Find ("InGameMenu").GetComponent<Canvas>();
+		inGameMenu.enabled = false;
+
+		unmute = GameObject.Find ("Unmute").GetComponent<Button> ();
+		resume = GameObject.Find ("Back").GetComponent<Button> ();
+		mainMenu = GameObject.Find ("MainMenu").GetComponent<Button> ();
+
+
+
+		backgroundMusic = GameObject.Find ("UI").GetComponent<AudioSource> ();
+		if(PlayerPrefs.GetString ("Unmute").Equals("Off")){
+			backgroundMusic.enabled = false;
+		}
+		else{
+			backgroundMusic.enabled = true;
+		}
+
+		ludwigIcon = GameObject.Find ("LudwigActiveIcon").GetComponent<Canvas> ();
 		ludwigIcon.enabled = false;
 
 		ludwigLives = ludwigIcon.transform.Find("LudwigLives").GetComponent<Image> ();
@@ -55,6 +57,7 @@ public class UIScene1 : MonoBehaviour {
 		ludwigHealthBar = ludwigIcon.transform.Find("LudwigEnergyBar").GetComponent<Image> ();
 		ludwigHealthBar.enabled = false;
 
+		pabloIcon = GameObject.Find ("PabloActiveIcon").GetComponent<Canvas> ();
 		pabloIcon.enabled = false;
 
 		pabloHealthBar = pabloIcon.transform.Find ("PabloEnergyBar").GetComponent<Image> ();
@@ -78,8 +81,7 @@ public class UIScene1 : MonoBehaviour {
 			ludwigLives.enabled = false;
 		}
 		
-		
-		
+				
 		if (ludwig.active) {
 			ludwigIcon.enabled = true;
 			ludwigHealthBar.enabled = true;
@@ -95,6 +97,32 @@ public class UIScene1 : MonoBehaviour {
 			PlayerPrefs.SetFloat("PabloHealth", pabloHealthBar.fillAmount);
 			PlayerPrefs.SetFloat("PabloLives", pabloLives.fillAmount);
 		}
+
+		if(Input.GetKey(KeyCode.Escape)){
+			if(inGameMenu.enabled == false){
+				inGameMenu.enabled = true;
+				Time.timeScale = 0;
+			}
+
+		}
+
+	}
+
+	public void onUnmuteClick(){
+		if (!backgroundMusic.enabled) {
+			backgroundMusic.enabled = true;
+		} else {
+			backgroundMusic.enabled = false;
+		}
+	}
+
+	public void onBackClick(){
+		inGameMenu.enabled = false;
+		Time.timeScale = 1;
+	}
+
+	public void onMainMenuClick(){
+		Application.LoadLevel (0);
 	}
 	
 	public void lamaGotDamaged(float damage, float livesDecrease) {
@@ -127,44 +155,14 @@ public class UIScene1 : MonoBehaviour {
 		
 	}
 
-	public void ludwigIconClick(){
-		if (!muteIcon.enabled) {
-			muteIcon.enabled = true;
-		} else {
-			muteIcon.enabled = false;		
+	public void lamaLifeRegain(float liveRegain){
+
+		ludwigLives.fillAmount += liveRegain;
 		}
-		if (!mainMenu.enabled) {
-			mainMenu.enabled = true;
-		} else {
-			mainMenu.enabled = false;
+
+	public void pumaLifeRegain(float liveRegain){
+		pabloLives.fillAmount += liveRegain;			
 		}
-	}
-	
-	public void pabloIconClick(){
-		if (!muteIcon.enabled) {
-			muteIcon.enabled = true;
-		} else {
-			muteIcon.enabled = false;		
-		}
-		if (!mainMenu.enabled) {
-			mainMenu.enabled = true;
-		} else {
-			mainMenu.enabled = false;
-		}
-	}
-	
-	public void muteButtonPress(){
-		if (backgroundMusic.enabled) {
-			
-			backgroundMusic.enabled = false;
-		} else {
-			backgroundMusic.enabled = true;
-		}
-	}
-	
-	public void mainMenuButtonPress(){
-		Application.LoadLevel (0);
-	}
 
 
 	
