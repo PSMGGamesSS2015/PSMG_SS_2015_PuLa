@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class GameElements : MonoBehaviour {
+public class UIScene1 : MonoBehaviour {
 
 	public Canvas ludwigIcon;
 	public Canvas pabloIcon;
@@ -14,21 +14,42 @@ public class GameElements : MonoBehaviour {
 	Image ludwigLives;
 	private int pabloLivesLeft = 3;
 	private int ludwigLivesLeft = 3;
+	public bool levelEnd = false;
+	public Canvas muteIcon;
+	public Canvas mainMenu;
+	public Button ludwigButton;
+	public Button pabloButton;
+	public Button muteButton;
+	public Button mainMenuButton;
+	public AudioSource backgroundMusic;
+	
 
-	float ludwigLive;	
+	
 
+	
+	
 	// Use this for initialization
 	void Start () {
+		
 		pablo = GameObject.Find ("Puma").GetComponent<PlayerMovement> ();
 		ludwig = GameObject.Find ("Lama").GetComponent<PlayerMovement> ();
-
+		
+		ludwigButton = GameObject.Find ("LudwigActiveIcon").GetComponent < Button >();
+		pabloButton = GameObject.Find ("PabloActiveIcon").GetComponent<Button> ();
+		backgroundMusic = GameObject.Find ("UI").GetComponent<AudioSource> ();
+		backgroundMusic.enabled = true;
+		
+		muteButton = GameObject.Find ("Mute").GetComponent<Button> ();
+		muteIcon = GameObject.Find ("Mute").GetComponent<Canvas> ();
+		muteIcon.enabled = false;
+		
+		mainMenuButton = GameObject.Find ("MainMenu").GetComponent<Button> ();
+		mainMenu = GameObject.Find ("MainMenu").GetComponent<Canvas> ();
+		mainMenu.enabled = false;
 
 		ludwigIcon.enabled = false;
 
 		ludwigLives = ludwigIcon.transform.Find("LudwigLives").GetComponent<Image> ();
-
-
-		Debug.Log ("lkajöldkfölasjdflksaökf" + "ludwigLivesFillAmount     " + ludwigLives.fillAmount);
 		ludwigLives.enabled = false;
 
 		ludwigHealthBar = ludwigIcon.transform.Find("LudwigEnergyBar").GetComponent<Image> ();
@@ -39,13 +60,12 @@ public class GameElements : MonoBehaviour {
 		pabloHealthBar = pabloIcon.transform.Find ("PabloEnergyBar").GetComponent<Image> ();
 		pabloHealthBar.enabled = false;
 
-	
 		pabloLives = pabloIcon.transform.Find("PabloLives").GetComponent<Image> ();
 		pabloLives.enabled = false;
-			
+		
 	}
-
-
+	
+	
 	
 	// Update is called once per frame
 	void Update () {
@@ -57,20 +77,26 @@ public class GameElements : MonoBehaviour {
 			ludwigHealthBar.enabled = false;
 			ludwigLives.enabled = false;
 		}
-
-
-
+		
+		
+		
 		if (ludwig.active) {
 			ludwigIcon.enabled = true;
 			ludwigHealthBar.enabled = true;
-			//ludwigLives.fillAmount = p.setLudwigLives ();
 			ludwigLives.enabled = true;
 			pabloIcon.enabled = false;
 			pabloHealthBar.enabled = false;
 			pabloLives.enabled = false;
 		}	
-	}
 
+		if (levelEnd) {
+			PlayerPrefs.SetFloat("LudwigHealth", ludwigHealthBar.fillAmount);
+			PlayerPrefs.SetFloat("LudwigLives", ludwigLives.fillAmount);
+			PlayerPrefs.SetFloat("PabloHealth", pabloHealthBar.fillAmount);
+			PlayerPrefs.SetFloat("PabloLives", pabloLives.fillAmount);
+		}
+	}
+	
 	public void lamaGotDamaged(float damage, float livesDecrease) {
 		if (ludwigHealthBar.fillAmount <= 0.1f) {
 			ludwigLivesLeft--;
@@ -83,10 +109,9 @@ public class GameElements : MonoBehaviour {
 			ludwigHealthBar.enabled = false;
 			ludwig.active = false;
 		}
-		PlayerPrefs.SetFloat ("ludwigLivesLeft", ludwigLives.fillAmount);
-		PlayerPrefs.SetFloat ("ludwigHealthBar", ludwigHealthBar.fillAmount);
+		
 	}
-
+	
 	public void pumaGotDamaged(float damage, float livesDecrease){
 		pabloHealthBar.fillAmount -= damage;
 		if (pabloHealthBar.fillAmount <= 0.1f) {
@@ -99,34 +124,49 @@ public class GameElements : MonoBehaviour {
 			pabloHealthBar.enabled = false;
 			pablo.active = false;
 		}
-
+		
 	}
 
-	public float getLudwigLives(){
-		return ludwigLives.fillAmount;
+	public void ludwigIconClick(){
+		if (!muteIcon.enabled) {
+			muteIcon.enabled = true;
+		} else {
+			muteIcon.enabled = false;		
+		}
+		if (!mainMenu.enabled) {
+			mainMenu.enabled = true;
+		} else {
+			mainMenu.enabled = false;
+		}
+	}
+	
+	public void pabloIconClick(){
+		if (!muteIcon.enabled) {
+			muteIcon.enabled = true;
+		} else {
+			muteIcon.enabled = false;		
+		}
+		if (!mainMenu.enabled) {
+			mainMenu.enabled = true;
+		} else {
+			mainMenu.enabled = false;
+		}
+	}
+	
+	public void muteButtonPress(){
+		if (backgroundMusic.enabled) {
+			
+			backgroundMusic.enabled = false;
+		} else {
+			backgroundMusic.enabled = true;
+		}
+	}
+	
+	public void mainMenuButtonPress(){
+		Application.LoadLevel (0);
 	}
 
-	public float getLudwigHealth(){
-		return ludwigHealthBar.fillAmount;
-	}
 
-	public float getPabloLives(){
-		return pabloLives.fillAmount;
-	}
-
-
-	public float getPabloHealth(){
-		return pabloHealthBar.fillAmount;
-	}
-
-
-
-
-
-
-
-
-
-
-
+	
 }
+

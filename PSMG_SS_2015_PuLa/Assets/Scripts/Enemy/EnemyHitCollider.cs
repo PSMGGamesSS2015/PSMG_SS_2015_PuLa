@@ -3,7 +3,8 @@ using System.Collections;
 
 public class EnemyHitCollider : MonoBehaviour {
 
-	private GameElements ui;
+	private UIScene1 ui1;
+	private UIScene2 ui2;
 	private float healthDecrease = 0.206f;
 	private float livesDecrease = 0.33339f;
 	private bool pabloTriggerStay = false;
@@ -13,7 +14,8 @@ public class EnemyHitCollider : MonoBehaviour {
 
 
 	void Start () {
-		ui = GameObject.Find ("UI").GetComponent<GameElements> ();
+		ui1 = GameObject.Find ("UI").GetComponent<UIScene1> ();
+		ui2 = GameObject.Find ("UI").GetComponent<UIScene2> ();
 	}
 	
 	// Update is called once per frame
@@ -28,11 +30,23 @@ public class EnemyHitCollider : MonoBehaviour {
 		}
 
 		if (collider.name == "Lama" | ludwigTriggerStay) {
-			ui.lamaGotDamaged(healthDecrease, livesDecrease);
+			if(Application.loadedLevel ==1){
+
+				ui1.lamaGotDamaged(healthDecrease, livesDecrease);
+				}
+			if(Application.loadedLevel ==2){
+
+				ui2.lamaGotDamaged(healthDecrease, livesDecrease);
+				}
 		}
 		if (collider.name == "Puma" | pabloTriggerStay) {
-			ui.pumaGotDamaged(healthDecrease, livesDecrease);
+			if(Application.loadedLevel ==1){
+			ui1.pumaGotDamaged(healthDecrease,livesDecrease);
+			}
+			if(Application.loadedLevel == 2){
 
+			ui2.pumaGotDamaged(healthDecrease, livesDecrease);
+			}
 		}
 	}
 
