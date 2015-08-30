@@ -5,14 +5,12 @@ public class BallRespawnTrigger : MonoBehaviour {
 
 	float waitDuration;
 
-	private float healthDecrease = 0.206f;
-	private float livesDecrease = 0.33339f;
-	private UIScene2 ui2;
+
 
 	// Use this for initialization
 	void Start () {
 		waitDuration = 2f;
-		ui2 = GameObject.Find ("UI").GetComponent<UIScene2> ();
+
 	
 	}
 	
@@ -23,7 +21,8 @@ public class BallRespawnTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider){
 		if (collider.transform.parent.tag == "Player") {
-			ui2.pumaGotDamaged(healthDecrease*5, livesDecrease);
+
+
 			respawnPlayer (collider.gameObject);
 	
 		} else {
@@ -36,6 +35,7 @@ public class BallRespawnTrigger : MonoBehaviour {
 	}
 
 	void respawnPlayer(GameObject obj){
+
 		obj.transform.parent.transform.position = transform.FindChild ("PlayerRespawnPosition").position;
 	}
 

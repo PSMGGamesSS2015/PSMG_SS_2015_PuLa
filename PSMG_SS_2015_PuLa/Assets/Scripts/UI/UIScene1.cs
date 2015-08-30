@@ -127,6 +127,16 @@ public class UIScene1 : MonoBehaviour {
 		
 	}
 
+	public void pumaLifeRegain(float livesRegain){
+		pabloLives.fillAmount += livesRegain;
+	}
+
+	public void lamaLifeRegain(float livesRegain){
+		ludwigLives.fillAmount += livesRegain;
+	
+	}
+
+
 	public void ludwigIconClick(){
 		if (!muteIcon.enabled) {
 			muteIcon.enabled = true;

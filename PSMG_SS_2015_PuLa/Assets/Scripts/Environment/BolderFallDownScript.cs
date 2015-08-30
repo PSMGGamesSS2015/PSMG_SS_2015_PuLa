@@ -7,6 +7,7 @@ public class BolderFallDownScript : MonoBehaviour {
 	public float waitAtStartTime;
 	public GameObject moveDown;
 	public GameObject moveUp;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (WaitAtStart (waitAtStartTime));

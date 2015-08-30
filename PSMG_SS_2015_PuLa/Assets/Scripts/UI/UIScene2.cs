@@ -163,6 +163,15 @@ public class UIScene2 : MonoBehaviour {
 		}
 	}
 
+	public void pumaLifeRegain(float livesRegain){
+		pabloLives.fillAmount += livesRegain;
+	}
+	
+	public void lamaLifeRegain(float livesRegain){
+		ludwigLives.fillAmount += livesRegain;
+		
+	}
+
 	public void mainMenuButtonPress(){
 		Application.LoadLevel (0);
 	}
