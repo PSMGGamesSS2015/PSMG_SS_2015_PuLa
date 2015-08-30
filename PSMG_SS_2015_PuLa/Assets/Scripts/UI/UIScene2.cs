@@ -34,9 +34,11 @@ public class UIScene2 : MonoBehaviour {
 		inGameMenu.enabled = false;
 		
 		unmute = GameObject.Find ("Unmute").GetComponent<Button> ();
+		unmute.enabled = false;
 		resume = GameObject.Find ("Back").GetComponent<Button> ();
+		resume.enabled = false;
 		mainMenu = GameObject.Find ("MainMenu").GetComponent<Button> ();
-		
+		mainMenu.enabled = false;
 		
 		backgroundMusic = GameObject.Find ("UI").GetComponent<AudioSource> ();
 		backgroundMusic.enabled = true;
@@ -96,6 +98,9 @@ public class UIScene2 : MonoBehaviour {
 
 
 		if(Input.GetKey(KeyCode.Escape)){
+			unmute.enabled = true;
+			resume.enabled = true;
+			mainMenu.enabled = true;
 			if(inGameMenu.enabled == false){
 				inGameMenu.enabled = true;
 				Time.timeScale = 0;
@@ -115,6 +120,9 @@ public class UIScene2 : MonoBehaviour {
 	
 	public void onBackClick(){
 		inGameMenu.enabled = false;
+		mainMenu.enabled = false;
+		unmute.enabled = false;
+		resume.enabled = false;
 		Time.timeScale = 1;
 	}
 	
