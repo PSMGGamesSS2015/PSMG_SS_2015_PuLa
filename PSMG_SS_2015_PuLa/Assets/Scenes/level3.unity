@@ -35714,6 +35714,7 @@ MonoBehaviour:
   - {fileID: 1219543848}
   - {fileID: 836914669}
   HighlightColor: {fileID: 2100000, guid: 7fd893e331de7954b862c0b3da965ae2, type: 2}
+  FinishColor: {fileID: 0}
 --- !u!4 &807487021
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: bf396705a1848474faa1dc1f2285970f, type: 3}
@@ -36966,6 +36967,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 836914670}
+  - 135: {fileID: 836914671}
+  - 114: {fileID: 836914672}
   m_Layer: 0
   m_Name: ColorTilesGreen
   m_TagString: Untagged
@@ -37000,6 +37003,30 @@ Transform:
   - {fileID: 545064146}
   m_Father: {fileID: 805795965}
   m_RootOrder: 4
+--- !u!135 &836914671
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 836914669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 10}
+--- !u!114 &836914672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 836914669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e97590cdab58419cbc0fe35d2d6ec5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileID: 4
 --- !u!1001 &838955636
 Prefab:
   m_ObjectHideFlags: 0
@@ -41391,6 +41418,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 948170158}
+  - 135: {fileID: 948170159}
+  - 114: {fileID: 948170160}
   m_Layer: 0
   m_Name: StartAgainTile
   m_TagString: Untagged
@@ -41425,6 +41454,29 @@ Transform:
   - {fileID: 1231561499}
   m_Father: {fileID: 805795965}
   m_RootOrder: 5
+--- !u!135 &948170159
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 948170157}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 10}
+--- !u!114 &948170160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 948170157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848ac9e199db04fd1b8efc9f558d2a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &949132836
 Prefab:
   m_ObjectHideFlags: 0
@@ -55312,6 +55364,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1219543849}
+  - 135: {fileID: 1219543850}
+  - 114: {fileID: 1219543851}
   m_Layer: 0
   m_Name: ColorTilesOrange
   m_TagString: Untagged
@@ -55346,6 +55400,30 @@ Transform:
   - {fileID: 1785270949}
   m_Father: {fileID: 805795965}
   m_RootOrder: 3
+--- !u!135 &1219543850
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1219543848}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 10}
+--- !u!114 &1219543851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1219543848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e97590cdab58419cbc0fe35d2d6ec5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileID: 3
 --- !u!1001 &1219956752
 Prefab:
   m_ObjectHideFlags: 0
@@ -68311,6 +68389,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1477410127}
+  - 135: {fileID: 1477410128}
+  - 114: {fileID: 1477410129}
   m_Layer: 0
   m_Name: ColorTilesYellow
   m_TagString: Untagged
@@ -68345,6 +68425,30 @@ Transform:
   - {fileID: 1582619496}
   m_Father: {fileID: 805795965}
   m_RootOrder: 2
+--- !u!135 &1477410128
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1477410126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 10}
+--- !u!114 &1477410129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1477410126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e97590cdab58419cbc0fe35d2d6ec5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileID: 2
 --- !u!1001 &1479538041
 Prefab:
   m_ObjectHideFlags: 0
@@ -90888,7 +90992,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1963002466}
   m_LocalRotation: {x: 0, y: -.382683337, z: 0, w: .923879623}
-  m_LocalPosition: {x: 300.200012, y: 66.5, z: 137.699997}
+  m_LocalPosition: {x: 337, y: 66.5, z: 135.300003}
   m_LocalScale: {x: 54.5429993, y: 163.964508, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -91121,6 +91225,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1968014700}
+  - 135: {fileID: 1968014701}
+  - 114: {fileID: 1968014702}
   m_Layer: 0
   m_Name: ColorTilesBlue
   m_TagString: Untagged
@@ -91155,6 +91261,30 @@ Transform:
   - {fileID: 373757937}
   m_Father: {fileID: 805795965}
   m_RootOrder: 1
+--- !u!135 &1968014701
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968014699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 10}
+--- !u!114 &1968014702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968014699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e97590cdab58419cbc0fe35d2d6ec5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileID: 1
 --- !u!1 &1969187460
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 3a3b8e21192a94956b19669d74e617e9, type: 3}
@@ -99013,6 +99143,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2123211996}
+  - 135: {fileID: 2123211997}
+  - 114: {fileID: 2123211998}
   m_Layer: 0
   m_Name: ColorTilesRed
   m_TagString: Untagged
@@ -99047,6 +99179,30 @@ Transform:
   - {fileID: 80640139}
   m_Father: {fileID: 805795965}
   m_RootOrder: 0
+--- !u!135 &2123211997
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2123211995}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 10}
+--- !u!114 &2123211998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2123211995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e97590cdab58419cbc0fe35d2d6ec5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileID: 0
 --- !u!1001 &2125476025
 Prefab:
   m_ObjectHideFlags: 0
