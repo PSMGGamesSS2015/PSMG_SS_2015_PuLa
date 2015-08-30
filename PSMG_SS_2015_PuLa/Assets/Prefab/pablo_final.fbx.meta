@@ -989,7 +989,7 @@ ModelImporter:
       name: Climbing
       takeName: Armature|ArmatureAction
       firstFrame: 442
-      lastFrame: 458
+      lastFrame: 454
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

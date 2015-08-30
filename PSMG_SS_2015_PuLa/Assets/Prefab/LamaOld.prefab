@@ -36,7 +36,7 @@ GameObject:
   - 114: {fileID: 11411334}
   - 114: {fileID: 11454798}
   m_Layer: 0
-  m_Name: Lama
+  m_Name: LamaOld
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,6 +185,8 @@ MonoBehaviour:
   movePower: 5
   jumpPower: 3
   active: 1
+  isMidAir: 0
+  isStuckInWall: 0
 --- !u!114 &11414352
 MonoBehaviour:
   m_ObjectHideFlags: 1
