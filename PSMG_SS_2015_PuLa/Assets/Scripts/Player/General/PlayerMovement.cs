@@ -127,7 +127,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	IEnumerator Wait(){
-		float duration = 0.2200f;
+		float duration = 0.1200f;
 		//This is a coroutine
 		yield return new WaitForSeconds(duration);   //Wait
 		Vector3 jump = new Vector3 (oldVelocityX, jumpPower, oldVelocityZ);

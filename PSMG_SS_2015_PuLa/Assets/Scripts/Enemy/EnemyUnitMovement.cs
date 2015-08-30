@@ -16,6 +16,7 @@ public class EnemyUnitMovement : MonoBehaviour {
 	private float damageOnHit;
 	private int lookAtCounter = 0;
 	private Transform target;
+	private Animator anim;
 
 	void Start () {
 		rBody = GetComponent<Rigidbody> ();
@@ -23,6 +24,7 @@ public class EnemyUnitMovement : MonoBehaviour {
 		isChasing = false;
 		movePower = 2.5f;
 		damageOnHit = 1;
+		anim = GetComponent<Animator> ();
 
 	}
 
@@ -45,13 +47,21 @@ public class EnemyUnitMovement : MonoBehaviour {
 
 	void doUpdate(){
 		if (isChasing) {
+			anim.SetBool("isWalking", true);
+
 			transform.LookAt(target);
-			transform.position += transform.forward*movePower*Time.deltaTime;
+			transform.eulerAngles += new Vector3(0, 180, 0);
+			transform.position += -transform.forward*movePower*Time.deltaTime;
 		}
 	}
 
 	public void destroy(){
 		isAlive = false;
-		Destroy (this.gameObject);
+		anim.SetBool("isDead", true);
+		Vector3 pos = transform.position;
+		pos.y += 0.5f;
+		transform.position = pos;
+		rBody.isKinematic = true;
+
 	}
 }
