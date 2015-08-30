@@ -16,7 +16,7 @@ public class ColorTileWhiteScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider) {
 		if (collider.tag == "Projectile") {
-			colorChallenge.showPattern();
+//			colorChallenge.showPattern();
 		}
 	}
 }

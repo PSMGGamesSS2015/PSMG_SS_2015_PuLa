@@ -27,7 +27,8 @@ public class PumaAnimationScript: MonoBehaviour {
 		}
 	}
 
-	public void JumpAnimation(){
+	public void JumpAnimationPuma(){
+		Debug.Log ("JumpAnimationPuma");
 		anim.Play ("Jumping");
 	}
 }

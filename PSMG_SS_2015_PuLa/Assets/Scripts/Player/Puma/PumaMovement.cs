@@ -17,6 +17,7 @@ public class PumaMovement : MonoBehaviour {
 	private bool isSprintOn;
 	private float rayOriginYAxisOffset = 2f;
 	public bool tired;
+	private Animator anim;
 
 	void Start () {
 		triggerDistance = 3f;
@@ -29,6 +30,7 @@ public class PumaMovement : MonoBehaviour {
 		staminaGain = 0.5f;
 		isSprintOn = false;
 		tired = false;
+		anim = GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -66,6 +68,16 @@ public class PumaMovement : MonoBehaviour {
 			}
 		} else {
 			isSprintOn = false;
+		}
+		if (Input.GetKeyDown (KeyCode.C)) {
+			anim.SetBool ("ClimbBool", true);
+		} else {
+			anim.SetBool ("ClimbBool", false);
+		}
+		if (Input.GetKey (KeyCode.R)) {
+			anim.SetBool ("Crowling", true);
+		} else {
+			anim.SetBool ("Crowling", false);
 		}
 		if (stamina == 0) {
 			tired = true;

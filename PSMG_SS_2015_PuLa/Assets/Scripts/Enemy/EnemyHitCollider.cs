@@ -9,11 +9,13 @@ public class EnemyHitCollider : MonoBehaviour {
 	private float livesDecrease = 0.33339f;
 	private bool pabloTriggerStay = false;
 	private bool ludwigTriggerStay = false;
+	private Animator anim;
 
 	// Use this for initialization
 
 
 	void Start () {
+		anim = GetComponent<Animator> ();
 		ui1 = GameObject.Find ("UI").GetComponent<UIScene1> ();
 		ui2 = GameObject.Find ("UI").GetComponent<UIScene2> ();
 	}
@@ -25,6 +27,8 @@ public class EnemyHitCollider : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider){
 		if (collider.tag == "Projectile") {
+
+			//transform.parent.GetComponent<EnemyUnitMovement>().getHit();
 			transform.parent.GetComponent<EnemyUnitMovement>().destroy();
 			collider.GetComponent<BulletScript>().destroy();
 		}

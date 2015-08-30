@@ -1,0 +1,906 @@
+fileFormatVersion: 2
+guid: 40f95e066ef5e4151ba15b7d4e673164
+timeCreated: 1440690282
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Bone
+    100002: Bone.001
+    100004: Bone.002
+    100006: Bone.003
+    100008: Bone.003_end
+    100010: Bone.003_end_end
+    100012: Bone.004
+    100014: Bone.005
+    100016: Bone.005_end
+    100018: Bone.005_end_end
+    100020: Bone.006
+    100022: Bone.006_end
+    100024: Bone.006_end_end
+    100026: Bone.007
+    100028: Bone.008
+    100030: Bone.008_end
+    100032: Bone.008_end_end
+    100034: Bone.009
+    100036: Bone.009_end
+    100038: Bone.009_end_end
+    100040: Bone.010
+    100042: Bone.010_end
+    100044: Bone.010_end_end
+    100046: Bone.011
+    100048: Bone.012
+    100050: Bone.013
+    100052: Bone.014
+    100054: Bone.015
+    100056: Bone.016
+    100058: Bone.016_end
+    100060: Bone.016_end_end
+    100062: Bone.017
+    100064: Bone.018
+    100066: Bone.019
+    100068: Bone.020
+    100070: Bone.020_end
+    100072: Bone.020_end_end
+    100074: Bone.021
+    100076: Bone.021_end
+    100078: Bone.021_end_end
+    100080: Bone.022
+    100082: Bone.022_end
+    100084: Bone.022_end_end
+    100086: Bone.023
+    100088: Bone.023_end
+    100090: Bone.023_end_end
+    100092: Bone.024
+    100094: Bone.024_end
+    100096: Bone.024_end_end
+    100098: Bone.025
+    100100: Bone.025_end
+    100102: Bone.025_end_end
+    100104: Bone.026
+    100106: Bone.026_end
+    100108: Bone.026_end_end
+    100110: Bone.027
+    100112: Bone.028
+    100114: Bone.029
+    100116: Bone.030
+    100118: Bone.031
+    100120: Bone.031_end
+    100122: Bone.031_end_end
+    100124: Bone.032
+    100126: Bone.033
+    100128: Bone.034
+    100130: Bone.034_end
+    100132: Bone.034_end_end
+    100134: Bone.035
+    100136: Bone.035_end
+    100138: Bone.035_end_end
+    100140: Ludwig
+    100142: Ludwig Armature
+    100144: //RootNode
+    400000: Bone
+    400002: Bone.001
+    400004: Bone.002
+    400006: Bone.003
+    400008: Bone.003_end
+    400010: Bone.003_end_end
+    400012: Bone.004
+    400014: Bone.005
+    400016: Bone.005_end
+    400018: Bone.005_end_end
+    400020: Bone.006
+    400022: Bone.006_end
+    400024: Bone.006_end_end
+    400026: Bone.007
+    400028: Bone.008
+    400030: Bone.008_end
+    400032: Bone.008_end_end
+    400034: Bone.009
+    400036: Bone.009_end
+    400038: Bone.009_end_end
+    400040: Bone.010
+    400042: Bone.010_end
+    400044: Bone.010_end_end
+    400046: Bone.011
+    400048: Bone.012
+    400050: Bone.013
+    400052: Bone.014
+    400054: Bone.015
+    400056: Bone.016
+    400058: Bone.016_end
+    400060: Bone.016_end_end
+    400062: Bone.017
+    400064: Bone.018
+    400066: Bone.019
+    400068: Bone.020
+    400070: Bone.020_end
+    400072: Bone.020_end_end
+    400074: Bone.021
+    400076: Bone.021_end
+    400078: Bone.021_end_end
+    400080: Bone.022
+    400082: Bone.022_end
+    400084: Bone.022_end_end
+    400086: Bone.023
+    400088: Bone.023_end
+    400090: Bone.023_end_end
+    400092: Bone.024
+    400094: Bone.024_end
+    400096: Bone.024_end_end
+    400098: Bone.025
+    400100: Bone.025_end
+    400102: Bone.025_end_end
+    400104: Bone.026
+    400106: Bone.026_end
+    400108: Bone.026_end_end
+    400110: Bone.027
+    400112: Bone.028
+    400114: Bone.029
+    400116: Bone.030
+    400118: Bone.031
+    400120: Bone.031_end
+    400122: Bone.031_end_end
+    400124: Bone.032
+    400126: Bone.033
+    400128: Bone.034
+    400130: Bone.034_end
+    400132: Bone.034_end_end
+    400134: Bone.035
+    400136: Bone.035_end
+    400138: Bone.035_end_end
+    400140: Ludwig
+    400142: Ludwig Armature
+    400144: //RootNode
+    4300000: Ludwig
+    7400000: walking
+    7400002: clout
+    7400004: jumping
+    7400006: standing
+    9500000: //RootNode
+    13700000: Ludwig
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walking
+      takeName: Ludwig Armature|Armature.001|Armature|ArmatureAction|Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Ludwig
+        weight: 1
+      - path: Ludwig Armature
+        weight: 1
+      - path: Ludwig Armature/Bone
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015/Bone.016
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015/Bone.016/Bone.016_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015/Bone.016/Bone.016_end/Bone.016_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019/Bone.020
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019/Bone.020/Bone.020_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019/Bone.020/Bone.020_end/Bone.020_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002/Bone.003
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002/Bone.003/Bone.003_end/Bone.003_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007/Bone.008
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007/Bone.008/Bone.008_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007/Bone.008/Bone.008_end/Bone.008_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030/Bone.031
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030/Bone.031/Bone.031_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030/Bone.031/Bone.031_end/Bone.031_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.034
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.034/Bone.034_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.034/Bone.034_end/Bone.034_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.035
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.035/Bone.035_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.035/Bone.035_end/Bone.035_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.005
+        weight: 1
+      - path: Ludwig Armature/Bone.005/Bone.005_end
+        weight: 1
+      - path: Ludwig Armature/Bone.005/Bone.005_end/Bone.005_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.006
+        weight: 1
+      - path: Ludwig Armature/Bone.006/Bone.006_end
+        weight: 1
+      - path: Ludwig Armature/Bone.006/Bone.006_end/Bone.006_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.009
+        weight: 1
+      - path: Ludwig Armature/Bone.009/Bone.009_end
+        weight: 1
+      - path: Ludwig Armature/Bone.009/Bone.009_end/Bone.009_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.010
+        weight: 1
+      - path: Ludwig Armature/Bone.010/Bone.010_end
+        weight: 1
+      - path: Ludwig Armature/Bone.010/Bone.010_end/Bone.010_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.021
+        weight: 1
+      - path: Ludwig Armature/Bone.021/Bone.021_end
+        weight: 1
+      - path: Ludwig Armature/Bone.021/Bone.021_end/Bone.021_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.022
+        weight: 1
+      - path: Ludwig Armature/Bone.022/Bone.022_end
+        weight: 1
+      - path: Ludwig Armature/Bone.022/Bone.022_end/Bone.022_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.023
+        weight: 1
+      - path: Ludwig Armature/Bone.023/Bone.023_end
+        weight: 1
+      - path: Ludwig Armature/Bone.023/Bone.023_end/Bone.023_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.024
+        weight: 1
+      - path: Ludwig Armature/Bone.024/Bone.024_end
+        weight: 1
+      - path: Ludwig Armature/Bone.024/Bone.024_end/Bone.024_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.025
+        weight: 1
+      - path: Ludwig Armature/Bone.025/Bone.025_end
+        weight: 1
+      - path: Ludwig Armature/Bone.025/Bone.025_end/Bone.025_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.026
+        weight: 1
+      - path: Ludwig Armature/Bone.026/Bone.026_end
+        weight: 1
+      - path: Ludwig Armature/Bone.026/Bone.026_end/Bone.026_end_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: clout
+      takeName: Ludwig Armature|Armature.001|Armature|ArmatureAction|Armature|ArmatureAction
+      firstFrame: 100
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Ludwig
+        weight: 1
+      - path: Ludwig Armature
+        weight: 1
+      - path: Ludwig Armature/Bone
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015/Bone.016
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015/Bone.016/Bone.016_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015/Bone.016/Bone.016_end/Bone.016_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019/Bone.020
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019/Bone.020/Bone.020_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019/Bone.020/Bone.020_end/Bone.020_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002/Bone.003
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002/Bone.003/Bone.003_end/Bone.003_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007/Bone.008
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007/Bone.008/Bone.008_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007/Bone.008/Bone.008_end/Bone.008_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030/Bone.031
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030/Bone.031/Bone.031_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030/Bone.031/Bone.031_end/Bone.031_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.034
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.034/Bone.034_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.034/Bone.034_end/Bone.034_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.035
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.035/Bone.035_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.035/Bone.035_end/Bone.035_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.005
+        weight: 1
+      - path: Ludwig Armature/Bone.005/Bone.005_end
+        weight: 1
+      - path: Ludwig Armature/Bone.005/Bone.005_end/Bone.005_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.006
+        weight: 1
+      - path: Ludwig Armature/Bone.006/Bone.006_end
+        weight: 1
+      - path: Ludwig Armature/Bone.006/Bone.006_end/Bone.006_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.009
+        weight: 1
+      - path: Ludwig Armature/Bone.009/Bone.009_end
+        weight: 1
+      - path: Ludwig Armature/Bone.009/Bone.009_end/Bone.009_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.010
+        weight: 1
+      - path: Ludwig Armature/Bone.010/Bone.010_end
+        weight: 1
+      - path: Ludwig Armature/Bone.010/Bone.010_end/Bone.010_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.021
+        weight: 1
+      - path: Ludwig Armature/Bone.021/Bone.021_end
+        weight: 1
+      - path: Ludwig Armature/Bone.021/Bone.021_end/Bone.021_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.022
+        weight: 1
+      - path: Ludwig Armature/Bone.022/Bone.022_end
+        weight: 1
+      - path: Ludwig Armature/Bone.022/Bone.022_end/Bone.022_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.023
+        weight: 1
+      - path: Ludwig Armature/Bone.023/Bone.023_end
+        weight: 1
+      - path: Ludwig Armature/Bone.023/Bone.023_end/Bone.023_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.024
+        weight: 1
+      - path: Ludwig Armature/Bone.024/Bone.024_end
+        weight: 1
+      - path: Ludwig Armature/Bone.024/Bone.024_end/Bone.024_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.025
+        weight: 1
+      - path: Ludwig Armature/Bone.025/Bone.025_end
+        weight: 1
+      - path: Ludwig Armature/Bone.025/Bone.025_end/Bone.025_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.026
+        weight: 1
+      - path: Ludwig Armature/Bone.026/Bone.026_end
+        weight: 1
+      - path: Ludwig Armature/Bone.026/Bone.026_end/Bone.026_end_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: jumping
+      takeName: Ludwig Armature|Armature.001|Armature|ArmatureAction|Armature|ArmatureAction
+      firstFrame: 140
+      lastFrame: 145
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Ludwig
+        weight: 1
+      - path: Ludwig Armature
+        weight: 1
+      - path: Ludwig Armature/Bone
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015/Bone.016
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015/Bone.016/Bone.016_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015/Bone.016/Bone.016_end/Bone.016_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019/Bone.020
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019/Bone.020/Bone.020_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019/Bone.020/Bone.020_end/Bone.020_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002/Bone.003
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002/Bone.003/Bone.003_end/Bone.003_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007/Bone.008
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007/Bone.008/Bone.008_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007/Bone.008/Bone.008_end/Bone.008_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030/Bone.031
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030/Bone.031/Bone.031_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030/Bone.031/Bone.031_end/Bone.031_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.034
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.034/Bone.034_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.034/Bone.034_end/Bone.034_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.035
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.035/Bone.035_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.035/Bone.035_end/Bone.035_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.005
+        weight: 1
+      - path: Ludwig Armature/Bone.005/Bone.005_end
+        weight: 1
+      - path: Ludwig Armature/Bone.005/Bone.005_end/Bone.005_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.006
+        weight: 1
+      - path: Ludwig Armature/Bone.006/Bone.006_end
+        weight: 1
+      - path: Ludwig Armature/Bone.006/Bone.006_end/Bone.006_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.009
+        weight: 1
+      - path: Ludwig Armature/Bone.009/Bone.009_end
+        weight: 1
+      - path: Ludwig Armature/Bone.009/Bone.009_end/Bone.009_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.010
+        weight: 1
+      - path: Ludwig Armature/Bone.010/Bone.010_end
+        weight: 1
+      - path: Ludwig Armature/Bone.010/Bone.010_end/Bone.010_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.021
+        weight: 1
+      - path: Ludwig Armature/Bone.021/Bone.021_end
+        weight: 1
+      - path: Ludwig Armature/Bone.021/Bone.021_end/Bone.021_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.022
+        weight: 1
+      - path: Ludwig Armature/Bone.022/Bone.022_end
+        weight: 1
+      - path: Ludwig Armature/Bone.022/Bone.022_end/Bone.022_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.023
+        weight: 1
+      - path: Ludwig Armature/Bone.023/Bone.023_end
+        weight: 1
+      - path: Ludwig Armature/Bone.023/Bone.023_end/Bone.023_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.024
+        weight: 1
+      - path: Ludwig Armature/Bone.024/Bone.024_end
+        weight: 1
+      - path: Ludwig Armature/Bone.024/Bone.024_end/Bone.024_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.025
+        weight: 1
+      - path: Ludwig Armature/Bone.025/Bone.025_end
+        weight: 1
+      - path: Ludwig Armature/Bone.025/Bone.025_end/Bone.025_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.026
+        weight: 1
+      - path: Ludwig Armature/Bone.026/Bone.026_end
+        weight: 1
+      - path: Ludwig Armature/Bone.026/Bone.026_end/Bone.026_end_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: standing
+      takeName: Ludwig Armature|Armature.001|Armature|ArmatureAction|Armature|ArmatureAction
+      firstFrame: 180
+      lastFrame: 259
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Ludwig
+        weight: 1
+      - path: Ludwig Armature
+        weight: 1
+      - path: Ludwig Armature/Bone
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015/Bone.016
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015/Bone.016/Bone.016_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.014/Bone.017/Bone.015/Bone.016/Bone.016_end/Bone.016_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019/Bone.020
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019/Bone.020/Bone.020_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.018/Bone.027/Bone.019/Bone.020/Bone.020_end/Bone.020_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002/Bone.003
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.001/Bone.011/Bone.002/Bone.003/Bone.003_end/Bone.003_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007/Bone.008
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007/Bone.008/Bone.008_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.004/Bone.012/Bone.007/Bone.008/Bone.008_end/Bone.008_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030/Bone.031
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030/Bone.031/Bone.031_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.033/Bone.028/Bone.032/Bone.029/Bone.030/Bone.031/Bone.031_end/Bone.031_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.034
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.034/Bone.034_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.034/Bone.034_end/Bone.034_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.035
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.035/Bone.035_end
+        weight: 1
+      - path: Ludwig Armature/Bone/Bone.013/Bone.035/Bone.035_end/Bone.035_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.005
+        weight: 1
+      - path: Ludwig Armature/Bone.005/Bone.005_end
+        weight: 1
+      - path: Ludwig Armature/Bone.005/Bone.005_end/Bone.005_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.006
+        weight: 1
+      - path: Ludwig Armature/Bone.006/Bone.006_end
+        weight: 1
+      - path: Ludwig Armature/Bone.006/Bone.006_end/Bone.006_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.009
+        weight: 1
+      - path: Ludwig Armature/Bone.009/Bone.009_end
+        weight: 1
+      - path: Ludwig Armature/Bone.009/Bone.009_end/Bone.009_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.010
+        weight: 1
+      - path: Ludwig Armature/Bone.010/Bone.010_end
+        weight: 1
+      - path: Ludwig Armature/Bone.010/Bone.010_end/Bone.010_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.021
+        weight: 1
+      - path: Ludwig Armature/Bone.021/Bone.021_end
+        weight: 1
+      - path: Ludwig Armature/Bone.021/Bone.021_end/Bone.021_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.022
+        weight: 1
+      - path: Ludwig Armature/Bone.022/Bone.022_end
+        weight: 1
+      - path: Ludwig Armature/Bone.022/Bone.022_end/Bone.022_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.023
+        weight: 1
+      - path: Ludwig Armature/Bone.023/Bone.023_end
+        weight: 1
+      - path: Ludwig Armature/Bone.023/Bone.023_end/Bone.023_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.024
+        weight: 1
+      - path: Ludwig Armature/Bone.024/Bone.024_end
+        weight: 1
+      - path: Ludwig Armature/Bone.024/Bone.024_end/Bone.024_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.025
+        weight: 1
+      - path: Ludwig Armature/Bone.025/Bone.025_end
+        weight: 1
+      - path: Ludwig Armature/Bone.025/Bone.025_end/Bone.025_end_end
+        weight: 1
+      - path: Ludwig Armature/Bone.026
+        weight: 1
+      - path: Ludwig Armature/Bone.026/Bone.026_end
+        weight: 1
+      - path: Ludwig Armature/Bone.026/Bone.026_end/Bone.026_end_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
