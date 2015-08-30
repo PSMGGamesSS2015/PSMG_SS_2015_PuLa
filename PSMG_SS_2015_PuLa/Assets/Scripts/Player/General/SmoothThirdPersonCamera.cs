@@ -158,7 +158,15 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		transform.LookAt (obj.transform);
 		StartCoroutine(Wait(waitDuration));
 		showMainCam ();
-	
+	}
+
+	public void CameraEvent(Transform lookFrom, Transform lookTo, float waitDuration) {
+		active = false;
+		target.GetComponent<PlayerMovement> ().active = false;
+		transform.position = lookFrom.position;
+		transform.LookAt (lookTo);
+		StartCoroutine(Wait(waitDuration));
+		showMainCam ();
 	}
 
 	IEnumerator Wait(float duration){

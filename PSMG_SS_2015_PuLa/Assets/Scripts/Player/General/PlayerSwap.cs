@@ -38,7 +38,7 @@ public class PlayerSwap : MonoBehaviour {
 		} 
 	}
 
-	private void doSwap()
+	public void doSwap()
 	{	
 		Debug.Log ("Swapping to " + otherCharacter.name);
 		GameObject camera = GameObject.FindGameObjectWithTag ("MainCamera");
