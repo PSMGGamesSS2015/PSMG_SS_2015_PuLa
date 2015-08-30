@@ -105,6 +105,7 @@ public class StartScreenScript : MonoBehaviour {
 		backgroundMusic.enabled = false;
 		buttonClick.enabled = false;
 		buttonHover.enabled = false;
+		PlayerPrefs.SetString ("Unmute", "Off");
 	}
 
 	public void optionsMuteClick(){
