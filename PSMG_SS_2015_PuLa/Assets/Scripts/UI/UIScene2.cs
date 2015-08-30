@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class UIScene2 : MonoBehaviour {
 	
+	
 	public Canvas ludwigIcon;
 	public Canvas pabloIcon;
 	private PlayerMovement pablo;
@@ -15,34 +16,30 @@ public class UIScene2 : MonoBehaviour {
 	private int pabloLivesLeft = 3;
 	private int ludwigLivesLeft = 3;
 	public bool levelEnd = false;
-	public Canvas muteIcon;
-	public Canvas mainMenu;
-	public Button ludwigButton;
-	public Button pabloButton;
-	public Button muteButton;
-	public Button mainMenuButton;
 	public AudioSource backgroundMusic;
+	public Button unmute;
+	public Button resume;
+	public Button mainMenu;
+	public Canvas inGameMenu;
 
 
 	
 	// Use this for initialization
 	void Start () {
-		
+
 		pablo = GameObject.Find ("Puma").GetComponent<PlayerMovement> ();
 		ludwig = GameObject.Find ("Lama").GetComponent<PlayerMovement> ();
-
-		ludwigButton = GameObject.Find ("LudwigActiveIcon").GetComponent < Button >();
-		pabloButton = GameObject.Find ("PabloActiveIcon").GetComponent<Button> ();
+		
+		inGameMenu = GameObject.Find ("InGameMenu").GetComponent<Canvas>();
+		inGameMenu.enabled = false;
+		
+		unmute = GameObject.Find ("Unmute").GetComponent<Button> ();
+		resume = GameObject.Find ("Back").GetComponent<Button> ();
+		mainMenu = GameObject.Find ("MainMenu").GetComponent<Button> ();
+		
+		
 		backgroundMusic = GameObject.Find ("UI").GetComponent<AudioSource> ();
 		backgroundMusic.enabled = true;
-
-		muteButton = GameObject.Find ("Mute").GetComponent<Button> ();
-		muteIcon = GameObject.Find ("Mute").GetComponent<Canvas> ();
-		muteIcon.enabled = false;
-
-		mainMenuButton = GameObject.Find ("MainMenu").GetComponent<Button> ();
-		mainMenu = GameObject.Find ("MainMenu").GetComponent<Canvas> ();
-		mainMenu.enabled = false;
 
 		ludwigIcon.enabled = false;
 		
@@ -68,6 +65,7 @@ public class UIScene2 : MonoBehaviour {
 	
 	
 	
+	
 	// Update is called once per frame
 	void Update () {
 		if (pablo.active) {
@@ -78,7 +76,6 @@ public class UIScene2 : MonoBehaviour {
 			ludwigHealthBar.enabled = false;
 			ludwigLives.enabled = false;
 		}
-		
 		
 		
 		if (ludwig.active) {
@@ -96,6 +93,33 @@ public class UIScene2 : MonoBehaviour {
 			PlayerPrefs.SetFloat("PabloHealth", pabloHealthBar.fillAmount);
 			PlayerPrefs.SetFloat("PabloLives", pabloLives.fillAmount);
 		}
+
+
+		if(Input.GetKey(KeyCode.Escape)){
+			if(inGameMenu.enabled == false){
+				inGameMenu.enabled = true;
+				Time.timeScale = 0;
+			}
+			
+		}
+		
+	}
+	
+	public void onUnmuteClick(){
+		if (!backgroundMusic.enabled) {
+			backgroundMusic.enabled = true;
+		} else {
+			backgroundMusic.enabled = false;
+		}
+	}
+	
+	public void onBackClick(){
+		inGameMenu.enabled = false;
+		Time.timeScale = 1;
+	}
+	
+	public void onMainMenuClick(){
+		Application.LoadLevel (0);
 	}
 	
 	public void lamaGotDamaged(float damage, float livesDecrease) {
@@ -127,44 +151,16 @@ public class UIScene2 : MonoBehaviour {
 		}
 		
 	}
-
-	public void ludwigIconClick(){
-		if (!muteIcon.enabled) {
-			muteIcon.enabled = true;
-		} else {
-			muteIcon.enabled = false;		
-		}
-		if (!mainMenu.enabled) {
-			mainMenu.enabled = true;
-		} else {
-			mainMenu.enabled = false;
-		}
+	
+	public void lamaLifeRegain(float liveRegain){
+		ludwigLives.fillAmount += liveRegain;
 	}
-
-	public void pabloIconClick(){
-		if (!muteIcon.enabled) {
-			muteIcon.enabled = true;
-		} else {
-			muteIcon.enabled = false;		
-		}
-		if (!mainMenu.enabled) {
-			mainMenu.enabled = true;
-		} else {
-			mainMenu.enabled = false;
-		}
+	
+	public void pumaLifeRegain(float liveRegain){
+		pabloLives.fillAmount += liveRegain;			
 	}
-
-	public void muteButtonPress(){
-		if (backgroundMusic.enabled) {
-
-			backgroundMusic.enabled = false;
-		} else {
-			backgroundMusic.enabled = true;
-		}
-	}
-
-	public void mainMenuButtonPress(){
-		Application.LoadLevel (0);
-	}
+	
+	
+	
 }
 
