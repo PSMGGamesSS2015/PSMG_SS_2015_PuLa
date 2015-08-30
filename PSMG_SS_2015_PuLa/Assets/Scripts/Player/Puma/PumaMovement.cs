@@ -15,6 +15,7 @@ public class PumaMovement : MonoBehaviour {
 	private float staminaDrain;
 	private float staminaGain;
 	private bool isSprintOn;
+	private float rayOriginYAxisOffset = 2f;
 	public bool tired;
 	private Animator anim;
 
@@ -43,7 +44,10 @@ public class PumaMovement : MonoBehaviour {
 	// Update is called once per frame
 	void doFixedUpdate () {
 		RaycastHit hit;
-		Ray climbRay = new Ray (transform.position, transform.forward);
+		//
+		Vector3 rayOrigin = transform.position;
+		rayOrigin.y += rayOriginYAxisOffset;
+		Ray climbRay = new Ray (rayOrigin, transform.forward);
 		if(Physics.Raycast (climbRay, out hit, triggerDistance)){
 			if(hit.collider.tag == "Climbable"){
 				climbHintText.showText();

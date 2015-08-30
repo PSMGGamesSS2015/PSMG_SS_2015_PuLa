@@ -197,11 +197,8 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 //		Debug.DrawLine (Camera.main.ScreenToWorldPoint (new Vector3 (0, 0, Camera.main.nearClipPlane)), pointTo.position);
 		cameraCorner = Camera.main.ScreenToWorldPoint (new Vector3 (0, 0, Camera.main.nearClipPlane));
 		Ray checkForWallsRay = new Ray (cameraCorner, (pointTo.position - cameraCorner).normalized);
-//		Debug.DrawRay (checkForWallsRay.origin, checkForWallsRay.direction);
-//		Debug.Log (checkForWallsRay.origin + ", " + pointTo.position);
 		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (cameraCorner, pointTo.position);
 		if (Physics.Raycast (checkForWallsRay, out hit, Vector3.Distance(cameraCorner, pointTo.position))) {
-			Debug.Log (hit.collider.name);
 			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
 	
 				return true;
@@ -212,7 +209,6 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
 		if (Physics.Raycast (checkForWallsRay, out hit, Vector3.Distance(cameraCorner, pointTo.position))) {
 			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
-				Debug.Log (hit.collider.tag);
 				return true;
 			}		
 		}
@@ -221,7 +217,6 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
 		if (Physics.Raycast (checkForWallsRay, out hit, Vector3.Distance(cameraCorner, pointTo.position))) {
 			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
-				Debug.Log (hit.collider.tag);
 				return true;
 			}		
 		}
@@ -230,7 +225,6 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 		distanceFromCameraPointToPlayer = distanceBetweenTwoVectors (checkForWallsRay.origin, pointTo.position);
 		if (Physics.Raycast (checkForWallsRay, out hit, Vector3.Distance(cameraCorner, pointTo.position))) {
 			if(hit.collider.tag != "Player" && hit.collider.name != "Terrain"){
-				Debug.Log (hit.collider.tag);
 				return true;
 			}
 		}

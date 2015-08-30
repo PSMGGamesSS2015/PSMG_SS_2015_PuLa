@@ -8,6 +8,9 @@ TagManager:
   - Projectile
   - Breakable
   - Enemy
+  - Plattform
+  - SpeedUpObject
+  - Trigger
   layers:
   - Default
   - TransparentFX

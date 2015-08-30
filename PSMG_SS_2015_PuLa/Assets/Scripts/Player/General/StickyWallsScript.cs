@@ -25,7 +25,9 @@ public class StickyWallsScript : MonoBehaviour {
 		rayOrigin.y += rayYAxisOffset;
 		Ray checkForWallsRay = new Ray (rayOrigin, transform.forward);
 		if (Physics.Raycast (checkForWallsRay, out hit, triggerDistance)) {
-			return true;
+			if(hit.collider.tag != "Trigger") {
+				return true;
+			}
 		}
 		return false;
 	}
