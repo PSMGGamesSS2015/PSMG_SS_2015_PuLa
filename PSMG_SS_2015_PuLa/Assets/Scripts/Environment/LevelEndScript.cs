@@ -16,6 +16,7 @@ public class LevelEndScript : MonoBehaviour {
 	private Transform posLook;
 	private UIScene1 ui;
 	private UIScene2 ui2;
+	private UIScene3 ui3;
 	// Use this for initialization
 	void Start () {
 		play = false;
@@ -28,6 +29,7 @@ public class LevelEndScript : MonoBehaviour {
 		posLook = transform.Find ("LookAt");
 		ui = GameObject.Find ("UI").GetComponent<UIScene1> ();
 		ui2 = GameObject.Find ("UI").GetComponent<UIScene2> ();
+		ui3 = GameObject.Find ("UI").GetComponent<UIScene3> ();
 
 	}
 	
@@ -63,6 +65,9 @@ public class LevelEndScript : MonoBehaviour {
 		if(Application.loadedLevel == 2){
 
 			ui2.levelEnd = true;
+		}
+		if (Application.loadedLevel == 3) {
+			ui3.levelEnd = true;
 		}
 	}
 
