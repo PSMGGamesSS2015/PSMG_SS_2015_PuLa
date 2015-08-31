@@ -5,7 +5,8 @@ public class RemoveBallChallenge : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject ballChallenge;
-	public GameObject doorToTrigger;
+	public GameObject colorChallengeTrigger;
+
 	void Start () {
 	
 	}
@@ -19,8 +20,8 @@ public class RemoveBallChallenge : MonoBehaviour {
 		if (collider.tag == "Player") {
 			Debug.Log ("Placeholder Gameobject taken");
 			Destroy(ballChallenge.gameObject);
-			doorToTrigger.GetComponent<MoveScript>().activate();
 			Destroy (this.gameObject);
+			colorChallengeTrigger.GetComponent<StartColorChallenge>().enabled = true;
 		}
 	} 
 }
