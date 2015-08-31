@@ -282,7 +282,7 @@ GameObject:
   - 95: {fileID: 9520840}
   - 65: {fileID: 6554264}
   m_Layer: 0
-  m_Name: Boss
+  m_Name: boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
