@@ -49,6 +49,7 @@ public class LamaAnimationScript : MonoBehaviour {
 		}
 	}
 	public void JumpAnimationLama(){
-		anim.Play("Jumping");
+		//jumping dindn't work right
+		//anim.Play("Jumping");
 	}
 }
