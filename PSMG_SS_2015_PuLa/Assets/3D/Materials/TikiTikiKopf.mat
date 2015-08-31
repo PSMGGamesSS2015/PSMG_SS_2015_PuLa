@@ -37,14 +37,21 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _EmissionMap
+          name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ParallaxMap
+          name: _OcclusionMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -59,13 +66,6 @@ Material:
       data:
         first:
           name: _DetailAlbedoMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _OcclusionMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -120,11 +120,11 @@ Material:
         second: 0
       data:
         first:
-          name: _Mode
+          name: _EmissionScaleUI
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
+          name: _Mode
         second: 0
       data:
         first:
@@ -134,11 +134,11 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _Color
-        second: {r: .239555538, g: .0613055266, b: .00371415261, a: 1}
+        second: {r: .389705896, g: .168799758, b: .0974264741, a: 1}
       data:
         first:
           name: _EmissionColorUI

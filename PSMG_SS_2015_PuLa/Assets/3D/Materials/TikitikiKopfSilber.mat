@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: "Tikitikiza\u0308hne"
+  m_Name: TikitikiKopfSilber
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -101,7 +101,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .186000004
+        second: .624000013
       data:
         first:
           name: _BumpScale
@@ -138,7 +138,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: .703733921, b: .347278476, a: 1}
+        second: {r: .360294104, g: .360294104, b: .360294104, a: 1}
       data:
         first:
           name: _EmissionColorUI

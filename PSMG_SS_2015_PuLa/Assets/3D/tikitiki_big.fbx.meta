@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: bf28d9be35f5c4820ad7feda0b5fffbf
+timeCreated: 1441040573
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.003
+    100008: Bone.004
+    100010: Bone.005
+    100012: Bone.006
+    100014: Bone.006_end
+    100016: Bone.007
+    100018: Bone.008
+    100020: Bone.009
+    100022: Bone.010
+    100024: Bone.010_end
+    100026: Bone.011
+    100028: Bone.012
+    100030: Bone.013
+    100032: Bone.013_end
+    100034: Bone.014
+    100036: Bone.015
+    100038: Bone.016
+    100040: Bone.016_end
+    100042: Bone.017
+    100044: EllenbogenLinks
+    100046: EllenbogenLinks_end
+    100048: EllenbogenRechts
+    100050: EllenbogenRechts_end
+    100052: "fu\xDFLinks IK"
+    100054: "fu\xDFLinks IK.001"
+    100056: "fu\xDFLinks IK.001_end"
+    100058: "fu\xDFLinks IK_end"
+    100060: HandLinksIK
+    100062: HandLinksIK_end
+    100064: HankRechtsIK
+    100066: HankRechtsIK_end
+    100068: head
+    100070: head_end
+    100072: KnieLinks
+    100074: KnieLinks_end
+    100076: KnieRechts
+    100078: KnieRechts_end
+    100080: //RootNode
+    100082: Tikitikimann
+    400000: Armature
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.003
+    400008: Bone.004
+    400010: Bone.005
+    400012: Bone.006
+    400014: Bone.006_end
+    400016: Bone.007
+    400018: Bone.008
+    400020: Bone.009
+    400022: Bone.010
+    400024: Bone.010_end
+    400026: Bone.011
+    400028: Bone.012
+    400030: Bone.013
+    400032: Bone.013_end
+    400034: Bone.014
+    400036: Bone.015
+    400038: Bone.016
+    400040: Bone.016_end
+    400042: Bone.017
+    400044: EllenbogenLinks
+    400046: EllenbogenLinks_end
+    400048: EllenbogenRechts
+    400050: EllenbogenRechts_end
+    400052: "fu\xDFLinks IK"
+    400054: "fu\xDFLinks IK.001"
+    400056: "fu\xDFLinks IK.001_end"
+    400058: "fu\xDFLinks IK_end"
+    400060: HandLinksIK
+    400062: HandLinksIK_end
+    400064: HankRechtsIK
+    400066: HankRechtsIK_end
+    400068: head
+    400070: head_end
+    400072: KnieLinks
+    400074: KnieLinks_end
+    400076: KnieRechts
+    400078: KnieRechts_end
+    400080: //RootNode
+    400082: Tikitikimann
+    4300000: Tikitikimann
+    7400000: Armature|ArmatureAction
+    7400002: Armature|Tikitikimann.000Action
+    7400004: Tikitikimann|Tikitikimann.000Action
+    7400006: ragemode
+    7400008: walking
+    9500000: //RootNode
+    13700000: Tikitikimann
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|ArmatureAction
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone.017
+        weight: 1
+      - path: Armature/Bone.017/Bone
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003/Bone.004
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003/Bone.004/Bone.005
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003/Bone.004/Bone.005/Bone.006/Bone.006_end
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007/Bone.008
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/head
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/head/head_end
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.011
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.011/Bone.012
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.011/Bone.012/Bone.013/Bone.013_end
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.014
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.014/Bone.015
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.014/Bone.015/Bone.016
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.014/Bone.015/Bone.016/Bone.016_end
+        weight: 1
+      - path: Armature/Bone.017/EllenbogenLinks
+        weight: 1
+      - path: Armature/Bone.017/EllenbogenLinks/EllenbogenLinks_end
+        weight: 1
+      - path: Armature/Bone.017/EllenbogenRechts
+        weight: 1
+      - path: Armature/Bone.017/EllenbogenRechts/EllenbogenRechts_end
+        weight: 1
+      - path: "Armature/Bone.017/fu\xDFLinks IK"
+        weight: 1
+      - path: "Armature/Bone.017/fu\xDFLinks IK/fu\xDFLinks IK_end"
+        weight: 1
+      - path: "Armature/Bone.017/fu\xDFLinks IK.001"
+        weight: 1
+      - path: "Armature/Bone.017/fu\xDFLinks IK.001/fu\xDFLinks IK.001_end"
+        weight: 1
+      - path: Armature/Bone.017/HandLinksIK
+        weight: 1
+      - path: Armature/Bone.017/HandLinksIK/HandLinksIK_end
+        weight: 1
+      - path: Armature/Bone.017/HankRechtsIK
+        weight: 1
+      - path: Armature/Bone.017/HankRechtsIK/HankRechtsIK_end
+        weight: 1
+      - path: Armature/Bone.017/KnieLinks
+        weight: 1
+      - path: Armature/Bone.017/KnieLinks/KnieLinks_end
+        weight: 1
+      - path: Armature/Bone.017/KnieRechts
+        weight: 1
+      - path: Armature/Bone.017/KnieRechts/KnieRechts_end
+        weight: 1
+      - path: Tikitikimann
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ragemode
+      takeName: Armature|ArmatureAction
+      firstFrame: 140
+      lastFrame: 159
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone.017
+        weight: 1
+      - path: Armature/Bone.017/Bone
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003/Bone.004
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003/Bone.004/Bone.005
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003/Bone.004/Bone.005/Bone.006/Bone.006_end
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007/Bone.008
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/head
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/head/head_end
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.011
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.011/Bone.012
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.011/Bone.012/Bone.013/Bone.013_end
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.014
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.014/Bone.015
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.014/Bone.015/Bone.016
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.014/Bone.015/Bone.016/Bone.016_end
+        weight: 1
+      - path: Armature/Bone.017/EllenbogenLinks
+        weight: 1
+      - path: Armature/Bone.017/EllenbogenLinks/EllenbogenLinks_end
+        weight: 1
+      - path: Armature/Bone.017/EllenbogenRechts
+        weight: 1
+      - path: Armature/Bone.017/EllenbogenRechts/EllenbogenRechts_end
+        weight: 1
+      - path: "Armature/Bone.017/fu\xDFLinks IK"
+        weight: 1
+      - path: "Armature/Bone.017/fu\xDFLinks IK/fu\xDFLinks IK_end"
+        weight: 1
+      - path: "Armature/Bone.017/fu\xDFLinks IK.001"
+        weight: 1
+      - path: "Armature/Bone.017/fu\xDFLinks IK.001/fu\xDFLinks IK.001_end"
+        weight: 1
+      - path: Armature/Bone.017/HandLinksIK
+        weight: 1
+      - path: Armature/Bone.017/HandLinksIK/HandLinksIK_end
+        weight: 1
+      - path: Armature/Bone.017/HankRechtsIK
+        weight: 1
+      - path: Armature/Bone.017/HankRechtsIK/HankRechtsIK_end
+        weight: 1
+      - path: Armature/Bone.017/KnieLinks
+        weight: 1
+      - path: Armature/Bone.017/KnieLinks/KnieLinks_end
+        weight: 1
+      - path: Armature/Bone.017/KnieRechts
+        weight: 1
+      - path: Armature/Bone.017/KnieRechts/KnieRechts_end
+        weight: 1
+      - path: Tikitikimann
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: walking
+      takeName: Armature|ArmatureAction
+      firstFrame: 10
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone.017
+        weight: 1
+      - path: Armature/Bone.017/Bone
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003/Bone.004
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003/Bone.004/Bone.005
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.003/Bone.004/Bone.005/Bone.006/Bone.006_end
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007/Bone.008
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/head
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.001/head/head_end
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.011
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.011/Bone.012
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.011/Bone.012/Bone.013
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.011/Bone.012/Bone.013/Bone.013_end
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.014
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.014/Bone.015
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.014/Bone.015/Bone.016
+        weight: 1
+      - path: Armature/Bone.017/Bone/Bone.014/Bone.015/Bone.016/Bone.016_end
+        weight: 1
+      - path: Armature/Bone.017/EllenbogenLinks
+        weight: 1
+      - path: Armature/Bone.017/EllenbogenLinks/EllenbogenLinks_end
+        weight: 1
+      - path: Armature/Bone.017/EllenbogenRechts
+        weight: 1
+      - path: Armature/Bone.017/EllenbogenRechts/EllenbogenRechts_end
+        weight: 1
+      - path: "Armature/Bone.017/fu\xDFLinks IK"
+        weight: 1
+      - path: "Armature/Bone.017/fu\xDFLinks IK/fu\xDFLinks IK_end"
+        weight: 1
+      - path: "Armature/Bone.017/fu\xDFLinks IK.001"
+        weight: 1
+      - path: "Armature/Bone.017/fu\xDFLinks IK.001/fu\xDFLinks IK.001_end"
+        weight: 1
+      - path: Armature/Bone.017/HandLinksIK
+        weight: 1
+      - path: Armature/Bone.017/HandLinksIK/HandLinksIK_end
+        weight: 1
+      - path: Armature/Bone.017/HankRechtsIK
+        weight: 1
+      - path: Armature/Bone.017/HankRechtsIK/HankRechtsIK_end
+        weight: 1
+      - path: Armature/Bone.017/KnieLinks
+        weight: 1
+      - path: Armature/Bone.017/KnieLinks/KnieLinks_end
+        weight: 1
+      - path: Armature/Bone.017/KnieRechts
+        weight: 1
+      - path: Armature/Bone.017/KnieRechts/KnieRechts_end
+        weight: 1
+      - path: Tikitikimann
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
