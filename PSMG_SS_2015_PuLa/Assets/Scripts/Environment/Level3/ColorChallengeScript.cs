@@ -101,10 +101,11 @@ public class ColorChallengeScript : MonoBehaviour {
 					if (currentIndex == pattern.Length - 1) {
 						if(currentLevelOfChallenge == 1) {
 							Debug.Log ("You beat the game");
-						}
+						} else {
 						currentPatternLength = challengeTwoPatternLength;
 						createNewPattern (currentPatternLength);
 						StartCoroutine (challengeCompleted ());
+						}
 					} else {
 						StartCoroutine (changeToSpecificColorAndBack (ColorTiles [tileID], HighlightColor));
 						currentIndex ++;
