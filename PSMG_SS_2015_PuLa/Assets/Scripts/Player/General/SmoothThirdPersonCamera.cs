@@ -79,7 +79,7 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 			Vector3 target1 = target.position;
 			// Since puma is a little bit shorter we have to adjust the camera a bit so the player can see more of the level
 			if(target.name == "Puma"){
-				target1 += new Vector3(0, 2, 0);
+				target1 += new Vector3(0, 1, 0);
 			} 
 			if(target.name == "Lama"){
 				target1 += new Vector3(0, 2, 0);
@@ -167,6 +167,10 @@ public class SmoothThirdPersonCamera : MonoBehaviour {
 			if (!CheckCollisionWithScreenCorners ()) {
 				needsAdjustment = false;
 			}
+		}
+		if (collider.tag == "Player") {
+			needsAdjustment = true;
+			isColliding = false;
 		}
 	}
 
