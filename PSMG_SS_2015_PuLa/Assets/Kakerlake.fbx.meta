@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 44fcb23585bd83e4f9f05d2313b5c8c5
-timeCreated: 1433957302
+guid: a7e3a7fb74da044b683a2945138e06b9
+timeCreated: 1441064212
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -62,7 +62,7 @@ ModelImporter:
     400052: //RootNode
     400054: Plane
     4300000: Plane
-    7400000: Armature|ArmatureAction
+    7400000: walking
     9500000: //RootNode
     13700000: Plane
   materials:
@@ -80,7 +80,89 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walking
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone.016
+        weight: 1
+      - path: Armature/Bone.016/Bone
+        weight: 1
+      - path: Armature/Bone.016/Bone/Bone.001
+        weight: 1
+      - path: Armature/Bone.016/Bone/Bone.001/Bone.001_end
+        weight: 1
+      - path: Armature/Bone.016/Bone.002
+        weight: 1
+      - path: Armature/Bone.016/Bone.002/Bone.003
+        weight: 1
+      - path: Armature/Bone.016/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: Armature/Bone.016/Bone.004
+        weight: 1
+      - path: Armature/Bone.016/Bone.004/Bone.005
+        weight: 1
+      - path: Armature/Bone.016/Bone.004/Bone.005/Bone.005_end
+        weight: 1
+      - path: Armature/Bone.016/Bone.006
+        weight: 1
+      - path: Armature/Bone.016/Bone.006/Bone.007
+        weight: 1
+      - path: Armature/Bone.016/Bone.006/Bone.007/Bone.007_end
+        weight: 1
+      - path: Armature/Bone.016/Bone.008
+        weight: 1
+      - path: Armature/Bone.016/Bone.008/Bone.009
+        weight: 1
+      - path: Armature/Bone.016/Bone.008/Bone.009/Bone.009_end
+        weight: 1
+      - path: Armature/Bone.016/Bone.010
+        weight: 1
+      - path: Armature/Bone.016/Bone.010/Bone.011
+        weight: 1
+      - path: Armature/Bone.016/Bone.010/Bone.011/Bone.011_end
+        weight: 1
+      - path: Armature/Bone.016/Bone.012
+        weight: 1
+      - path: Armature/Bone.016/Bone.012/Bone.013
+        weight: 1
+      - path: Armature/Bone.016/Bone.012/Bone.013/Bone.013_end
+        weight: 1
+      - path: Armature/Bone.016/Bone.014
+        weight: 1
+      - path: Armature/Bone.016/Bone.014/Bone.015
+        weight: 1
+      - path: Armature/Bone.016/Bone.014/Bone.015/Bone.015_end
+        weight: 1
+      - path: Plane
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
