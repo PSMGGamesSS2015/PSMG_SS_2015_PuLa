@@ -5,17 +5,23 @@ public class BossScript : MonoBehaviour {
 
 	// Use this for initialization
 	private enum BossAttackMode { Melee, Ranged, Insane};
-	private enum BossAttackSpeed {Melee = 15, Ranged = 80, Insane = 1};
-	private enum BossProjectileSpeed {Melee = 10, Ranged = 30, Insane = 100};
 
+	private float AttackSpeedMelee = 1.5f;
+	private float AttackSpeedRanged = 0.75f;
+	private float AttackSpeedInsane = 0.1f;
+
+	private float prSpeedMelee = 10f;
+	private float prSpeedRanged = 30f;
+	private float prSpeedInsane = 100f;
+	
 	private BossAttackMode mode;
-	private BossAttackSpeed attackSpeed;
-	private BossProjectileSpeed prSpeed;
+	private float attackSpeed;
+	private float prSpeed;
 
 	private Animator anim;
 	private Rigidbody rBody;
-	private ParticleSystem insaneParticleSystem;
-	private ParticleSystem hitableParticleSystem;
+	public ParticleSystem insaneParticleSystem;
+	public ParticleSystem hitableParticleSystem;
 
 	private Transform player;
 
@@ -24,56 +30,78 @@ public class BossScript : MonoBehaviour {
 	private int hitPoints;
 	private bool hitable;
 	private bool attackReady;
+	private bool isAlive;
+
+	public GameObject projectile;
+	public Transform projectileOrigin;
 
 	void Start () {
 		anim = GetComponent<Animator> ();
 		rBody = GetComponent<Rigidbody> ();
-		insaneParticleSystem = transform.Find ("InsaneVisualizer").gameObject.GetComponent<ParticleSystem> ();
-		hitableParticleSystem = transform.Find ("hitableVisualizer").gameObject.GetComponent<ParticleSystem> ();
+		player = GameObject.Find ("Lama").transform;
 
 
 		mode = BossAttackMode.Ranged;
 		hitPoints = 30;
 		hitable = true;
 		attackReady = true;
-		insaneParticleSystem.Stop ();
+		isAlive = true;
+		insaneParticleSystem.Play ();
 		hitableParticleSystem.Stop ();
+		activate ();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (mode == BossAttackMode.Melee) {
-			insaneParticleSystem.Stop ();
-			moveTowardsPlayer();
-			attackSpeed = BossAttackSpeed.Melee;
-			prSpeed = BossProjectileSpeed.Melee;
-		} else if (mode == BossAttackMode.Ranged) {
-			insaneParticleSystem.Stop ();
-			attackSpeed = BossAttackSpeed.Ranged;
-			prSpeed = BossProjectileSpeed.Ranged;
-		} else if (mode == BossAttackMode.Insane) {
-			insaneParticleSystem.Simulate();
-			attackSpeed = BossAttackSpeed.Insane;
-			prSpeed = BossProjectileSpeed.Insane;
+		if (isAlive) {
+			if (mode == BossAttackMode.Melee) {
+				insaneParticleSystem.Stop ();
+				moveTowardsPlayer ();
+				attackSpeed = AttackSpeedMelee;
+				prSpeed = prSpeedMelee;
+				anim.SetBool ("isRaging", false);
+			} else if (mode == BossAttackMode.Ranged) {
+				insaneParticleSystem.Stop ();
+				attackSpeed = AttackSpeedRanged;
+				prSpeed = prSpeedRanged;
+				anim.SetBool ("isRaging", false);
+				transform.LookAt(player);
+				transform.eulerAngles += new Vector3(0, 180, 0);
+			} else if (mode == BossAttackMode.Insane) {
+				insaneParticleSystem.Play ();
+				attackSpeed = AttackSpeedInsane;
+				prSpeed = prSpeedInsane;
+				anim.SetBool ("isRaging", true);
+			}
 		}
 	}
 
 	void activate(){
 		mode = BossAttackMode.Melee;
+		attackSpeed = AttackSpeedMelee;
+		prSpeed = prSpeedMelee;
 		startAttacking ();
 	}
 
 	void startAttacking() {
-		while (attackReady) {
-			StartCoroutine(attack (attackSpeed));
-		}
+	 	StartCoroutine(attack ());
 	}
 
 	void OnTriggerEnter(Collider collider) {
 		if (hitable) {
-			if (collider.tag == "Projectile" && collider.tag.Contains ("Bullet")) {
+			if (collider.tag == "Projectile" && collider.name.Contains ("Bullet")) {
 				hitPoints --;
 				StartCoroutine(recoverFromHit());
+				if(hitPoints % 10 == 0) {
+					hitable = false;
+					StartCoroutine(TransitionIntoInsaneMode());
+				} else if (hitPoints % 5 == 0) {
+					mode = BossAttackMode.Ranged;
+				}
+				if(hitPoints == 0) {
+					isAlive = false;
+					hitable = false;
+				}
 			}
 		}
 	}
@@ -86,18 +114,31 @@ public class BossScript : MonoBehaviour {
 
 	IEnumerator recoverFromHit() {
 		hitable = false;
-		hitableParticleSystem.Simulate ();
+		hitableParticleSystem.Play ();
 		yield return new WaitForSeconds (2f);
 		hitableParticleSystem.Stop ();
 		hitable = true;
 	}
 
-	IEnumerator attack(float attackSpeed) {
-		attackReady = false;
+	IEnumerator attack() {
+		while (isAlive) {
+			GameObject spear1 = (GameObject)Instantiate (projectile, projectileOrigin.position, Quaternion.identity);
+			spear1.GetComponent<SpearFlyingScript> ().ShootWithSpeed (player, prSpeed);
+			yield return new WaitForSeconds (attackSpeed);
 
-		//Spawn Projectile
+		}
+	}
 
-		yield return new WaitForSeconds (attackSpeed/10);
-		attackReady = true;
+	IEnumerator calmDown() {
+		yield return new WaitForSeconds (5);
+		mode = BossAttackMode.Melee;
+	}
+
+	IEnumerator TransitionIntoInsaneMode() {
+		insaneParticleSystem.Play ();
+		yield return new WaitForSeconds(2);
+		mode = BossAttackMode.Insane;
+		hitable = true;
+		StartCoroutine (calmDown ());
 	}
 }
