@@ -18,7 +18,11 @@ public class PumaMovement : MonoBehaviour {
 	private float rayOriginYAxisOffset = 2f;
 	public bool tired;
 	private Animator anim;
-
+	private float startTime;
+	private float journeyLength;
+	private bool isClimbing;
+	private Transform startMarker;
+	private Vector3 endMarker;
 	void Start () {
 		triggerDistance = 3f;
 		climbHintText = GameObject.Find ("ClimbHint").GetComponent<UIHint>();
@@ -30,6 +34,7 @@ public class PumaMovement : MonoBehaviour {
 		staminaGain = 0.5f;
 		isSprintOn = false;
 		tired = false;
+		isClimbing = false;
 		anim = GetComponent<Animator> ();
 	}
 
@@ -48,16 +53,20 @@ public class PumaMovement : MonoBehaviour {
 		Vector3 rayOrigin = transform.position;
 		rayOrigin.y += rayOriginYAxisOffset;
 		Ray climbRay = new Ray (rayOrigin, transform.forward);
-		if(Physics.Raycast (climbRay, out hit, triggerDistance)){
-			if(hit.collider.tag == "Climbable"){
-				climbHintText.showText();
+		if (Physics.Raycast (climbRay, out hit, triggerDistance)) {
+			if (hit.collider.tag == "Climbable") {
+				climbHintText.showText ();
 			} 
 		} else {
-			climbHintText.hideText();
+			climbHintText.hideText ();
 		}
-		if(Input.GetKeyDown(KeyCode.Q)){
-			if(climbHintText.isEnabled()){
-				doClimb(hit.collider);
+		if (Input.GetKeyDown (KeyCode.Q)) {
+			Debug.Log ("Q");
+			if (climbHintText.isEnabled ()) {
+				Debug.Log ("climb");
+				StartCoroutine(startClimb(hit.collider));
+			} else {
+				anim.SetBool ("ClimbBool", false);
 			}
 		}
 		if (Input.GetKey (KeyCode.LeftShift)) {
@@ -69,8 +78,10 @@ public class PumaMovement : MonoBehaviour {
 		} else {
 			isSprintOn = false;
 		}
-		if (Input.GetKeyDown (KeyCode.C)) {
-			anim.SetBool ("ClimbBool", true);
+		if (Input.GetKeyDown (KeyCode.Q)) {
+			if (climbHintText.isEnabled ()) {
+				anim.SetBool ("ClimbBool", true);
+			}
 		} else {
 			anim.SetBool ("ClimbBool", false);
 		}
@@ -88,9 +99,14 @@ public class PumaMovement : MonoBehaviour {
 		if (tired) {
 			GetComponent<PlayerMovement> ().movePower = slowSpeed;
 		} else {
-			GetComponent<PlayerMovement>().movePower = walkingSpeed;
+			GetComponent<PlayerMovement> ().movePower = walkingSpeed;
 		}
-		
+
+		if (isClimbing) {
+			doClimb ();
+		} else {
+			anim.SetBool ("ClimbBool", false);
+		}
 		
 		if (isSprintOn) {
 			GetComponent<PlayerMovement>().movePower = sprintSpeed;
@@ -104,11 +120,35 @@ public class PumaMovement : MonoBehaviour {
 
 	}
 
-	void doClimb(Collider hit){
+	IEnumerator startClimb(Collider hit){
+		anim.SetBool ("ClimbBool", true);
 		Vector3 endOfClimb = transform.position;
 		endOfClimb.y += hit.GetComponentInParent<MeshFilter>().mesh.bounds.size.y * hit.transform.lossyScale.y + transform.lossyScale.y;
+		startTime = Time.time;
+		journeyLength = Vector3.Distance(transform.position, endOfClimb);
+		startMarker = transform;
+		endMarker = endOfClimb;
+//		yield return new WaitForSeconds (1);
+		isClimbing = true;
+		yield return new WaitForSeconds (2);
 		endOfClimb += transform.forward * 2;
+		isClimbing = false;
+		anim.SetBool ("ClimbBool", false);
 		transform.position = endOfClimb;
+//		transform.position = Vector3.Lerp (transform.position, endOfClimb, 2f);
+//		yield return new WaitForSeconds(2);
+//		transform.position = endOfClimb;
+//		anim.SetBool ("ClimbBool", false);
+
+
+
+//		transform.position = endOfClimb;
 		
+	}
+
+	void doClimb() {
+		float distCovered = (Time.time - startTime) * 2f;
+		float fracJourney = distCovered / journeyLength;
+		transform.position = Vector3.Lerp(startMarker.position, endMarker, fracJourney);
 	}
 }
