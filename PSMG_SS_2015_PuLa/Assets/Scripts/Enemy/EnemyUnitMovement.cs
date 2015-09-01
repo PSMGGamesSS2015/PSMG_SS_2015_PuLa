@@ -62,6 +62,13 @@ public class EnemyUnitMovement : MonoBehaviour {
 		pos.y += 0.3f;
 		transform.position = pos;
 		rBody.isKinematic = true;
+		StartCoroutine (kill ());
 
+	}
+
+	IEnumerator kill () {
+
+		yield return new WaitForSeconds (4);
+		Destroy(this.gameObject);
 	}
 }

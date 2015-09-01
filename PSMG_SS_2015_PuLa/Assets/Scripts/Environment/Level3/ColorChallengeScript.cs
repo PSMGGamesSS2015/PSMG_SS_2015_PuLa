@@ -99,9 +99,13 @@ public class ColorChallengeScript : MonoBehaviour {
 			if (!isWorking) {
 				if (tileID == (int)pattern [currentIndex]) {
 					if (currentIndex == pattern.Length - 1) {
+						if(currentLevelOfChallenge == 1) {
+							Debug.Log ("You beat the game");
+						} else {
 						currentPatternLength = challengeTwoPatternLength;
 						createNewPattern (currentPatternLength);
 						StartCoroutine (challengeCompleted ());
+						}
 					} else {
 						StartCoroutine (changeToSpecificColorAndBack (ColorTiles [tileID], HighlightColor));
 						currentIndex ++;
@@ -117,7 +121,7 @@ public class ColorChallengeScript : MonoBehaviour {
 	private void createNewPattern(int sequenceLength) {
 		TileColor[] pattern = new TileColor[sequenceLength];
 		for (int i = 0; i < sequenceLength; i ++) {
-			pattern[i] = (TileColor) Random.Range(0, ColorTiles.Length-1);
+			pattern[i] = (TileColor) Random.Range(0, ColorTiles.Length);
 		}
 		this.pattern = pattern;
 	}
