@@ -8,8 +8,14 @@ public class StartScreenScript : MonoBehaviour {
 	public Button settings;
 	public Button lIcon;
 	public Button pIcon;
+	public Button ludwigForward;
+	public Button ludwigBackward;
+	public Button pabloForward;
+	public Button pabloBackward;
 	public Canvas ludwigDescription;
+	public Canvas ludwigControl;
 	public Canvas pabloDescription;
+	public Canvas pabloControl;
 	public Button quit;
 	public Canvas quitMenu;
 	public Canvas settingsMenu;
@@ -25,15 +31,23 @@ public class StartScreenScript : MonoBehaviour {
 		settingsMenu = settingsMenu.GetComponent<Canvas> ();
 		lIcon = lIcon.GetComponent<Button> ();
 		pIcon = pIcon.GetComponent<Button> ();
+		pabloForward = pabloForward.GetComponent<Button> ();
+		pabloBackward = pabloBackward.GetComponent<Button> ();
+		ludwigForward = ludwigForward.GetComponent<Button> ();
+		ludwigBackward = ludwigBackward.GetComponent<Button> ();
 		quit = quit.GetComponent<Button> ();
 		quitMenu.GetComponent<Canvas> ();
 		quitMenu.enabled = false;
+		settingsMenu = settingsMenu.GetComponent<Canvas> ();
 		settingsMenu.enabled = false;
 		ludwigDescription = ludwigDescription.GetComponent<Canvas> ();
 		ludwigDescription.enabled = false;
 		pabloDescription = pabloDescription.GetComponent<Canvas> ();
 		pabloDescription.enabled = false;
-
+		ludwigControl = ludwigControl.GetComponent<Canvas> ();
+		ludwigControl.enabled = false;
+		pabloControl = pabloControl.GetComponent<Canvas> ();
+		pabloControl.enabled = false;
 
 
 	}
@@ -118,5 +132,33 @@ public class StartScreenScript : MonoBehaviour {
 		buttonHover.Play ();
 	
 	}
+
+	public void onPabloForwardClick(){
+		pabloControl.enabled = true;
+		pabloDescription.enabled = false;
+		buttonClick.Play();
+	}
+
+	public void onPabloBackwardClick(){
+		pabloControl.enabled = false;
+		pabloDescription.enabled = true;
+		buttonClick.Play ();
+
+	}
+
+	public void onLudwigForwardClick(){
+		ludwigControl.enabled = true;
+		ludwigDescription.enabled = false;
+		buttonClick.Play();
+	}
+	
+	public void onLudwigBackwardClick(){
+		ludwigControl.enabled = false;
+		ludwigDescription = true;
+		buttonClick.Play ();
+		
+	}
+	                   
+
 
 }

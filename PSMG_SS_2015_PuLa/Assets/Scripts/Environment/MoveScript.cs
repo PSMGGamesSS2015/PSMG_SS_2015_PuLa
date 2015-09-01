@@ -10,13 +10,16 @@ public class MoveScript : MonoBehaviour {
 	private float time;
 	private float timeEnd;
 
+
 	void Start () {
 		active = false;
 		wantedPosition = moveTo.transform.position;
+	
 	}
 
 	void DoUpdate(){
 		transform.position = Vector3.Lerp (transform.position, wantedPosition, Time.deltaTime);
+
 		time = Time.time;
 		if (time > timeEnd) {
 			active = false;
@@ -32,6 +35,7 @@ public class MoveScript : MonoBehaviour {
 
 	public void activate(){
 		active = true;
+
 		time = Time.time;
 		timeEnd = time + 5;
 	}

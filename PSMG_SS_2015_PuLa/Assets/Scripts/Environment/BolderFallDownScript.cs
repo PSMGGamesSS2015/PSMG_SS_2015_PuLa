@@ -7,9 +7,14 @@ public class BolderFallDownScript : MonoBehaviour {
 	public float waitAtStartTime;
 	public GameObject moveDown;
 	public GameObject moveUp;
+	private UIScene2 ui2;
+	private float healthDecrease = 0.206f;
+	private float livesDecrease = 0.33339f;
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (WaitAtStart (waitAtStartTime));
+		ui2 = GameObject.Find ("UI").GetComponent<UIScene2> ();
+
 	}
 	
 	// Update is called once per frame
@@ -44,5 +49,10 @@ public class BolderFallDownScript : MonoBehaviour {
 			Debug.Log("trigger");
 			StartCoroutine(Wait(2f));
 		}
-	}
+
+		if (collider.name == "Puma") {
+			ui2.pumaGotDamaged(healthDecrease*5, livesDecrease);
+			}
+		}
+
 }
