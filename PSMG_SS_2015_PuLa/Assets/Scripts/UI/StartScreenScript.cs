@@ -154,7 +154,7 @@ public class StartScreenScript : MonoBehaviour {
 	
 	public void onLudwigBackwardClick(){
 		ludwigControl.enabled = false;
-		ludwigDescription = true;
+		ludwigDescription.enabled = true;
 		buttonClick.Play ();
 		
 	}
