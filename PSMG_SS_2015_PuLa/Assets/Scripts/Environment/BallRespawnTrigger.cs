@@ -22,7 +22,7 @@ public class BallRespawnTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider collider){
-		if (collider.transform.parent.tag == "Player") {
+		if (collider.tag == "Player") {
 			ui2.pumaGotDamaged(healthDecrease*5, livesDecrease);
 			respawnPlayer (collider.gameObject);
 	
