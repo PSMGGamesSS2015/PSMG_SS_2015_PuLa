@@ -46,9 +46,8 @@ public class BossScript : MonoBehaviour {
 		hitable = true;
 		attackReady = true;
 		isAlive = true;
-		insaneParticleSystem.Play ();
+		insaneParticleSystem.Stop ();
 		hitableParticleSystem.Stop ();
-		activate ();
 	}
 	
 	// Update is called once per frame
@@ -76,7 +75,7 @@ public class BossScript : MonoBehaviour {
 		}
 	}
 
-	void activate(){
+	public void activate(){
 		mode = BossAttackMode.Melee;
 		attackSpeed = AttackSpeedMelee;
 		prSpeed = prSpeedMelee;
@@ -101,6 +100,7 @@ public class BossScript : MonoBehaviour {
 				if(hitPoints == 0) {
 					isAlive = false;
 					hitable = false;
+					StartCoroutine(endScene());
 				}
 			}
 		}
@@ -142,5 +142,10 @@ public class BossScript : MonoBehaviour {
 		mode = BossAttackMode.Insane;
 		hitable = true;
 		StartCoroutine (calmDown ());
+	}
+
+	IEnumerator endScene() {
+		yield return new WaitForSeconds (3);
+		Application.LoadLevel (4);
 	}
 }

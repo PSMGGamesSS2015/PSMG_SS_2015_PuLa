@@ -42,7 +42,7 @@ public class LifeRegainScript : MonoBehaviour {
 				
 				ui3.lamaLifeRegain (livesFillAmount);
 			}
-			Destroy(heart);
+			Destroy(this.gameObject);
 		}
 
 		if (collider.name == "Puma") {
@@ -55,7 +55,7 @@ public class LifeRegainScript : MonoBehaviour {
 			if (Application.loadedLevel == 3) {
 				ui3.pumaLifeRegain (livesFillAmount);
 			}
-			Destroy(heart);
+			Destroy(this.gameObject);
 		}
 
 	}

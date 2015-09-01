@@ -100,7 +100,7 @@ public class ColorChallengeScript : MonoBehaviour {
 				if (tileID == (int)pattern [currentIndex]) {
 					if (currentIndex == pattern.Length - 1) {
 						if(currentLevelOfChallenge == 1) {
-							Debug.Log ("You beat the game");
+							StartCoroutine (challengeCompleted ());
 						} else {
 						currentPatternLength = challengeTwoPatternLength;
 						createNewPattern (currentPatternLength);

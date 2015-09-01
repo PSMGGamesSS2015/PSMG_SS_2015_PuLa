@@ -26,12 +26,14 @@ public class StartColorChallenge : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider collider) {
-		if (isReady) {
-			if (collider.tag == "Player") {
-				collider.GetComponent<PlayerSwap>().doSwap();
-				startChallenge ();
-				isReady = false;
-			} 
+		if (enabled) {
+			if (isReady) {
+				if (collider.tag == "Player") {
+					collider.GetComponent<PlayerSwap> ().doSwap ();
+					startChallenge ();
+					isReady = false;
+				} 
+			}
 		}
 	}
 
