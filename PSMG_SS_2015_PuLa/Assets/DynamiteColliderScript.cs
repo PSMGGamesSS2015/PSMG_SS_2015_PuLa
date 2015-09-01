@@ -17,7 +17,7 @@ public class DynamiteColliderScript : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider collider){
 		if (collider.name == "Lama" | collider.name == "Puma") {
-			gameItems.dynamiteFound = true;
+			PlayerPrefs.SetInt("DynamiteFound", 1);
 			Destroy(dynamite);
 		}
 	}

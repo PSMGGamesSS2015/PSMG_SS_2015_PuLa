@@ -5,6 +5,7 @@ public class LifeRegainScript : MonoBehaviour {
 
 	private UIScene1 ui1;
 	private UIScene2 ui2;
+	private UIScene3 ui3;
 	private GameObject heart;
 	private float livesFillAmount = 0.35f;
 
@@ -15,6 +16,7 @@ public class LifeRegainScript : MonoBehaviour {
 	void Start () {
 		ui1 = GameObject.Find ("UI").GetComponent<UIScene1> ();
 		ui2 = GameObject.Find ("UI").GetComponent<UIScene2> ();
+		ui3 = GameObject.Find ("UI").GetComponent<UIScene3> ();
 		heart = GameObject.Find ("heart");
 
 	}
@@ -36,6 +38,10 @@ public class LifeRegainScript : MonoBehaviour {
 				
 				ui2.lamaLifeRegain (livesFillAmount);
 			}
+			if (Application.loadedLevel == 3) {
+				
+				ui3.lamaLifeRegain (livesFillAmount);
+			}
 			Destroy(heart);
 		}
 
@@ -45,6 +51,9 @@ public class LifeRegainScript : MonoBehaviour {
 			}
 			if (Application.loadedLevel == 2) {
 				ui2.pumaLifeRegain (livesFillAmount);
+			}
+			if (Application.loadedLevel == 3) {
+				ui3.pumaLifeRegain (livesFillAmount);
 			}
 			Destroy(heart);
 		}

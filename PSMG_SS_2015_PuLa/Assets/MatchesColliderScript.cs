@@ -17,7 +17,7 @@ public class MatchesColliderScript : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider collider){
 		if (collider.name == "Lama" | collider.name == "Puma") {
-			gameItems.matchesFound = true;
+			PlayerPrefs.SetInt("MatchesFound", 1);
 			Destroy(matches);
 		}
 	}

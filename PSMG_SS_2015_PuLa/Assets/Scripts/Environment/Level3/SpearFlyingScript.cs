@@ -5,9 +5,11 @@ public class SpearFlyingScript : MonoBehaviour {
 
 	private Rigidbody rBody;
 	private UIScene3 ui3;
+	private float healthDecrease = 0.206f;
+	private float livesDecrease = 0.33339f;
 	// Use this for initialization
 	void Start () {
-	
+		ui3 = GameObject.Find ("UI").GetComponent<UIScene3> ();
 	}
 	
 	// Update is called once per frame
@@ -32,10 +34,8 @@ public class SpearFlyingScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider) {
 
-		if (collider.tag == "Player") {
-			// Damage Player start
-
-			// Damage Player end
+		if (collider.name == "Puma") {
+			ui3.pumaGotDamaged(healthDecrease*2, livesDecrease);
 			Destroy (this.gameObject);
 		}
 		if (collider.tag == "Plattform") {
