@@ -24,10 +24,10 @@ public class SpearFlyingScript : MonoBehaviour {
 		rBody.AddForce (Vector3.up * -10);	
 	}
 
-	public void ShootWithSpeed(Transform target, float speed){
+	public void ShootWithSpeed(Vector3 target, float speed){
 		rBody = GetComponent<Rigidbody> ();
 		transform.LookAt (target);
-		Vector3 velocity = (target.position - transform.position).normalized * speed;
+		Vector3 velocity = (target - transform.position).normalized * speed;
 		rBody.velocity = velocity;
 		rBody.AddForce (Vector3.up * -10);	
 	}
@@ -36,6 +36,10 @@ public class SpearFlyingScript : MonoBehaviour {
 
 		if (collider.name == "Puma") {
 			ui3.pumaGotDamaged(healthDecrease*2, livesDecrease);
+			Destroy (this.gameObject);
+		}
+		if (collider.name == "Lama") {
+			ui3.lamaGotDamaged(healthDecrease*2, livesDecrease);
 			Destroy (this.gameObject);
 		}
 		if (collider.tag == "Plattform") {

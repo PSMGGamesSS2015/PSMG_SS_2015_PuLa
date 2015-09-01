@@ -123,7 +123,9 @@ public class BossScript : MonoBehaviour {
 	IEnumerator attack() {
 		while (isAlive) {
 			GameObject spear1 = (GameObject)Instantiate (projectile, projectileOrigin.position, Quaternion.identity);
-			spear1.GetComponent<SpearFlyingScript> ().ShootWithSpeed (player, prSpeed);
+			Vector3 temp = player.position;
+			temp.y += 2;
+			spear1.GetComponent<SpearFlyingScript> ().ShootWithSpeed (temp, prSpeed);
 			yield return new WaitForSeconds (attackSpeed);
 
 		}
